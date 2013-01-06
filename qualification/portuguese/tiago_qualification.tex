@@ -1,13 +1,22 @@
 \documentclass[12pt,twoside,final]{book}
 
+%%%%%%%%%
+% My packages
+%%%%%%%%
+\usepackage{rotating}
+%%%%%%%%%
+% My packages
+%%%%%%%%
+
+
 \usepackage[portuges,brazil]{babel}
 \usepackage[latin1]{inputenc}
-
 \usepackage{indentfirst}
 \usepackage{ae}
 \usepackage{harvard}
 \usepackage{amssymb,fancyhdr,fancybox,epsfig,psfrag,amsmath,tabularx}
 \usepackage[paperwidth=8.5in,paperheight=11in,hmargin={25mm,20mm},vmargin={20mm,20mm}]{geometry} %tamanho letter
+
 
 
 \usepackage[color]{showkeys}
@@ -32,7 +41,7 @@
 
 \begin{document}
 
-\pagenumbering{roman}
+%\pagenumbering{roman}
 \pagestyle{plain}
 
 %Tese em português
@@ -41,11 +50,11 @@
 %\input{capaPortIngles}
 
 
-\input{dedicatoria}
+%\input{dedicatoria}
 
-\input{agradecimento}
+%\input{agradecimento}
 
-\input{epigrafe}
+%\input{epigrafe}
 
 
 \baselineskip 1.1 \baselineskip
@@ -54,17 +63,17 @@
 
 
 %=============================== lista de tabelas e figuras ==========================
-\listoffigures
-\newpage
+%\listoffigures
+%\newpage
 
 
-\listoftables
-\newpage
+%\listoftables
+%\newpage
 
 
 
 %============================ acrônimos, símbolos e notações ========================
-\input{acro_notacao.tex}
+%\input{acro_notacao.tex}
 
 %=============================== sumário =============================================
 \tableofcontents
@@ -79,8 +88,8 @@
 \pagestyle{fancy}
 
 
-\markboth{Introdu\c{c}\~{a}o Geral}{Introdu\c{c}\~{a}o Geral}
-\include{introducao}
+%\markboth{Introdu\c{c}\~{a}o Geral}{Introdu\c{c}\~{a}o Geral}
+%\include{introducao}
 
 \include{cap1}
 \include{cap2}

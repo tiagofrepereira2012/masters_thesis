@@ -1,0 +1,108 @@
+\chapter{Introdução}
+
+
+%%%%%%%%
+% Contextualização e motivação
+%%%%%%%%
+\section{Contextualização e motivação}
+
+Em uma sociedade moderna, o processo de autenticação é uma tarefa importante para proteger dados e recursos sejam ele físicos ou digitais. Consistindo da confirmação de uma identidade requerida, o processo de autenticação é o primeiro e o mais crítico na cadeia de segurança restringindo acesso a usuários não autorizados.
+
+Para a tarefa de confirmação de uma identidade, utilizam-se elementos que devem corresponder unívocamente ao identificador associado a um determinado usuário. Estes elementos são chamados de fatores de autenticação. Centralizados no usuário que está requerendo a identidade, estes fatores podem ser utilizados isoladamente ou combinados a fim de reforçar a a segurança. Os fatores de autenticação são classificados em aquilo que o usuário:
+
+\begin{itemize}
+        \item \textbf{Sabe}: Por exemplo, uma senha ou uma frase de segurança;
+        \item \textbf{Possui}: Por exemplo, um \textit{token} de segurança,  uma chave de cadeado ou um cartão;
+        \item \textbf{É}:  Por exemplo, uma característica física ou comportamental.
+\end{itemize}
+
+
+%No simples caminho da casa para o trabalho, um ser humano comum pode passar por vários processos de autenticação. Antes de sair de casa, portas devem ser abertas e muito provavelmente um conjunto de chaves são utilizadas para este fim. Ao pagar a conta da padaria, no café da manhã, com o cartão de crédito, muito provavelmente utiliza-se dois fatores de autenticação (combinação de cartão e senha do cartão). Ao chegar ao trabalho a entrada é registrada utilizando um cartão de ponto. Se o trabalho exige a utilização de computadores uma série de senhas são utilizadas para acessar os recursos da empresa (acesso ao computador, acesso à e-mail e acesso à sistemas internos da empresa). Neste pequeno exemplo foi possível observar que temos uma certa familiaridade com métodos de autenticação.
+
+Cada um destes fatores apresentados possui um conjunto de vantagens e desvantagens. O uso mais comum de senhas, é acesso lógico a sistemas computacionais (computadores, e-mail, banco, cartão de crédito e muitos outros). A senha possui a vantagem de ser naturalmente imutável ao longo do tempo, ou seja, caso a mesma não seja mudada, ela continuará tendo o mesmo valor ao longo do tempo. Senhas contudo podem ser tão complexas quanto se queira, ficando a critério de seu detentor criar uma senha que ao mesmo tempo seja segura (de difícil adivinhação para um eventual atacante) e de fácil memorização. Estes critérios, claramente antagônicos, é o principal ponto de ataque a sistemas computacionais baseados em autenticação com senhas. Como um exemplo de vulnerabilidade no uso de senhas, em fevereiro de 2012 78 contas de e-mail de membros do governo da Síria foram invadidas divulgando informações confidenciais\footnote{http://www.dailymail.co.uk/news/article-2100111/New-York-spin-doctor-coached-Syrian-dictator-Assad-swing-sympathies-US-public.html}. Destas 78 contas de e-mail, 33 a senha era '12345' ou '123456' incluindo a senha do próprio presidente.
+
+\textit{Tokens} geralmente são assoaciados a um segundo fator de autenticação. Como exemplo, um cartão de crédito é um \textit{token} que acompanhado com a senha do cartão reforça a segurança do mesmo. Há bancos que disponibilizam para seus clientes tokens que geram um número aleatório a cada 30 segundos com a finalidade de reforçar o acesso à serviços de \textit{internet banking}. Na Figura \ref{fig_token_itau}) pode-se o observar um token em formato de chaveiro. Estes \textit{tokens} são objetos físicos que podem ser facilmente perdidos, e uma vez perdidos a autenticação fica comprometida por parte do usuário.
+
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics [width=7.5cm] {images/token_itau.jpg}
+\caption{Token em formato de chaveiro} \label{fig_token_itau}
+\end{center}
+\end{figure}
+
+
+Biometria é a ciência de reconhecer a identidade de uma pessoa baseada em seus atributos físicos e/ou comportamentais, tais como a face, as impressões digitais, veias da mão, voz e a íris \cite{li2011handbook}. O uso da biometria como fator de autenticação possuí algumas vantagens. Naturalmente, não é possível esquecer uma característica biométrica e dificilmente esta característica desaparece repentinamente (talvez em casos de acidentes graves). Características biométricas são intrínsecas a pessoa que as possui e portanto é intransferível. Como desvantagem, a biometria pode variar drasticamente ao longo do tempo. Como exemplo, a voz humana pode variar repentinamente quando estamos doentes; nossos traços faciais infelizmente envelhecem ao longo do tempo. Vale ressaltar que métodos de autenticação baseados em biometría são probabilísticos, ou seja, pode ser que o sistema de autenticação rejeite uma entrada autêntica devido à uma série de fatores externos.
+
+As características humanas para serem utilizadas em uma método de autenticação biométrica devem satisfazer alguns requisitos, dentre eles destacam-se:
+
+\begin{itemize}
+        \item Universalidade (toda pessoa deve possuí-la);
+        \item Unicidade (deve permitir distinguir as pessoas);
+        \item Estabilidade (não deve se alterar demasiadamente ao longo do tempo);
+        \item Coletabilidade (deve poder ser medida quantitativamente);
+        \item Desempenho (deve possibilitar um reconhecimento preciso, em tempo hábil);
+        \item Aceitabilidade (deve ser aceitos facilmente por seus usuários);
+        \item Circunvenção (deve dificultar a possibilidade de fraudes).
+\end{itemize}
+
+A tabela \ref{tb:comparacao} apresenta um comparativo realizado por \cite{maltoni2009handbook} entre as características biométricas mais utilizadas. É possível observar que nenhuma das biometrías apresentadas consegue atender todos estes requisitos com excelência e a escolha de qual utilizar deve levar em conta a natureza e as exigências de cada aplicação \cite{jain1999biometrics}.
+
+\begin{table}[ht]
+\caption{Comparação das características biométricas mais utilizadas}
+\begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c |}
+    \hline
+    \textbf{Característica} & \rotatebox{90}{\textbf{Universalidade}} & \rotatebox{90}{\textbf{Unicidade}} & \rotatebox{90}{\textbf{Estabiliade}} & \rotatebox{90}{\textbf{Coletabilidade}} & \rotatebox{90}{\textbf{Desempenho}} & \rotatebox{90}{\textbf{Aceitabilidade}} & \rotatebox{90}{\textbf{Circunvenção}} \\ \hline
+    Face                             & Alta      & Baixa  & Média & Alta     & Baixa  & Alta      & Baixa \\ \hline
+    Impressão Digital      & Média  &  Alta    & Alta      & Média & Alta     & Média  & Média \\ \hline
+   Geometria das mãos & Média  & Média & Média & Alta     & Média & Média  & Média \\ \hline
+    Veias da mão/dedo  & Média  & Média  & Média & Média & Média & Média & Alta \\ \hline
+    Íris                                & Alta      & Alta       & Alta     & Média & Alta     & Baixa  & Alta \\ \hline
+    Assinatura                  & Baixa   & Baixa   & Baixa  & Alta     & Baixa  & Alta     & Baixa \\ \hline
+    Voz                              & Média  & Baixa   & Baixa  & Média & Baixa  & Alta     & Baixa \\ \hline
+    \end{tabular}
+\end{center}
+\label{tb:comparacao}
+\end{table}
+
+Sistemas de autenticação biométrica podem ser grosseiramente representados segundo o fluxograma da Figura \ref{fig:diagram_attacks}.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics [width=13cm] {images/diagram_attacks.png}
+\caption{Fluxograma de um sistema de autenticação biométrica} \label{fig_diagram}
+\end{center}
+\end{figure}
+
+Primeiramente o trato biométrico é capturado via algum tipo de \textbf{sensor}. Após esta captura, o trato biométrico capturado é \textbf{processado} a fim de extrair as características biométricas e geração da referência biométrica. Quando se está efetuando o cadastro de uma referência biométrica, estas características são \textbf{armazenadas} em uma base de dados para acessos futuros. Quando se está efetuando a \textbf{autenticação}, estas características biométricas serão utilizadas no processo de comparação com alguma identidade requerida no banco de dados. Conforme pode ser observado na  figura ataques podem ser efetuados em qualquer ponto da arquitetura \cite{xiao2005security}. As próximas subseções irão discorrer sobre cada um dos possíveis ataques e soluções para mitigá-los.
+
+\subsection{Ataque de \textit{replay}}
+
+O ataque de replay consiste da utilização de dados previamente submetidos da identidade alvo para o sistema de autenticação a fim de obter o acesso não autorizado. Estes dados podem ser obtidos interceptando (\textit{sniffing}) o canal de dados entre o sensor e a unidade de processamento de dados biométricos durante uma autenticação bem sucedida da identidade alvo. Para deter ataques dessa natureza, o sistema de autenticação biométrica deve assegurar que o dado fornecido não foi injetado artificialmente. Uma forma de se defender deste tipo de ataque é fazer uso da característica probabilística da própria biometria. É praticamente impossível dois processos de captura independentes e em intervalos de tempo distintos gerar exatamente o mesmo dado biométrico. Se isto ocorrer é provável que este dado foi interceptado e está sendo injetado no sistema de autenticação \cite{xiao2005security}.
+
+\subsection{Ataque na referência biométrica}
+
+O ataque de referências biométricas consiste em atacar o local de armazenamento das referências biométricas. Com este tipo de ataque pode-se: adicionar uma biometria falsa no sistema de armazenamento, copiar as referências biométricas armazenadas, remover alguma referência biométrica ou modificar as referências biométricas existentes \cite{uludag2004attacks}. Dentre estas possibilidades a mais perigosa é a cópia de referências biométricas, pois as mesmas podem ser usadas, através de engenharia reversa, para gerar biometrias falsas. \cite{hill2001risk} demonstrou que é possível gerar impressões digitais falsas através do processo de engenharia reversa com referências biométricas baseadas em minúcias. Com estas impressões digitais fabricadas, foi possível violar um sistema de autenticação baseado em impressões digitais. Um outro ponto de destaque neste tipo de ataque é que uma vez violada uma referência biométrica, a mesma perde a característica da unicidade.
+
+\subsection{Ataque \textit{man-in-the-midle}}
+
+O ataque \textit{man-in-the-middle} ou homem do meio é uma forma de ataque em que os dados trocados entre os componentes do sistema de biometria são, de alguma forma, interceptados e alterados pelo atacante. Neste tipo de ataque o atacante pode: interceptar dados sensor, interceptar dados enviados para armazenamento e interceptar dados de decisão do sistema de biometria. Mecanismos como encriptação dos dados antes de serem transmitidos e/ou prover canais de comunicação seguro podem mitigar este tipo de ataque.
+
+\subsection{Ataque de spoofing}
+
+O ataque de \textit{spoofing} em sistemas de autenticação biométrica, é um tipo de ataque em que o atacante forja o trato biométrico alvo apresentando uma biometria falsa ao sensor, burlando o sistema de autenticação. Em sistemas de autenticação baseados em biometria há duas motivações para se forjar um trato biométrico. A \textbf{primeira} motivação é o atacante obter o trato biométrico de outra pessoa a fim de tomar sua identidade. Em sistemas de autenticação baseados na voz, o atacante pode gravar a voz da identidade alvo e usar esta gravação como entrada no sistema de autenticação. Em sistemas de autenticação baseados em impressões digitais o atacante pode obter alguma impressão latente da identidade alvo e gerar um dedo artificial contento a impressão digital roubada. A saber em \cite{uludag2004attacks}, \cite{leyden2002gummi} e \cite{matsumoto2002impact} são trabalhos relacionados a ataques de \textit{spoofing} em sistemas de autenticação baseados em impressões digitais, em \cite{johnson2010multimodal}, \cite{kanematsu2007highly} e \cite{pacut2006aliveness} são trabalhos relacionados a ataques de \textit{spoofing} baseados na biometria da iris e em \cite{chetty2004liveness} e \cite{eveno2005speaker} são trabalhos relacionados a ataques de \textit{spoofing} em sistemas de autenticação baseados na biometria da voz humana. A \textbf{segunda} motivação é um atacante gerar um trato biométrico totalmente artificial (sem se basear em uma biometria real), a fim de enganar o sistema de cadastro e autenticação biométricos. Com isso, o atacante pode compartilhar esta biometria falsa com outros atacantes.
+
+Melhores práticas de segurança orientam utilizar mecanismos como, criptografia de dados e criação de canais seguros para mitigar ataques para a maioria dos casos citados anteriormente \cite{xiao2005security}. No caso dos ataques de \textit{spoofing}, o sensor de biometría (ponto alvo deste tipo de ataque) é o único ponto do fluxograma da Figura \ref{fig_diagram} em que nenhum dos mecanismos são efetivos para mitigá-los, tornando-se assim o ponto mais frágil a ataques.
+
+
+%%%%%%%%
+% Objetivos, Hipóteses e Resultados esperados
+%%%%%%%%
+\section{Objetivos, Hipóteses e Resultados esperados}
+
+
+%%%%%%%%
+% Organização do trabalho
+%%%%%%%%
+\section{Organização do trabalho}
