@@ -29,50 +29,63 @@ Estratégias não colaborativas podem ser classificados em que exploram:
 \begin{itemize}
         \item Presença de vitalidade (liveness detection);
         \item Discrepância em padrões de movimento;
-        \item Discrepância relativa a qualidade da imagem.
+        \item Discrepância relativa a qualidade da imagem;
+        \item Combinação.
 \end{itemize}
 
 \subsection{Presença de vitalidade}
 
 Presença de vitalidade ou \textit{liveness detection} consiste na seleção de características faciais que apenas pessoas vivas conseguem reproduzir.
 
-Com o objetivo de bloquear ataques efetuados com fotografia, \cite{pan2007eyeblink,jiangweili} exploraram uma contramedida baseada em piscadela. Apoiados na hipótese que seres humanos em média piscam uma vez a cada 2-4 segundos, uma estratégia baseada em tal característica seria factível. Os experimentos realizados com o banco de dados piscar de olhos ZJU \footnote{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html} mostrou uma precisão de 95,7\%.
+O piscar de olhos é uma tarefa involutária que os seres humanos executam constantemente. Um ser humano comum pisca de forma involuntária a cada 2 ou 6 segundos para manter os olhos limpos e umidecídos. Este intervá-lo pode variar drasticamente em situações de stress aumentando este intervalo para mais de 20 segundos. Porém, não importa a situação de stress que se está submetido; em algum momento este movimento irá ocorrer. Não há estabelecido um limite máximo estabelecido em que um ser humano consegue suportar sem piscar os olhos.
 
-Scenic clues
+Apoiado na hipótese citada anteriormente, \cite{pan2007eyeblink,jiangweili} desenvolveram uma contramedida baseada no piscar dos olhos com o objetivo de bloquear ataques efetuados com fotografia. O sistema desenvolvido modela a piscadela utilizando cadeias escondidade de markov (HMM) mapeando os estados de olho aberto para olho fechado e olho aberto novamente. Experimentos foram conduzidos utilizando uma base de dados criada pelos autores e livremente disponível para download\footnote{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html} mostraram uma acurácia de 95,7\% contra uma taxa de falsos positivos abaixo de 0,1\%.
+
 
 \subsection{Discrepância em padrões de movimento}
 
 Contramedidas baseadas em padrões de movimento partem do princípio que tentativas de ataque possuem padrões de movimento distintos de acessos reais.
 
-Explorando a correlação em diferentes partes da região facial \cite{kollreider2009non} desenvolveu uma heurística baseada em fluxo ótico comparando a direção entre o centro da face e a região das orelhas. O algoritmo pode ser sumarizado em:
+Apoiado na hipótese que em um ataque regiões distintas da face apresenta padrões de movimento altamente correlacionados se comparados com acessos reais, \cite{kollreider2009non} desenvolveu uma heurística baseada em fluxo ótico para mensurar tal correlação. Comparando a direção entre o centro da face e a região das orelhas como pode-se observar na Figura X, 
+
+
+
+Fig X
+
+O algoritmo pode ser sumarizado como segue:
 
 \begin{enumerate}
+        \item Detectar a face;
+        \item Definir região facial está se movendo mais horizontalmente ou mais verticalmente;
         \item Delimitar a região do centro da face e das orelhas;
-        \item Definir se a região da face está se movendo mais horizontalmente e verticalmente;
-        \item Se a 
+verticalmente;
+        \item Se a cabeça estiver se movendo mais horizontalmente, LIMIARES. TERMINAR
+        \item Será considerado ataque se a quantidade de movimento percebida na região do centro da face semelhante a quantidade de movimento na região das orelhas.
 \end{enumerate}
 
-O desempenho foi avaliado usando o subconjunto "Shot rotação da cabeça" do banco de dados XM2VTS cujo verdadeiro acesso era os vídeos deste subconjunto e os ataques foram gerados com cópias de tais dados. Usando este banco de dados, que não foi tornado público, uma taxa de erro igual (EER) de 0,5 \% .
 
-TERMINAR
+A performance foi avaliada utilizando uma base de dados construída sobre a base de dados de face XM2VTS. Os acessos reais foram gerados utilizando o subconjunto \textit{Head Rotation Shot} desta base de dados e o ataques foram gerados com fotografias impressas em papel das mesmas imagens utilizadas para os acessos reais e regravados utilizando uma câmera de computador. Com esta base de dados criada um $EER=0,5\%$ foi obtido. Esta base dados não foi disponibilizada publicamente pelos autores de modo que qualquer tentativa de reprodução dos resultados fica impossibilitada. 
 
-FIGURA
+%%% BAO
 
-%%%%%%% BAO
+Ainda com fluxo ótico, \cite{bao2009liveness} explora as diferenças de movimento entre um objeto plano e um objeto tridimensional. Ao contrário de \cite{kollreider2009non}, Bao et al não detecta regiões específicas da face, mas sim as divide em quatro partes (horizontalmente e verticalmente) e avalia se ...
 
-\cite{bao2009liveness} exploram as características da movimentação facial e apresenta solução baseada em fluxo óptico que procura analisar as diferenças de movimento entre um objeto plano e um objeto 3D.
+Com a seguinte euristica..
 
-A proposta de medida preventiva em \cite {AnjosIJCB2011} \footnote{http://pypi.python.org/pypi/antispoofing.motion/} mede a diferença de movimento relativo entre a face eo fundo. Os autores focados em simples diferenças de intensidades em quadros sucessivos. O movimento acumulado entre esta diferença ($M_D$), para um dado uma Região de Interesse (ROI) e seu respectivo fundo, é calculado usando a seguinte equação:
 
-% \ vspace {-2mm}
+%%% André
+
+A contramedida proposta por \cite{AnjosIJCB2011} mede a correlação do movimento da região da face em relação ao seu fundo utilizando como métrica de movimento uma simples diferença das intensidades dos pixels em quadros sucessivos. O movimento acumulado entre esta diferença ($M_D$), para um dado uma Região de Interesse (ROI) e seu respectivo fundo, é calculado usando a seguinte equação:
 
 \begin{equation}
 M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|
 \label{eq:motion}
 \end{equation}
-where $D$ is the RoI, $S_D$ is the area of the RoI and $I_t$ is the intensity of a pixel.
+em que $D$ é o RoI, $S_D$ é a área do RoI e $I_t$ é a intensidade de um pixel.
 
 Para introduzir o coeficiente de movimento em um classificador, 5 quantidades são extraídos para cada janela de 20 quadros. As quantidades são as seguintes: o mínimo de $M_D$ em que a janela de tempo, no máximo, a média, o desvio padrão e a proporção $R$ espectral entre a soma de todos os componentes não-DC e DC do componente em si tomadas como base o $N$ pontos transformada de Fourier do sinal (ver Equação \ ref {eq: motionR}). Estes 5 quantidades são alimentados em um Multi-camada classificador Perceptron (MLP), com 5 neurônios na camada escondida, que é treinado para detectar ataques de spoofing.
+
+
 
 
 
