@@ -22,10 +22,59 @@ Embora seja possível para falsificar um sistema de autenticação de face usando m
 
 Contramedidas para ataques de spoofing em reconhecimento de face podem ser classificados quanto à dependência da colaboração do usuário. Métodos que são ditos \textbf{colaborativos}, partem do princípio que a pessoa que está efetuando a autenticação deve favorecer o mesmo, executando alguma atividade do tipo desafio-resposta. Em \cite{faraj2007synergy} e \cite{chetty2009biometric} o usuário é orientado a falar um texto gerado automaticamente e os movimentos labiais são correlacionados com reconhecimento de fala a fim de gerar uma checagem forte acerca da presença de um usuário em frente à câmera.
 
-Métodos que não são colaborativos, procuram trabalhar somente com imagens ou vídeos capturados por câmeras convencionais que operam no espectro de luz visível. Estes métodos possuem a vantagem de não necessitar de nenhum hardware específico para este fim, tornando-os naturalmente mais baratos. Outra vantagem é abrangência de tais métodos, já que câmeras que operam no espectro visível são encontrados em muitos equipamentos de nosso uso diário como \textit{webcams} comuns, \textit{laptops}, \textit{smartphones} e \textit{tablets}. Tais métodos podem ser aplicados a sistemas de autenticação de face em diversos equipamentos. Uma outra vantagem que merece ser destacada é que a usabilidade de sistemas de autenticação de face não é onerada com estes métodos, já que o usuário não toma ciência de que uma checagem de sua presença em frente a câmera está sendo efetuada. Estes métodos podem ser classificados em métodos que exploram a:
+Métodos que não são colaborativos, procuram trabalhar somente com imagens ou vídeos capturados por câmeras convencionais que operam no espectro de luz visível. Estes métodos possuem a vantagem de não necessitar de nenhum hardware específico para este fim, tornando-os naturalmente mais baratos. Outra vantagem é abrangência de tais métodos, já que câmeras que operam no espectro visível são encontrados em muitos equipamentos de nosso uso diário como \textit{webcams} comuns, \textit{laptops}, \textit{smartphones} e \textit{tablets}. Tais métodos podem ser aplicados a sistemas de autenticação de face em diversos equipamentos. Uma outra vantagem que merece ser destacada é que a usabilidade de sistemas de autenticação de face não é onerada com estes métodos, já que o usuário não toma ciência de que uma checagem de sua presença em frente a câmera está sendo efetuada. Dada as vantagens descritas, o método escolhido para estudo será este (Horrível). 
+
+Estratégias não colaborativas podem ser classificados em que exploram:
 
 \begin{itemize}
         \item Presença de vitalidade (liveness detection);
         \item Discrepância em padrões de movimento;
         \item Discrepância relativa a qualidade da imagem.
 \end{itemize}
+
+\subsection{Presença de vitalidade}
+
+Presença de vitalidade ou \textit{liveness detection} consiste na seleção de características faciais que apenas pessoas vivas conseguem reproduzir.
+
+Com o objetivo de bloquear ataques efetuados com fotografia, \cite{pan2007eyeblink,jiangweili} exploraram uma contramedida baseada em piscadela. Apoiados na hipótese que seres humanos em média piscam uma vez a cada 2-4 segundos, uma estratégia baseada em tal característica seria factível. Os experimentos realizados com o banco de dados piscar de olhos ZJU \footnote{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html} mostrou uma precisão de 95,7\%.
+
+Scenic clues
+
+\subsection{Discrepância em padrões de movimento}
+
+Contramedidas baseadas em padrões de movimento partem do princípio que tentativas de ataque possuem padrões de movimento distintos de acessos reais.
+
+Explorando a correlação em diferentes partes da região facial \cite{kollreider2009non} desenvolveu uma heurística baseada em fluxo ótico comparando a direção entre o centro da face e a região das orelhas. O algoritmo pode ser sumarizado em:
+
+\begin{enumerate}
+        \item Delimitar a região do centro da face e das orelhas;
+        \item Definir se a região da face está se movendo mais horizontalmente e verticalmente;
+        \item Se a 
+\end{enumerate}
+
+O desempenho foi avaliado usando o subconjunto "Shot rotação da cabeça" do banco de dados XM2VTS cujo verdadeiro acesso era os vídeos deste subconjunto e os ataques foram gerados com cópias de tais dados. Usando este banco de dados, que não foi tornado público, uma taxa de erro igual (EER) de 0,5 \% .
+
+TERMINAR
+
+FIGURA
+
+%%%%%%% BAO
+
+\cite{bao2009liveness} exploram as características da movimentação facial e apresenta solução baseada em fluxo óptico que procura analisar as diferenças de movimento entre um objeto plano e um objeto 3D.
+
+A proposta de medida preventiva em \cite {AnjosIJCB2011} \footnote{http://pypi.python.org/pypi/antispoofing.motion/} mede a diferença de movimento relativo entre a face eo fundo. Os autores focados em simples diferenças de intensidades em quadros sucessivos. O movimento acumulado entre esta diferença ($M_D$), para um dado uma Região de Interesse (ROI) e seu respectivo fundo, é calculado usando a seguinte equação:
+
+% \ vspace {-2mm}
+
+\begin{equation}
+M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|
+\label{eq:motion}
+\end{equation}
+where $D$ is the RoI, $S_D$ is the area of the RoI and $I_t$ is the intensity of a pixel.
+
+Para introduzir o coeficiente de movimento em um classificador, 5 quantidades são extraídos para cada janela de 20 quadros. As quantidades são as seguintes: o mínimo de $M_D$ em que a janela de tempo, no máximo, a média, o desvio padrão e a proporção $R$ espectral entre a soma de todos os componentes não-DC e DC do componente em si tomadas como base o $N$ pontos transformada de Fourier do sinal (ver Equação \ ref {eq: motionR}). Estes 5 quantidades são alimentados em um Multi-camada classificador Perceptron (MLP), com 5 neurônios na camada escondida, que é treinado para detectar ataques de spoofing.
+
+
+
+\subsection{Discrepância relativa a qualidade da imagem}
+
