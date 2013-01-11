@@ -1,20 +1,30 @@
 \chapter{Revisão da literatura}
 
-Por sua natureza não intrusiva, autenticação utilizando a biometria da face é uma das áreas mais ativas e desafiadoras no campo da biometria. Apesar do significativo progresso da tecnologia de reconhecimento facial nas últimas décadas em uma série de tópicos como o envelhecimento dos indivíduos e iluminação exterior complexo ainda são desafios de pesquisa na área. Avanços na área foram amplamente relatados em \cite {flynn2008handbook, li2011handbook}. No entanto, a tarefa de verificar se o rosto apresentado a uma câmera é realmente um rosto de uma pessoa real, e não uma tentativa de forjar uma identidade (\textit{spoof}) tem sido quase sempre esquecido.
+Por sua natureza não intrusiva, autenticação utilizando a biometria da face é uma das áreas mais ativas e desafiadoras no campo da biometria. Apesar do significativo progresso da tecnologia de reconhecimento facial nas últimas décadas em uma série de tópicos como o envelhecimento dos indivíduos e iluminação exterior complexo ainda são desafios de pesquisa na área. Avanços na área foram amplamente relatados em \cite {flynn2008handbook, li2011handbook}. No entanto, a tarefa de verificar se o rosto apresentado a uma câmera é realmente um rosto de uma pessoa real, e não uma tentativa de forjar uma identidade (\textit{spoof}) tem sido quase sempre esquecido. A Figura \ref{img_information_flow} apresenta os fluxos da informação no caso de um acesso real e em no caso de um ataque de spoofing.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics [width=15cm] {images/information_flow.pdf}
+\caption{(a) Fluxo da informação em um acesso real (b) Fluxo da informação em um ataque de spoofing
+} \label{img_information_flow}
+\end{center}
+\end{figure}
+
 
 Recentemente, a mídia tem documentado algumas situações de ataques em sistemas de reconhecimento de face em produção. Usando fotografias simples, um grupo de pesquisa da Universidade de Hanói mostrou que com relativa facilidade é possível burlar os sistemas de autenticação face em produção nos laptops Lenovo, Asus e Toshiba \cite{BlackHat2009}. Desde o lançamento da versão \textit{Ice Cream Sandwich}, o sistema operacional Android vêm com um sistema de autenticação de face embarcado com a finalidade de desbloquear o celular. Desde então, tem sido amplamente demonstrado em toda a web como é possível burlar esta barreira de autenticação. Como resposta, uma contramedida baseada no piscar de olhos, foi introduzida na versão mais recente do sistema operacional Android.
 
 
 Deficiências contra ataques de spoofing não é exclusividade da biometría facial. Podem ser observados em \cite{uludag2004attacks, leyden2002gummi, matsumoto2002impact} que sistemas biométricos baseados em impressões digitais sofrem de fraqueza semelhante. A mesma deficiência em sistemas de reconhecimento de íris foram diagnosticados em \cite{johnson2010multimodal, kanematsu2007highly}. Finalmente, em \cite {eveno2005speaker chetty2004liveness,} ataques spoofing para reconhecimento de locutor são abordados.
 
-BLA BLA BLA introduzir a proxima seção.
-
+Este capítulo está organizado da seguinte maneira: Na Seção \ref{sec_db} serão apresentados as principais bases de dados de referência para o estudo de ataques de \textit{spoofing} em sistemas de reconhecimento facial. A Seção \ref{sec_review} apresenta uma sucinta revisão da literatura apresentando algumas estratégias para lidar com o problema. Por fim na Seção \label{sec_consideracoes_finais} é apresentado as considerações finais do capítulo.
 
 \section{Bases de dados de referência}
+\label{sec_db}
 
 REPLAY, NUAA, CASIA.
 
 \section{Spoofing em reconhecimento de face}
+\label{sec_review}
 
 Um sistema de autenticação baseado na biometria de face pode ser forjada de diversas maneiras \cite{pan2008liveness} e são elas a apresentação para a câmera de:
 \begin{itemize}
@@ -22,20 +32,20 @@ Um sistema de autenticação baseado na biometria de face pode ser forjada de dive
         \item Vídeos com a face do usuário alvo;
         \item Máscaras construídas a partir da face do usuário alvo;
         \item Maquiagem na tentativa de imitar a identidade do usuário alvo; 
-        \item Cirurgia plática na tentativa de imitar a identidade do usuário alvo.
+        \item Cirurgia plástica na tentativa de imitar a identidade do usuário alvo.
 \end{itemize}
 
-Embora seja possível para falsificar um sistema de autenticação de face usando maquiagem, cirurgia plástica ou máscaras; fotografias e vídeos são provavelmente as ameaças mais comuns. Além disso, devido à crescente popularidade das redes sociais na WEB, (facebook, youtube, flickr, instagram e outros) uma grande quantidade de conteúdo multimídia, especialmente vídeos e fotografias, estão disponíveis e estes dados podem ser utilizados facilmente para atacar um sistema de autenticação de faces. Para mitigar os sucessos dos ataques dessa natureza, contramedidas eficazes deve ser pesquisadas e desenvolvidas.
+Embora seja possível para falsificar um sistema de autenticação de face utilizando maquiagem, cirurgia plástica ou máscaras; fotografias e vídeos são provavelmente as ameaças mais comuns. Além disso, devido à crescente popularidade das redes sociais na WEB, (facebook, youtube, flickr, instagram e outros) uma grande quantidade de conteúdo multimídia, especialmente vídeos e fotografias, estão disponíveis e estes dados podem ser utilizados facilmente para atacar um sistema de autenticação de faces. Para mitigar os sucessos dos ataques dessa natureza, contramedidas eficazes deve ser pesquisadas e desenvolvidas.
 
-Contramedidas para ataques de spoofing em reconhecimento de face podem ser classificados quanto à dependência da colaboração do usuário. Métodos que são ditos \textbf{colaborativos}, partem do princípio que a pessoa que está efetuando a autenticação deve favorecer o mesmo, executando alguma atividade do tipo desafio-resposta. Em \cite{faraj2007synergy} e \cite{chetty2009biometric} o usuário é orientado a falar um texto gerado automaticamente e os movimentos labiais são correlacionados com reconhecimento de fala a fim de gerar uma checagem forte acerca da presença de um usuário em frente à câmera.
+Contramedidas para ataques de spoofing em reconhecimento de face podem ser classificados quanto à dependência da colaboração do usuário. Métodos que são ditos colaborativos, partem do princípio que a pessoa que está efetuando a autenticação deve favorecer o mesmo, executando alguma atividade do tipo desafio-resposta. Em \cite{faraj2007synergy} e \cite{chetty2009biometric} o usuário é orientado a falar um texto gerado automaticamente e os movimentos labiais são correlacionados com reconhecimento de fala a fim de gerar uma checagem forte acerca da presença de um usuário em frente à câmera.
 
-Métodos que não são colaborativos, procuram trabalhar somente com imagens ou vídeos capturados por câmeras convencionais que operam no espectro de luz visível. Estes métodos possuem a vantagem de não necessitar de nenhum hardware específico para este fim, tornando-os naturalmente mais baratos. Outra vantagem é abrangência de tais métodos, já que câmeras que operam no espectro visível são encontrados em muitos equipamentos de nosso uso diário como \textit{webcams} comuns, \textit{laptops}, \textit{smartphones} e \textit{tablets}. Tais métodos podem ser aplicados a sistemas de autenticação de face em diversos equipamentos. Uma outra vantagem que merece ser destacada é que a usabilidade de sistemas de autenticação de face não é onerada com estes métodos, já que o usuário não toma ciência de que uma checagem de sua presença em frente a câmera está sendo efetuada. Dada as vantagens descritas, o método escolhido para estudo será este (Horrível). 
+Métodos que não são colaborativos, operam com imagens ou vídeos capturados por câmeras convencionais sem exigir uma interação com o usuário que está efetuando a autenticação. Uma vantagem clara nas abordagens desse tipo é que a usabilidade de sistemas de autenticação de face não é onerada, já que o usuário não toma ciência de que uma checagem de sua presença em frente a câmera está sendo efetuada. Dada a vantagem descrita métodos dessa natureza serão explorados neste trabalho.
 
-Estratégias não colaborativas podem ser classificados em que exploram:
+Estratégias não colaborativas podem ser classificados em estratégias que exploram:
 
 \begin{itemize}
         \item Presença de vitalidade (liveness detection);
-        \item Características;
+        \item Características da cena;
         \item Discrepância relativa a qualidade da imagem;
 \end{itemize}
 
@@ -43,13 +53,18 @@ Estratégias não colaborativas podem ser classificados em que exploram:
 
 Presença de vitalidade ou \textit{liveness detection} consiste na seleção de características faciais que apenas pessoas vivas conseguem reproduzir.
 
-O piscar de olhos é uma tarefa involutária que os seres humanos executam constantemente. Um ser humano comum pisca de forma involuntária a cada 2 ou 6 segundos para manter os olhos limpos e umidecídos. Este intervá-lo pode variar drasticamente em situações de stress aumentando este intervalo para mais de 20 segundos. Porém, não importa a situação de stress que se está submetido; em algum momento este movimento irá ocorrer. Não há estabelecido um limite máximo estabelecido em que um ser humano consegue suportar sem piscar os olhos.
+O piscar de olhos é uma tarefa involutária que os seres humanos executam constantemente. Um ser humano comum pisca de forma involuntária em média uma vez a cada 2 ou 6 segundos para manter os olhos limpos e umedecidos. Este interva-lo pode variar drasticamente em situações de stress aumentando este intervalo para mais de 20 segundos. Contudo, não importa a situação de stress em que se está submetido; em algum momento este movimento irá ocorrer e não há estabelecido um limite máximo estabelecido em que um ser humano consegue suportar sem piscar os olhos. Apoiado nesta hipótese, \cite{pan2007eyeblink,jiangweili} desenvolveram uma contramedida baseada no piscar dos olhos com o objetivo de bloquear ataques efetuados com fotografia. O sistema desenvolvido modela a piscadela utilizando cadeias escondidade de markov (HMM) mapeando os estados de olho aberto para olho fechado e olho aberto novamente. Experimentos foram conduzidos utilizando uma base de dados criada pelos autores e livremente disponível para download\footnote{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html} mostraram uma acurácia de 95,7\% contra uma taxa de falsos positivos abaixo de 0,1\%.
 
-Apoiado na hipótese citada anteriormente, \cite{pan2007eyeblink,jiangweili} desenvolveram uma contramedida baseada no piscar dos olhos com o objetivo de bloquear ataques efetuados com fotografia. O sistema desenvolvido modela a piscadela utilizando cadeias escondidade de markov (HMM) mapeando os estados de olho aberto para olho fechado e olho aberto novamente. Experimentos foram conduzidos utilizando uma base de dados criada pelos autores e livremente disponível para download\footnote{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html} mostraram uma acurácia de 95,7\% contra uma taxa de falsos positivos abaixo de 0,1\%.
+Apoiado na hipótese de que faces vivas apresentam padrões de movimento em certas regiões da face altamente descorrelacionados se comparados ataques \cite{kollreider2009non} desenvolveu uma heurística baseada em fluxo ótico para explorar tal característica. Como referência foram selecionados a região do centro da face e das orelhas com pode ser observado na Figura \ref{img_kollreider}.
 
-Apoiado na hipótese que faces vivas apresentam, em certas regiões da face, padrões de movimento altamente descorelacionados do que ataques. Utilizando como referência a região do centro da face e a região das orelhas, \cite{kollreider2009non} desenvolveu uma heurística baseada em fluxo ótico para mensurar tal correlação como pode-se observar na Figura X.
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics [width=14cm] {images/kollreider.pdf}
+caption{CAPTION} \label{img_kollreider}
+\end{center}
+\end{figure}
 
-Fig X
+
 
 O algoritmo pode ser sumarizado como segue:
 
@@ -148,5 +163,6 @@ Com uma base de dados combinando o subconjunto de ataques utilizando fotografias
 
 
 \section{Considerações Finais}
+\label{sec_consideracoes_finais}
 
 Cada uma avalia de um jeito e não da pra saber qual é o melhor.
