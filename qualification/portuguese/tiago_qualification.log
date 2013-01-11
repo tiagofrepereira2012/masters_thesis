@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.27)  10 JAN 2013 20:12
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.27)  11 JAN 2013 15:13
 entering extended mode
 **tiago_qualification.tex
 
@@ -579,7 +579,7 @@ pin-doctor-coached-Syrian-dictator-Assad-
 [11
 
 
-] <images/token_itau.jpg, id=138, 2055.68pt x 1541.76pt>
+] <images/token_itau.jpg, id=148, 2055.68pt x 1541.76pt>
 File: images/token_itau.jpg Graphic file (type jpg)
 
 <use images/token_itau.jpg>
@@ -604,7 +604,7 @@ LaTeX Warning: Citation 'jain1999biometrics' on page 13 undefined on input line
 LaTeX Warning: Reference `fig:diagram_attacks' on page 13 undefined on input li
 ne 69.
 
-<images/diagram_attacks.png, id=145, 972.63374pt x 504.88625pt>
+<images/diagram_attacks.png, id=155, 972.63374pt x 504.88625pt>
 File: images/diagram_attacks.png Graphic file (type png)
 
 <use images/diagram_attacks.png>
@@ -675,95 +675,107 @@ LaTeX Warning: Citation 'xiao2005security' on page 15 undefined on input line 9
 Cap\'{\i }tulo 2.
 
 LaTeX Warning: Citation 'flynn2008handbook' on page 17 undefined on input line 
-5.
-
-
-LaTeX Warning: Citation ' li2011handbook' on page 17 undefined on input line 5.
-
-
-
-LaTeX Warning: Citation 'BlackHat2009' on page 17 undefined on input line 7.
-
-
-LaTeX Warning: Citation 'uludag2004attacks' on page 17 undefined on input line 
-10.
-
-
-LaTeX Warning: Citation ' leyden2002gummi' on page 17 undefined on input line 1
-0.
-
-
-LaTeX Warning: Citation ' matsumoto2002impact' on page 17 undefined on input li
-ne 10.
-
-
-LaTeX Warning: Citation 'johnson2010multimodal' on page 17 undefined on input l
-ine 10.
-
-
-LaTeX Warning: Citation ' kanematsu2007highly' on page 17 undefined on input li
-ne 10.
-
-
-LaTeX Warning: Citation 'eveno2005speaker chetty2004liveness' on page 17 undefi
-ned on input line 10.
-
-
-LaTeX Warning: Citation '' on page 17 undefined on input line 10.
-
-
-LaTeX Warning: Citation 'pan2008liveness' on page 17 undefined on input line 12
-.
-
-[17]
-
-LaTeX Warning: Citation 'faraj2007synergy' on page 18 undefined on input line 2
 3.
 
 
+LaTeX Warning: Citation ' li2011handbook' on page 17 undefined on input line 3.
+
+
+
+LaTeX Warning: Citation 'BlackHat2009' on page 17 undefined on input line 5.
+
+
+LaTeX Warning: Citation 'uludag2004attacks' on page 17 undefined on input line 
+8.
+
+
+LaTeX Warning: Citation ' leyden2002gummi' on page 17 undefined on input line 8
+.
+
+
+LaTeX Warning: Citation ' matsumoto2002impact' on page 17 undefined on input li
+ne 8.
+
+
+LaTeX Warning: Citation 'johnson2010multimodal' on page 17 undefined on input l
+ine 8.
+
+
+LaTeX Warning: Citation ' kanematsu2007highly' on page 17 undefined on input li
+ne 8.
+
+
+LaTeX Warning: Citation 'eveno2005speaker chetty2004liveness' on page 17 undefi
+ned on input line 8.
+
+
+LaTeX Warning: Citation '' on page 17 undefined on input line 8.
+
+
+LaTeX Warning: Citation 'pan2008liveness' on page 17 undefined on input line 19
+.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+
+LaTeX Warning: Citation 'faraj2007synergy' on page 18 undefined on input line 3
+0.
+
+
 LaTeX Warning: Citation 'chetty2009biometric' on page 18 undefined on input lin
-e 23.
+e 30.
 
 [18]
 
-LaTeX Warning: Citation 'pan2007eyeblink' on page 19 undefined on input line 42
+LaTeX Warning: Citation 'pan2007eyeblink' on page 19 undefined on input line 48
 .
 
 
-LaTeX Warning: Citation 'jiangweili' on page 19 undefined on input line 42.
+LaTeX Warning: Citation 'jiangweili' on page 19 undefined on input line 48.
 
 
 LaTeX Warning: Citation 'kollreider2009non' on page 19 undefined on input line 
-49.
+50.
 
 
-LaTeX Warning: Citation 'bao2009liveness' on page 19 undefined on input line 71
+LaTeX Warning: Citation 'bao2009liveness' on page 19 undefined on input line 69
 .
 
 
 LaTeX Warning: Citation 'kollreider2009non' on page 19 undefined on input line 
-71.
+69.
+
+[19]
+
+LaTeX Warning: Citation 'AnjosIJCB2011' on page 20 undefined on input line 82.
 
 
-LaTeX Warning: Citation 'AnjosIJCB2011' on page 19 undefined on input line 78.
+LaTeX Warning: Citation 'ChingovskaBIOSIG2012' on page 20 undefined on input li
+ne 105.
 
-[19]) [20]
+[20]
+
+LaTeX Warning: Citation 'zhangface' on page 21 undefined on input line 121.
+
+[21]) [22]
 (C:\Users\tpereira\Documents\GitHub\masters_thesis\qualification\portuguese\cap
 3.tex
 Cap\'{\i }tulo 3.
-) [21
+) [23
 
 
 
 ]
 (C:\Users\tpereira\Documents\GitHub\masters_thesis\qualification\portuguese\con
-clusao.tex [22
+clusao.tex [24
 
 
 
 ]
 Cap\'{\i }tulo 4.
-) [23]
+) [25]
 No file tiago_qualification.bbl.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 111.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 111.
@@ -781,20 +793,20 @@ clusao.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 111.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 111.
 Package rerunfilecheck Info: File `tiago_qualification.out' has not changed.
-(rerunfilecheck)             Checksum: 9112B8604A9BE2951EC45383A556BFB9;1138.
+(rerunfilecheck)             Checksum: 6A941847304AAB9B6E839DF999FFC520;1282.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8195 strings out of 494045
- 115921 string characters out of 3145960
- 211738 words of memory out of 3000000
- 11197 multiletter control sequences out of 15000+200000
+ 8206 strings out of 494045
+ 116073 string characters out of 3145960
+ 211780 words of memory out of 3000000
+ 11202 multiletter control sequences out of 15000+200000
  51547 words of font info for 105 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 44i,11n,43p,1696b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,43p,1696b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program 
@@ -812,9 +824,9 @@ s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmr8a.pfb>
-Output written on tiago_qualification.pdf (23 pages, 1435221 bytes).
+Output written on tiago_qualification.pdf (25 pages, 1450059 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 299 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 147 words of extra memory for PDF output out of 10000 (max. 10000000)
 
