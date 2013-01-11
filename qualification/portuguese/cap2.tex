@@ -75,7 +75,7 @@ Com a seguinte euristica..
 
 %%% André
 
-A contramedida proposta por \cite{AnjosIJCB2011} mede a correlação do movimento da região da face em relação ao seu fundo utilizando como métrica de movimento uma simples diferença das intensidades dos pixels em quadros sucessivos. O movimento acumulado entre esta diferença ($M_D$), para um dado uma Região de Interesse (ROI) e seu respectivo fundo, é calculado usando a seguinte equação:
+A contramedida proposta por \cite{AnjosIJCB2011} mede a correlação do movimento da região da face em relação ao seu fundo utilizando como medida de movimento uma simples diferença das intensidades dos pixels em quadros sucessivos. O movimento acumulado entre esta diferença ($M_D$), para um determinado $RoI$ e seu respectivo fundo, é calculado usando a seguinte equação:
 
 \begin{equation}
 M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|
@@ -83,11 +83,27 @@ M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|
 \end{equation}
 em que $D$ é o RoI, $S_D$ é a área do RoI e $I_t$ é a intensidade de um pixel.
 
-Para introduzir o coeficiente de movimento em um classificador, 5 quantidades são extraídos para cada janela de 20 quadros. As quantidades são as seguintes: o mínimo de $M_D$ em que a janela de tempo, no máximo, a média, o desvio padrão e a proporção $R$ espectral entre a soma de todos os componentes não-DC e DC do componente em si tomadas como base o $N$ pontos transformada de Fourier do sinal (ver Equação \ ref {eq: motionR}). Estes 5 quantidades são alimentados em um Multi-camada classificador Perceptron (MLP), com 5 neurônios na camada escondida, que é treinado para detectar ataques de spoofing.
+Para introduzir o coeficiente de movimento em um classificador, 5 medidas são computadas em uma janela de $n$ segundos. As medidas são as seguintes: o mínimo de $M_D$, o máximo, a média, o desvio padrão e a proporção $R$ composta entre a soma de todos os componentes não-DC e DC do componente em si tomadas como base o $N$ pontos transformada de Fourier do sinal (ver Equação \ ref {eq: motionR}). Estas medidas computadas são alimentados em um Multi-camada classificador Perceptron (MLP), com 5 neurônios na camada escondida, que é treinado para detectar ataques de spoofing.
 
+\begin{equation}
+R = \frac{\sum_{i=1}^{N}|FFT_i|}{|FFT_0|}
+\label{eq:motionR}
+\end{equation}
 
+Avaliada com o subconjunto de ataques com fotografias impressas em papel da bases de Replay Attack apresentou $HTER=9\%$ . FALAR MAIS
 
 
 
 \subsection{Discrepância relativa a qualidade da imagem}
+
+LBP.
+DoG.
+Fourier
+Reflexivos.
+
+\subsection{Combinados}
+
+LBPTOP.
+Scene.
+
 
