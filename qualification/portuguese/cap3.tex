@@ -1,23 +1,31 @@
 \chapter{Metodologia}
 \label{cap:metodology}
 
-Neste capítulo serão apresentados as etapas de desenvolvimento deste projeto. Conforme
-
-Primeiramente será .
-
-Firstly, we study how the countermeasures, presented in Section \ref{sec:countermeasures}, will perform in a more realistic condition. This condition consists in training and tuning each one of the countermeasures with one face anti-spoofing database and testing with another one. To report the performance in such a scenario, two evaluation protocols were designed to work with the databases described in Section \ref{sec:Databases}. These protocols are the "intra-test" protocol and the "inter-test" protocol.
-
-
-The intra-test protocol is equivalent to the database normal protocol. It consists in training, tuning and testing a countermeasure with the respectively training set, development set and test set of such a database. With this protocol, it is possible to evaluate the performance and the generalization power of a countermeasure within one database. The inter-test protocol evaluates the countermeasure performance in a more realistic scenario, close to real usage conditions. It consists in training and tuning a countermeasure with the training set and development set of one database and test it with the test set of another one. With this protocol, it is possible to evaluate the performance and the generalization power of a countermeasure in a set of unseen types of attacks.
-
-
-Conforme descrito na seção X, 
+Neste capítulo serão apresentados as etapas de desenvolvimento deste projeto. Primeiramente é necessário avaliar se as contramedidas são realmente efetivas aplicando um protocolo único a fim de comparar diretamente cada contramedida. Como segunda contribuição um protocolo para avaliação do poder de generalização foi proposto
 
 
 
+\section{Protocolo de avaliação Intra-base de dados}
+\ref{sec:protocol}
 
-Escolha da base de dados (Replay e Casia)
+Nesta avaliação pretende-se avaliar a performance das contramedidas, em termos de detecção de ataques, utilizando apenas uma base de dados.
 
-Definir um protocolo de avaliação HTER.
+Para comparação escolhemos o Taxa média de erro onde pondera HTER
 
-Como avaliar generalização.
+
+\begin{equation}
+\label{eq:HTER}
+HTER=\frac{FAR(\tau,D)+ FRR(\tau,D)} {2} ,
+\end{equation}
+onde $\tau(D_n)$ é o limiar, $D_n$ é a base de dados, $FAR$ é a taxa de falsas aceitações na base de dados $D_1$ e FRR é a taxa de falsas rejeições na base de dados $D_1$.
+
+\section{Protocolo de avaliação Inter-base de dados}
+\ref{sec:protocol}
+
+Nesta avaliação pretende-se avaliar a performance das contramedidas em termos de detecção de ataques em um cenário mais realístico. Este cenário consiste em treinar e calibrar as contramedidas utilizando uma base de dados e reportar os resultados utilizando outras bases de dados. 
+
+\begin{equation}
+\label{eq:HTER}
+HTER(D_1)=\frac{FAR(\tau(D_2),D_1)+ FRR(\tau(D_2),D_1)} {2} ,
+\end{equation}
+onde $\tau(D_n)$ é o limiar, $D_n$ é a base de dados, $FAR$ é a taxa de falsas aceitações na base de dados $D_1$ e FRR é a taxa de falsas rejeições na base de dados $D_1$.

@@ -1,13 +1,38 @@
-\chapter{Conclus\~{o}es e Perspectivas}
+\chapter{Resultados e conclusões parciais}
+
+\section{Resultados preliminares}
+
+\begin{table*}[ht!]
+\caption{$HTER(\%)$ of each countermeasure applying the intra-test ($D_1=D_2$) and the inter-test ($D_1 \neq D_2$) protocol.}
+\begin{center}
+  \begin{tabular}{ | c | c | c | c  c |  c  | }
+    \hline
+
+   \multirow{2}{*}{\textbf{Countermeasure}} & \textbf{Train/Tune} & \textbf{Test} & \multicolumn{2}{c|}{\textbf{HTER(\%)}} & \textbf{HTER degradation (test set) between}\\ 
+     & EER in $D_1$ & $D_2$ & \textbf{dev} & \textbf{test}  & $D_1 = D_2$ and $D_1 \neq D_2$ \\ \hline
+    
+    \multirow{4}{*}{Correlation} & Replay  & Replay  &  11.66 & 11.79 & \multirow{2}{*}{$424.00\%$}\\ 
+               &  \footnotesize{$EER=11.66\%$}& CASIA & 59.12 & 61.78  & \\ \cline{2-6}
+               & CASIA  & Replay & 49.34 & 48.47  & \multirow{2}{*}{$54.56\%$}\\  
+               & \footnotesize{$EER=24.91\%$}  & CASIA  & 24.91 & 31.36 & \\ \hline \hline
+
+    \multirow{4}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay & Replay  & 8.17 & 8.51  & \multirow{2}{*}{$499.88\%$} \\
+               &  \footnotesize{$EER=8.17\%$}  & CASIA  & 52.32 & 51.05 &  \\ \cline{2-6}
+               & CASIA  & Replay & 60.09 & 61.11  & \multirow{2}{*}{$174.40\%$} \\ 
+               & \footnotesize{$EER=21.77\%$}   & CASIA  & 21.77 & 22.27 & \\ \hline \hline
+
+    \multirow{4}{*}{$LBP_{8,1}^{u2}$} & Replay  & Replay  & 14.41 &15.45 & \multirow{2}{*}{$211.07\%$} \\
+               &  \footnotesize{$EER=14.41\%$}  & CASIA  & 46.87  & 48.06  & \\ \cline{2-6}
+               & CASIA  & Replay & 55.21 & 57.64  & \multirow{2}{*}{$155.72\%$} \\
+               & \footnotesize{$EER=23.00\%$}  & CASIA  & 23.00  & 22.54 & \\
+            
+    \hline
+  \end{tabular}
+\end{center}
+\label{tb:CrossTest}
+\end{table*}
 
 
-\section*{Perspectivas}
-
-
-\subsection*{Publica\c{c}\~{o}es}
-
-
-
-\subsection*{Submiss\~{o}es}
+Analyzing the performance in the intra-test protocol ($D_1 = D_2$) it can be observed a good  performance and a good intra-database generalization power of the three evaluated countermeasures. Note that the countermeasure based on $LBP-TOP$ is the state-of-art in both databases \cite{Pereira_LBP_2012} and \cite{JukkaLBP2012}. The good generalization performance can be attested comparing the results between the development set and the test set. In Table \ref{tb:CrossTest} the $HTER(\%)$ in the development set and the $HTER(\%)$ in the test set are very similar. In Figure \ref{fig:ROC_cross} the ROC curves blue and red (dashed line and solid line) represents the intra-test test protocol. It can be observed that the curves are almost overlapped.
 
 
