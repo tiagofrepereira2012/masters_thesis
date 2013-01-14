@@ -1,8 +1,17 @@
 \chapter{Resultados e conclusões parciais}
 
+Foi avaliado 3 contramedidas bla bla bla.
+
+Definição do Tau.
+
 \section{Resultados preliminares}
 
-\begin{table*}[ht!]
+\subsection{Protocolo de Avaliação Intra Base de Dados}
+
+A Tabela X exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Intra Base de Dados.
+
+
+\begin{table}[ht!]
 \caption{$HTER(\%)$ of each countermeasure applying the intra-test ($D_1=D_2$) and the inter-test ($D_1 \neq D_2$) protocol.}
 \begin{center}
   \begin{tabular}{ | c | c | c | c  c |  c  | }
@@ -30,9 +39,22 @@
   \end{tabular}
 \end{center}
 \label{tb:CrossTest}
-\end{table*}
+\end{table}
+
+Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura X. As curvas azuis e vermelhas (linha tracejada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na tabela X.
 
 
-Analyzing the performance in the intra-test protocol ($D_1 = D_2$) it can be observed a good  performance and a good intra-database generalization power of the three evaluated countermeasures. Note that the countermeasure based on $LBP-TOP$ is the state-of-art in both databases \cite{Pereira_LBP_2012} and \cite{JukkaLBP2012}. The good generalization performance can be attested comparing the results between the development set and the test set. In Table \ref{tb:CrossTest} the $HTER(\%)$ in the development set and the $HTER(\%)$ in the test set are very similar. In Figure \ref{fig:ROC_cross} the ROC curves blue and red (dashed line and solid line) represents the intra-test test protocol. It can be observed that the curves are almost overlapped.
+\subsection{Protocolo de Avaliação Inter Base de Dados}
+
+A Tabela X exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Inter Base de Dados.
+
+Tabela.
+
+
+Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura X. As curvas azuis e verdes (linha tracejada e linha pontilhada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para cada valor de $\tal$. 
+
+
+
+\section{Conclusões parciais}
 
 

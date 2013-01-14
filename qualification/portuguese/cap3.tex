@@ -1,31 +1,46 @@
-\chapter{Metodologia}
+\chapter{Metodologia de avaliação}
 \label{cap:metodology}
 
-Neste capítulo serão apresentados as etapas de desenvolvimento deste projeto. Primeiramente é necessário avaliar se as contramedidas são realmente efetivas aplicando um protocolo único a fim de comparar diretamente cada contramedida. Como segunda contribuição um protocolo para avaliação do poder de generalização foi proposto
+Neste capítulo é apresentada a metodologia de avaliação do projeto em questão. 
+
+As contramedidas serão avaliadas seguindo dois critérios. O primeiro critério avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, utilizando cada uma das bases de dados de referência. Este critério de avaliação é chamado de Protocolo de Avaliação Intra Base de Dados. O segundo critério avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, em um cenário mais realístico avaliando assim a capacidade de generalização das mesmas. Este critério de avaliação é chamado de Protocolo de Avaliação Inter Base de Dados.
+
+Este capítulo está organizado da seguinte maneira: A Seção \ref{sec:performance} descreve as medidas de desempenho que serão utilizadas neste projeto. Já Seção \ref{sec:intra-protocol} apresenta o Protocolo de Avaliação Intra Base de Dados. Por fim  a Seção \ref{sec:intra-protocol} apresenta o Protocolo de Avaliação Inter Base de Dados.
 
 
+\section{Medidas de desempenho}
+\label{sec:performance}
 
-\section{Protocolo de avaliação Intra-base de dados}
-\ref{sec:protocol}
+Serão utilizadas as seguintes métricas de desempenho para avaliar as contramedidas:
 
-Nesta avaliação pretende-se avaliar a performance das contramedidas, em termos de detecção de ataques, utilizando apenas uma base de dados.
+\begin{itemize}
 
-Para comparação escolhemos o Taxa média de erro onde pondera HTER
-
+\item \textbf{$HTER$}: Média entre as Taxas de Falsas Aceitações (FAR) e Falsas Rejeições (FRR) para um dado limiar $\tau$ como pode-se observar na equação:
 
 \begin{equation}
 \label{eq:HTER}
-HTER=\frac{FAR(\tau,D)+ FRR(\tau,D)} {2} ,
+HTER=\frac{FAR(\tau,D)+ FRR(\tau,D)} {2},
 \end{equation}
-onde $\tau(D_n)$ é o limiar, $D_n$ é a base de dados, $FAR$ é a taxa de falsas aceitações na base de dados $D_1$ e FRR é a taxa de falsas rejeições na base de dados $D_1$.
+onde $\tau$ é o limiar, $D$ é a base de dados, $FAR$ é a taxa de falsas aceitações na base de dados $D$ e FRR é a taxa de falsas rejeições na base de dados $D$;
+
+
+\item \textbf{$FAR100$}: Valor esperado para a Taxa de Falsa Rejeição (FRR) quando a Taxa
+de Falsa Aceitação (FAR) é igual a 1/100. Esta medida é útil para avaliar contramedidas com requisitos de segurança mais rigorosos;
+
+\item \textbf{$FAR1000$}: Semelhante a medida FAR100, onde obtém-se o valor esperado para
+a Taxa de Falsa Rejeição (FRR) quando a Taxa de Falsa Aceitação (FAR) é igual
+a 1/1000. Sistemas com requisitos ainda mais rigorosos adotam tal medida.
+
+\end{itemize}
+
+\section{Protocolo de Avaliação Intra Base de Dados}
+\label{sec:intra-protocol}
+
+Este protocolo avaliará a performance das contramedidas em termos de detecção de ataques. As contramedidas serão treinadas, calibradas e os resultados serão reportados em cada uma das bases de dados de referência utilizando as métricas descritas na seção \ref{sec:performance}.
 
 \section{Protocolo de avaliação Inter-base de dados}
-\ref{sec:protocol}
+\label{sec:inter-protocol}
 
-Nesta avaliação pretende-se avaliar a performance das contramedidas em termos de detecção de ataques em um cenário mais realístico. Este cenário consiste em treinar e calibrar as contramedidas utilizando uma base de dados e reportar os resultados utilizando outras bases de dados. 
+Mesmo utilizando conjuntos distintos de treinamento, calibração e teste com o objetivo de mitigar qualquer tipo de enviesamento certos viéses no processo de construção da base de dados podem acontecer. Este protocolo tem o objetivo de mitigar este tipo de viés e fornecer uma métrica de avaliação justa das contramedidas apresentadas na literatura.
 
-\begin{equation}
-\label{eq:HTER}
-HTER(D_1)=\frac{FAR(\tau(D_2),D_1)+ FRR(\tau(D_2),D_1)} {2} ,
-\end{equation}
-onde $\tau(D_n)$ é o limiar, $D_n$ é a base de dados, $FAR$ é a taxa de falsas aceitações na base de dados $D_1$ e FRR é a taxa de falsas rejeições na base de dados $D_1$.
+Neste protocolo cada uma das contramedidas será treinada e calibrada utilizando uma base de dados. Resultados serão reportados utilizando outra base de dados.
