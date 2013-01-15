@@ -8,51 +8,82 @@ Definição do Tau.
 
 \subsection{Protocolo de Avaliação Intra Base de Dados}
 
-A Tabela X exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Intra Base de Dados.
-
+A Tabela \ref{tb:intraTest} exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Intra Base de Dados.
 
 \begin{table}[ht!]
-\caption{$HTER(\%)$ of each countermeasure applying the intra-test ($D_1=D_2$) and the inter-test ($D_1 \neq D_2$) protocol.}
+\caption{Performance de três contramedidas utilizando o Protocolo de Avaliação Intra Test}
 \begin{center}
-  \begin{tabular}{ | c | c | c | c  c |  c  | }
+  \begin{tabular}{ | c | c |  c  c |  c  | c |}
     \hline
 
-   \multirow{2}{*}{\textbf{Countermeasure}} & \textbf{Train/Tune} & \textbf{Test} & \multicolumn{2}{c|}{\textbf{HTER(\%)}} & \textbf{HTER degradation (test set) between}\\ 
-     & EER in $D_1$ & $D_2$ & \textbf{dev} & \textbf{test}  & $D_1 = D_2$ and $D_1 \neq D_2$ \\ \hline
+   \multirow{2}{*}{\textbf{Countermeasure}} & \multirow{2}{*}{\textbf{Database}}  & \multicolumn{2}{c|}{\textbf{HTER(\%)}} &  \multirow{2}{*}{\textbf{FAR100 (\%)}} &  \multirow{2}{*}{\textbf{FAR1000 (\%)}} \\ 
+     &  & \textbf{dev} & \textbf{test} & & \\ \hline
     
-    \multirow{4}{*}{Correlation} & Replay  & Replay  &  11.66 & 11.79 & \multirow{2}{*}{$424.00\%$}\\ 
-               &  \footnotesize{$EER=11.66\%$}& CASIA & 59.12 & 61.78  & \\ \cline{2-6}
-               & CASIA  & Replay & 49.34 & 48.47  & \multirow{2}{*}{$54.56\%$}\\  
-               & \footnotesize{$EER=24.91\%$}  & CASIA  & 24.91 & 31.36 & \\ \hline \hline
+    \multirow{2}{*}{Correlation} & Replay Attack  & 11.66 & 11.79 & &\\ 
+               & CASIA  FASD &  24.91 & 31.36 & &\\ \hline \hline
 
-    \multirow{4}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay & Replay  & 8.17 & 8.51  & \multirow{2}{*}{$499.88\%$} \\
-               &  \footnotesize{$EER=8.17\%$}  & CASIA  & 52.32 & 51.05 &  \\ \cline{2-6}
-               & CASIA  & Replay & 60.09 & 61.11  & \multirow{2}{*}{$174.40\%$} \\ 
-               & \footnotesize{$EER=21.77\%$}   & CASIA  & 21.77 & 22.27 & \\ \hline \hline
+    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay &  8.17 & 8.51 & & \\
+               & CASIA FASD   &  21.77 & 22.27  & &\\ \hline \hline
 
-    \multirow{4}{*}{$LBP_{8,1}^{u2}$} & Replay  & Replay  & 14.41 &15.45 & \multirow{2}{*}{$211.07\%$} \\
-               &  \footnotesize{$EER=14.41\%$}  & CASIA  & 46.87  & 48.06  & \\ \cline{2-6}
-               & CASIA  & Replay & 55.21 & 57.64  & \multirow{2}{*}{$155.72\%$} \\
-               & \footnotesize{$EER=23.00\%$}  & CASIA  & 23.00  & 22.54 & \\
+    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay   & 14.41 &15.45 & & \\
+               & CASIA FASD & 23.00  & 22.54  & &\\
             
     \hline
   \end{tabular}
 \end{center}
-\label{tb:CrossTest}
+\label{tb:intraTest}
 \end{table}
 
-Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura X. As curvas azuis e vermelhas (linha tracejada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na tabela X.
+
+Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e vermelhas (linha tracejada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na Tabela \ref{tb:intraTest}.
 
 
 \subsection{Protocolo de Avaliação Inter Base de Dados}
 
-A Tabela X exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Inter Base de Dados.
+A Tabela \ref{tb:interTest} exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Inter Base de Dados.
 
-Tabela.
+\begin{table}[ht!]
+\caption{$HTER(\%)$ of each countermeasure applying the intra-test ($D_1=D_2$) and the inter-test ($D_1 \neq D_2$) protocol.}
+\begin{center}
+  \begin{tabular}{ | c | c | c |  c  c |  c  | c |}
+    \hline
+
+   \multirow{2}{*}{\textbf{Contramedida}} & \textbf{Conj. de treino} & \textbf{Conj. de} & \multicolumn{2}{c|}{\textbf{HTER(\%)}} &  \multirow{2}{*}{\textbf{FAR100 (\%)}} &  \multirow{2}{*}{\textbf{FAR1000 (\%)}} \\ 
+     &  \textbf{e calibração} & \textbf{teste} & \textbf{dev} & \textbf{test} & & \\ \hline
+    
+    \multirow{2}{*}{Correlation} & Replay Attack  & CASIA  FASD & 11.66 & 61.78 & &\\ 
+               & CASIA  FASD & Replay Attack &  24.91 & 54.56 & &\\ \hline \hline
+
+    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay Attack & CASIA FASD &  8.17 & 51.05 & & \\
+               & CASIA FASD  & Replay Attack &  21.77 & 61.11 & &\\ \hline \hline
+
+    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay Attack & CASIA FASD & 14.41 &48.06 & & \\
+               & CASIA FASD & Replay Attack & 23.00  & 57.64  & &\\
+            
+    \hline
+  \end{tabular}
+\end{center}
+\label{tb:interTest}
+\end{table}
 
 
-Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura X. As curvas azuis e verdes (linha tracejada e linha pontilhada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para cada valor de $\tal$. 
+Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e verdes (linha tracejada e linha pontilhada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para qualquer valor de limiar $\tau$. 
 
+\begin{figure}[ht]
+\begin{center}
+
+\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/MOTION/roc_replay-machine.pdf} 
+\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/LBPTOP/roc_replay-machine.pdf}
+\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/LBP/roc_replay-machine.pdf}
+
+\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/MOTION/roc_casia_fasd-machine.pdf} 
+\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/LBPTOP/roc_casia_fasd-machine.pdf}
+\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/LBP/roc_casia_fasd-machine.pdf}
+
+\caption{ROC curves of each countermeasure using the intra-test and the inter-test protocol. (a) Correlation with frame differences countermeasure trained and tuned with the Replay Attack Database (b) $LBP-TOP$ countermeasure trained and tuned with the Replay Attack Database (c) $LBP$ countermeasure trained and tuned with the Replay Attack Database (d) Correlation with frame differences countermeasure trained and tuned with the CASIA-FASD (e) $LBP-TOP$ countermeasure trained and tuned with the CASIA-FASD (f) $LBP$ countermeasure trained and tuned with the CASIA-FASD.} 
+\label{fig:ROC_cross}
+\end{center}
+\end{figure}
 
 
 \section{Conclusões parciais}
