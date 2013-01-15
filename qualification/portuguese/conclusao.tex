@@ -1,12 +1,18 @@
-\chapter{Resultados e conclusões parciais}
+\chapter{Resultados e Conclusões Parciais}
 
-Foi avaliado 3 contramedidas bla bla bla.
+MLP TREINADA 5x.
 
-Definição do Tau.
+Neste capítulo são apresentados os primeiros experimentos realizados seguindo a metodologia proposta no capítulo \ref{cap:metodology}. A metodologia foi aplicada a três contramedidas sendo duas explorando a características relativas a qualidade da imagem e uma relativa às características da cena. Os códigos fontes destas contramedidas estão livremente disponíveis na WEB e são elas:
 
-\section{Resultados preliminares}
+\begin{itemize}
+	\item Contramedida que explora a relação de movimento da face em relação a cena proposta por \cite{AnjosIJCB2011};
+	\item Contramedida que explora texturas utilizando LBP proposta por \cite{ChingovskaBIOSIG2012};
+	\item Contramedida que explora a dinâmica de uma textura ao longo do tempo (MINHA REF).
+\end{itemize}
 
-\subsection{Protocolo de Avaliação Intra Base de Dados}
+As contramedidas propostas por \cite{AnjosIJCB2011} e (MINHA REF) admitem apenas vídeos como entrada. Por esta razão a metodologia foi aplicada apenas nas bases de dados Replay Attack e CASIA FASD que possuem apenas vídeos.
+
+\section{Protocolo de Avaliação Intra Base de Dados}
 
 A Tabela \ref{tb:intraTest} exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Intra Base de Dados.
 
@@ -22,11 +28,11 @@ A Tabela \ref{tb:intraTest} exibe a performance obtida com cada contramedida uti
     \multirow{2}{*}{Correlation} & Replay Attack  & 11.66 & 11.79 & &\\ 
                & CASIA  FASD &  24.91 & 31.36 & &\\ \hline \hline
 
-    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay &  8.17 & 8.51 & & \\
-               & CASIA FASD   &  21.77 & 22.27  & &\\ \hline \hline
+    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay &  8.17 & 8.51 & 28.77 & 53.72 \\
+               & CASIA FASD   &  21.77 & 22.27  & 86.15 & 98.42 \\ \hline \hline
 
-    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay   & 14.41 &15.45 & & \\
-               & CASIA FASD & 23.00  & 22.54  & &\\
+    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay   & 14.41 &15.45 & 46.10 & 73.38 \\
+               & CASIA FASD & 23.00  & 22.54  & 86.48 & 98.84\\
             
     \hline
   \end{tabular}
@@ -35,10 +41,12 @@ A Tabela \ref{tb:intraTest} exibe a performance obtida com cada contramedida uti
 \end{table}
 
 
-Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e vermelhas (linha tracejada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na Tabela \ref{tb:intraTest}.
+Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e vermelhas (linha tracejada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na Tabela \ref{tb:intraTest}. Porém, analisando a performance das contramedidas com restrições de segurança mais rigorosas os resultados não são satisfatórios.  Analisando a taxa de Falsa Rejeições quando a Taxa de Falsas Aceitações está em 0,1\% (FAR1000) temos uma performance acima de 98\% para todas as contramedidas iviabilizando o seu uso para aplições que necessitam altos requisitos de segurança.
+
+A performance obtida em cada base de dados sugere que a base de dados CASIA FASD possui ataques mais difíceis de serem detectados que os da base de dados Replay Attack.
 
 
-\subsection{Protocolo de Avaliação Inter Base de Dados}
+\section{Protocolo de Avaliação Inter Base de Dados}
 
 A Tabela \ref{tb:interTest} exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Inter Base de Dados.
 
@@ -54,11 +62,11 @@ A Tabela \ref{tb:interTest} exibe a performance obtida com cada contramedida uti
     \multirow{2}{*}{Correlation} & Replay Attack  & CASIA  FASD & 11.66 & 61.78 & &\\ 
                & CASIA  FASD & Replay Attack &  24.91 & 54.56 & &\\ \hline \hline
 
-    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay Attack & CASIA FASD &  8.17 & 51.05 & & \\
-               & CASIA FASD  & Replay Attack &  21.77 & 61.11 & &\\ \hline \hline
+    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay Attack & CASIA FASD &  8.17 & 51.05 & 100 & 100 \\
+               & CASIA FASD  & Replay Attack &  21.77 & 61.11 & 99.52 & 99.99 \\ \hline \hline
 
-    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay Attack & CASIA FASD & 14.41 &48.06 & & \\
-               & CASIA FASD & Replay Attack & 23.00  & 57.64  & &\\
+    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay Attack & CASIA FASD & 14.41 &48.06 & 100 & 100 \\
+               & CASIA FASD & Replay Attack & 23.00  & 57.64  & 98.65 & 99.90\\
             
     \hline
   \end{tabular}
@@ -67,7 +75,8 @@ A Tabela \ref{tb:interTest} exibe a performance obtida com cada contramedida uti
 \end{table}
 
 
-Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e verdes (linha tracejada e linha pontilhada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para qualquer valor de limiar $\tau$. 
+Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e verdes (linha tracejada e linha pontilhada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para qualquer valor de limiar $\tau$. Corroborando com estes resultados, uma análise da performance das taxas de Falsas Rejeições quando as Taxas de Falsas Aceitações estão em 0,1\% (FAR1000) temos uma performance acima de 98\% para todas as contramedidas impossibilitando o seu uso para aplições que necessitam altos requisitos de segurança.
+
 
 \begin{figure}[ht]
 \begin{center}
@@ -85,7 +94,18 @@ Em termos de HTER é possível observar um desempenho distante do obtido no experi
 \end{center}
 \end{figure}
 
-
 \section{Conclusões parciais}
 
+O estudo de detecção de ataques de \textit{spoofing} em sistemas de autenticação de face é bastante recente. BLA BLA
+
+
+Diversas contramedidas vem sendo publicadas nos últimos meses, porém cada trabalho apresentam avaliações utilizando métricas diferentes e bases de dados muitas vezes privadas impossibilitando a reprodução de resultados e eventual comparação. 
+
+O objetivo dessa dissertação de mestrado é prover uma metodologia de avaliação de contramedidas de ataques de spoofing explorando dois aspectos. O primeiro deles é a aferição da performance de contramedidas em termos de detecção de ataques em bases de dados públicas. O segundo aspecto consiste da aferição da performance das contramedidas em termos de detecção de ataques em um cenário mais realístico avaliando a capacidade de generalização de cada contramedida. Para isso dois protocolos foram propostos, respectivamente o Protocolo de Avaliação Intra Base de Dados e o Protocolo de Avaliação Inter Base de Dados.
+
+Aplicada a três contramedidas o Protocolo de Avaliação Intra Base de Dados evidenciou uma boa capacidade de generalização de todas porém a performance das mesmas com requisitos de segurança mais rigorosos não foi satisfatória. O Protocolo de Avaliação Inter Base de Dados ajudou a evidenciar que todas as contramedidas avaliadas possuem um forte enviesamento por conta da base dados sugerindo sobretreinamento inviabilizando a aplicabilidade de tais contramedidas em um cenário real.
+
+\section{Trabalhos futuros e cronograma}
+
+Aplicação de pelo menos uma contramedida relativa a liveness. Mais 3 contramedidas.
 

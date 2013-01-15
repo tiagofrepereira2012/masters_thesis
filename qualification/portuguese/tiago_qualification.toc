@@ -21,5 +21,8 @@
 \contentsline {section}{\numberline {3.1}Medidas de desempenho}{27}{section.3.1}
 \contentsline {section}{\numberline {3.2}Protocolo de Avalia\c c\~ao Intra Base de Dados}{28}{section.3.2}
 \contentsline {section}{\numberline {3.3}Protocolo de avalia\c c\~ao Inter-base de dados}{28}{section.3.3}
-\contentsline {chapter}{\numberline {4}Resultados e conclus\~oes parciais}{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}Resultados preliminares}{29}{section.4.1}
+\contentsline {chapter}{\numberline {4}Resultados e Conclus\~oes Parciais}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Protocolo de Avalia\c c\~ao Intra Base de Dados}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}Protocolo de Avalia\c c\~ao Inter Base de Dados}{30}{section.4.2}
+\contentsline {section}{\numberline {4.3}Conclus\~oes parciais}{31}{section.4.3}
+\contentsline {section}{\numberline {4.4}Trabalhos futuros e cronograma}{32}{section.4.4}
