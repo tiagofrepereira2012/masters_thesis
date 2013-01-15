@@ -1,7 +1,7 @@
-\chapter{Revisão da literatura}
+\chapter{Revisão da Literatura}
 \label{cap:review}
 
-Por sua natureza não intrusiva, autenticação utilizando a biometria da face é uma das áreas mais ativas e desafiadoras no campo da biometria. Apesar do significativo progresso da tecnologia de reconhecimento facial nas últimas décadas em uma série de tópicos como o envelhecimento dos indivíduos e iluminação exterior complexo ainda são desafios de pesquisa na área. Avanços na área foram amplamente relatados em \cite {flynn2008handbook, li2011handbook}. No entanto, a tarefa de verificar se o rosto apresentado a uma câmera é realmente um rosto de uma pessoa real, e não uma tentativa de forjar uma identidade (\textit{spoof}) tem sido quase sempre esquecido. A Figura \ref{img_information_flow} apresenta os fluxos da informação no caso de um acesso real e em no caso de um ataque de spoofing.
+Por sua natureza não intrusiva, autenticação utilizando a biometria da face é uma das áreas mais ativas e desafiadoras no campo da biometria. Apesar do significativo progresso da tecnologia de reconhecimento facial nas últimas décadas em uma série de tópicos como o envelhecimento dos indivíduos e reconhecimento em cenários de iluminação complexa ainda são desafios de pesquisa na área. Avanços na área foram amplamente relatados em \cite {flynn2008handbook, li2011handbook}. No entanto, a tarefa de verificar se o rosto apresentado a uma câmera é realmente um rosto de uma pessoa real, e não uma tentativa de forjar uma identidade (\textit{spoof}) tem sido quase sempre esquecido. A Figura \ref{img_information_flow} apresenta dois fluxos de execução. O primeiro (\textbf{a})  apresenta o processo de aquisição da biometria da face em um acesso real. Já o segundo fluxo apresenta o processo de aquisição da biometria da face em uma tentativa de ataque de \textit{spoofing}.
 
 \begin{figure}[!htb]
 \begin{center}
@@ -12,22 +12,22 @@ Por sua natureza não intrusiva, autenticação utilizando a biometria da face é um
 \end{figure}
 
 
-Recentemente, a mídia tem documentado algumas situações de ataques em sistemas de reconhecimento de face em produção. Usando fotografias simples, um grupo de pesquisa da Universidade de Hanói mostrou que com relativa facilidade é possível burlar os sistemas de autenticação face em produção nos laptops Lenovo, Asus e Toshiba \cite{BlackHat2009}. Desde o lançamento da versão \textit{Ice Cream Sandwich}, o sistema operacional Android vêm com um sistema de autenticação de face embarcado com a finalidade de desbloquear o celular. Desde então, tem sido amplamente demonstrado em toda a web como é possível burlar esta barreira de autenticação. Como resposta, uma contramedida baseada no piscar de olhos, foi introduzida na versão mais recente do sistema operacional Android.
+Recentemente, a mídia tem documentado algumas situações de ataques de \textit{spoofing} em sistemas de reconhecimento de face em produção no mercado. Usando fotografias simples, um grupo de pesquisa da Universidade de Hanói mostrou que, com relativa facilidade, é possível burlar os sistemas de autenticação face em produção nos laptops Lenovo, Asus e Toshiba \cite{BlackHat2009}. Desde o lançamento da versão \textit{Ice Cream Sandwich}, o sistema operacional Android vêm com um sistema de autenticação de face embarcado com a finalidade de desbloquear o uso do celular. Desde então, tem sido amplamente demonstrado em toda a WEB como é possível burlar esta barreira de autenticação. Como resposta, uma contramedida baseada no piscar de olhos, foi introduzida na versão mais recente do sistema operacional Android.
 
 
-Deficiências contra ataques de spoofing não é exclusividade da biometría facial. Podem ser observados em \cite{uludag2004attacks, leyden2002gummi, matsumoto2002impact} que sistemas biométricos baseados em impressões digitais sofrem de fraqueza semelhante. A mesma deficiência em sistemas de reconhecimento de íris foram diagnosticados em \cite{johnson2010multimodal, kanematsu2007highly}. Finalmente, em \cite {eveno2005speaker chetty2004liveness,} ataques spoofing para reconhecimento de locutor são abordados.
+%Deficiências contra ataques de spoofing não é exclusividade da biometría facial. Podem ser observados em \cite{uludag2004attacks, leyden2002gummi, matsumoto2002impact} que sistemas biométricos baseados em impressões digitais sofrem de fraqueza semelhante. A mesma deficiência em sistemas de reconhecimento de íris foram diagnosticados em \cite{johnson2010multimodal, kanematsu2007highly}. Finalmente, em \cite {eveno2005speaker chetty2004liveness,} ataques spoofing para reconhecimento de locutor são abordados.
 
-Este capítulo está organizado da seguinte maneira: Na Seção \ref{sec_db} serão apresentados as principais bases de dados de referência para o estudo de ataques de \textit{spoofing} em sistemas de reconhecimento facial. A Seção \ref{sec_review} apresenta uma sucinta revisão da literatura apresentando algumas estratégias para lidar com o problema. Por fim na Seção \label{sec_consideracoes_finais} é apresentado as considerações finais do capítulo.
+Este Capítulo está organizado da seguinte maneira: Na Seção \ref{sec_db} serão apresentadas as principais bases de dados de referência para o estudo de ataques de \textit{spoofing} em sistemas de reconhecimento facial. A Seção \ref{sec_review} apresenta uma sucinta revisão da literatura apresentando algumas estratégias para lidar com o problema. Por fim na Seção \ref{sec_consideracoes_finais} apresenta as considerações finais do Capítulo.
 
-\section{Bases de dados de referência}
+\section{Bases de Dados de Referência}
 \label{sec_db}
 
-Com o surgimento de pesquisas relacionadas a ataques de \textit{spoofing}, alguma bases de dados utilizadas para validar métodos propostos foram surgindo. Nesta seção algumas dessas bases de dados serão descritas.
+Com o surgimento de pesquisas relacionadas a ataques de \textit{spoofing}, alguma bases de dados utilizadas para validar métodos propostos foram surgindo. Nesta Seção algumas dessas bases de dados serão descritas.
 
 \subsection{NUAA}
 \label{sec_nuaa}
 
-Construída para o cenário de ataques utilizando fotografias impressas em papel, a base de dados NUAA\footnote{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html} consiste de capturas de vídeo de pessoas em frente à câmera de um \emph{notebook} e de ataques feitos à mesma câmera com fotos impressas de alta qualidade destas mesmas pessoas. A base de dados possui gravações de 15 pessoas distintas divididas em 3 seções espaçadas em duas semanas e cada seção possui quatro gravações por pessoa com condições de iluminação distintas. Na Figura~\ref{fig:nuaa} são apresentados exemplos dessa base de dados.
+Construída para estudar o cenário de ataques utilizando fotografias impressas em papel, a base de dados NUAA\footnote{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html} consiste de capturas de fotográficas de pessoas em frente à câmera de um \emph{notebook} e de ataques feitos à mesma câmera com fotos impressas de alta qualidade destas mesmas pessoas. A base de dados possui gravações de 15 pessoas distintas divididas em 3 seções espaçadas em duas semanas e cada seção possui quatro gravações por pessoa com condições de iluminação distintas. Na Figura~\ref{fig:nuaa} são apresentados exemplos dessa base de dados.
 
 \begin{figure}[!htb]
 \begin{center}
@@ -41,12 +41,12 @@ Construída para o cenário de ataques utilizando fotografias impressas em papel, 
 \subsection{Replay Attack}
 \label{sec_replay}
 
-A base de dados Replay Attack \cite{ChingovskaBIOSIG2012} consiste de gravações de vídeos de curta duração ($\sim10s$) tanto de simulações de acessos reais e quanto simulações de ataques em 50 identidades diferentes, utilizando um computador portátil. Ela contém 1.200 vídeos sendo 200 contemplando simulações de acesos reais ataques e 1000 comtemplando simulações de ataques em três cenários diferentes com duas diferentes condições de iluminação e suporte. Os cenários de ataque incluem condições em que o atacante:
+A base de dados Replay Attack \cite{ChingovskaBIOSIG2012} consiste de gravações de vídeos de curta duração ($\sim10s$) tanto de simulações de acessos reais e quanto simulações de ataques em 50 identidades diferentes, utilizando um computador portátil. Ela contém 1.200 vídeos sendo 200 contemplando simulações de acesos reais e 1000 comtemplando simulações de ataques em três cenários diferentes com duas diferentes condições de iluminação e suporte. Os cenários de ataque incluem condições em que o atacante:
 
 \begin{enumerate}
-        \item \textbf{print}: Exibe uma cópia da face da identidade alvo impressa em papel com alta resolução e impressa em papel fotográfico de tamanho A4;
-        \item \textbf{mobile}:  Exibe fotografias e vídeos obtidas com um telefone celular modelo iPhone 3GS e exibidas com o mesmo dispositivo;
-        \item \textbf{highdef}: Exibe fotografias em alta resolução ($1024\times768$) com um iPad.
+        \item \textbf{print}: Exibe uma cópia da face da identidade alvo impressa em alta resolução com papel fotográfico de tamanho A4;
+        \item \textbf{mobile}:  Exibe fotografias e vídeos obtidas com um telefone celular modelo iPhone 3GS;
+        \item \textbf{highdef}: Exibe fotografias e vídeos em alta resolução ($1024\times768$) com um iPad.
 \end{enumerate}
 
 As condições de iluminação incluem:
@@ -62,19 +62,18 @@ As condições de suporte incluem:
 \end{enumerate}
 
 
-Fig. \ ref {fig: Banco de Dados} mostrar alguns exemplos de acessos reais e ataques em diferentes cenários. Na linha superior, pode-se observar amostras no cenário controlado e na linha inferior pode-se observar amostras no cenário com iluminação não controlada. Colunas da esquerda para a direita mostram exemplos de acesso real, ataques com fotografias impressas em papel, celular e ataques com \textit{tablet} respectivamente.
+A Figura \ref{fig:Database} apresenta alguns exemplos de acessos reais e ataques em diferentes cenários. Na linha superior, pode-se observar amostras no cenário controlado e na linha inferior pode-se observar amostras no cenário com iluminação não controlada. Colunas da esquerda para a direita mostram exemplos de acesso real, ataques efetuados com fotografias impressas em papel, celular e \textit{tablet} respectivamente. Na Tabela \ref{tb_Database} são apresentadas as quantidades de vídeos para cada cenário descrito.
 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=15cm] {images/Replay_database.png}
-\caption{Some frames of real access and spoofing attempts (courtesy of (REF IVANA)).} \label{fig:Database}
+\caption{Algumas capturas da base de dados Replay Attack (cortesia de (REF IVANA)).} \label{fig:Database}
 \end{center}
 \end{figure}
 
 
-A base de dados Replay Attack fornece um protocolo para avaliar objetivamente uma dada contramedida. Tal protocolo define três conjuntos não sobrepostos e são eles o conjunto de treino (train set), calibração (devel set) e o conjunto de teste (test set). O conjunto de treino (train set) deve ser utilizado para treinar uma contramedida, o conjunto de calibração é usado ajustar hiper-parâmetros de uma contramedida e para definir uma valor de limiar de detecção de ataques para ser utilizado no conjunto de teste que deve ser utilizado apenas para reportar resultados. Como medida de desempenho, o protocolo recomenda o uso da medida ($HTER$) que é definida como:
+A base de dados Replay Attack fornece um protocolo para avaliar objetivamente uma dada contramedida. Tal protocolo define três conjuntos mutuamente exclusívos e são eles o conjunto de treino (train set), calibração (devel set) e o conjunto de teste (test set). O conjunto de treino deve ser utilizado para treinar uma contramedida, o conjunto de calibração é usado ajustar hiper-parâmetros de uma contramedida e para definir uma valor de limiar de detecção de ataques para ser utilizado no conjunto de teste que deve ser utilizado apenas para reportar resultados. Como medida de desempenho, o protocolo recomenda o uso da medida ($HTER$) que é definida como:
 
-]
 \begin{equation}
 \label{eq:HTER}
 HTER=\frac{FAR(\tau,D)+ FRR(\tau,D)} {2} ,
@@ -104,11 +103,12 @@ onde $\tau$ é o limiar de detecção de ataques, $D$ é um subconjunto da base de d
 \subsection{CASIA FASD}
 \label{sec_casia}
 
-Composta por 50 identidades, a base de dados CASIA FASD possui simulações de acessos reais e uma variedade de simulações de ataques. A variedade de ataques é obtida através três tipos de ataque em três tipos de resolução (baixa, normal e alta). Os tipos de ataques são: ataques impressos em papel em que o atacante deforma o papel a fim de gerar um ataque mais efetivo (\textit{warped}), máscaras de papel em que o atacante a veste na execução do ataque (\textit{cut}) e os ataques utilizando vídeos sendo exibidos utilizando um iPad.  Exemplos da base de dados pode ser visto na Fig \ref{fig: casia_db}. No total, o banco de dados consiste de 600 vídeos e os assuntos são divididos em subconjuntos para treinamento e teste (240 e 360, respectivamente).
+Composta por 50 identidades, a base de dados CASIA FASD possui simulações de acessos reais e uma variedade de simulações de ataques. Tal variedade é obtida através três tipos de ataque em três tipos de resolução (baixa, normal e alta). Os tipos de ataques são: ataques impressos em papel em que o atacante deforma o papel a fim de gerar um ataque mais efetivo (\textit{warped}), máscaras de papel em que o atacante a veste na execução do ataque (\textit{cut}) e os ataques utilizando vídeos sendo exibidos utilizando um iPad. Pode ser observado na Figura \ref{fig:casia_db} exemplos dessa base de dados. No total, o banco de dados consiste de 600 vídeos subdivididos em subconjuntos mutuamente exclusivos para treinamento e teste; 240 e 360, respectivamente.
 
-O objetivo desta base de dados é investigar a efetividade de diferentes tipos e ataques com as suas respectivas resoluções. Para isso, a base de dados possuí um protocolo de avaliação composto de sete cenários.
-Para avaliar o impacto da resolução da imagem nos ataques três cenários são descritos utilizando todos os tipos de ataque e são eles testes com: (1) baixa resolução, (2) resolução normal  e (3) alta resolução. Para avaliar o impacto do tipo de ataque mais três cenários são descritos utilizando ataques de todas as resoluções e são eles testes com (4) ataques com fotografias impressas em papel, (5) ataques de utilizando máscaras de papel e (6) ataques com vídeo. O sétimo cenário consiste da avaliação utilizando toda a base de dados. Para reportar os resultados recomenda-se o uso do EER obtido na base de dados de teste. 
+O objetivo desta base de dados é investigar a efetividade de diferentes tipos de ataques com as suas respectivas resoluções. Para isso, a base de dados possuí um protocolo de avaliação composto de sete cenários.
+Para avaliar o impacto da resolução da imagem nos ataques, três cenários são descritos utilizando todos os tipos de ataque e são eles testes com: (1) baixa resolução, (2) resolução normal  e (3) alta resolução. Para avaliar o impacto do tipo de ataque mais três cenários são descritos utilizando ataques de todas as resoluções e são eles testes com (4) ataques com fotografias impressas em papel, (5) ataques de utilizando máscaras de papel e (6) ataques com vídeo. O sétimo cenário consiste da avaliação utilizando toda a base de dados.
 
+Como métrica para reportar os resultados, recomenda-se o cálculo do EER no subconjunto de teste.
 
 \begin{figure}[!btb]
 \begin{center}
@@ -117,9 +117,6 @@ Para avaliar o impacto da resolução da imagem nos ataques três cenários são desc
 \label{fig:casia_db}
 \end{center}
 \end{figure}
-
-
-
 
 
 \section{Spoofing em reconhecimento de face}
@@ -134,16 +131,16 @@ Um sistema de autenticação baseado na biometria de face pode ser forjada de dive
         \item Cirurgia plástica na tentativa de imitar a identidade do usuário alvo.
 \end{itemize}
 
-Embora seja possível para falsificar um sistema de autenticação de face utilizando maquiagem, cirurgia plástica ou máscaras; fotografias e vídeos são provavelmente as ameaças mais comuns. Além disso, devido a crescente popularidade das redes sociais na WEB, (facebook, youtube, flickr, instagram e outros) uma grande quantidade de conteúdo multimídia, especialmente vídeos e fotografias, estão disponíveis e estes dados podem ser utilizados facilmente para atacar um sistema de autenticação de faces. Para mitigar os sucessos dos ataques dessa natureza, contramedidas eficazes deve ser pesquisadas e desenvolvidas.
+Embora seja possível para falsificar um sistema de autenticação de face utilizando maquiagem, cirurgia plástica ou máscaras; fotografias e vídeos são provavelmente as ameaças mais comuns. Além disso, devido a crescente popularidade das redes sociais na WEB, (facebook, youtube, flickr, instagram e outros) uma grande quantidade de conteúdo multimídia, especialmente vídeos e fotografias, estão disponíveis e estes dados podem ser utilizados facilmente para atacar um sistema de autenticação de faces. Para mitigar os sucessos dos ataques dessa natureza, contramedidas eficazes devem ser pesquisadas e desenvolvidas.
 
 Contramedidas para ataques de \textit{spoofing} em reconhecimento de face podem ser classificados quanto à dependência da colaboração do usuário. Métodos que são ditos colaborativos, partem do princípio que a pessoa que está efetuando a autenticação deve favorecer o mesmo, executando alguma atividade do tipo desafio-resposta. Em \cite{faraj2007synergy} e \cite{chetty2009biometric} o usuário é orientado a falar um texto gerado automaticamente e os movimentos labiais são correlacionados com reconhecimento de fala a fim de gerar uma checagem forte acerca da presença de um usuário em frente à câmera.
 
-Métodos que não são colaborativos, operam com imagens ou vídeos capturados por câmeras convencionais sem exigir uma interação com o usuário que está efetuando a autenticação. Uma vantagem clara nas abordagens desse tipo é que a usabilidade de sistemas de autenticação de face não é onerada, já que o usuário não toma ciência de que uma checagem de sua presença em frente a câmera está sendo efetuada. Dada a vantagem descrita métodos dessa natureza serão explorados neste trabalho.
+Métodos que não são colaborativos, operam com imagens ou vídeos capturados por câmeras convencionais sem exigir uma interação com o usuário que está efetuando a autenticação. Uma vantagem clara nas abordagens desse tipo é que a usabilidade de sistemas de autenticação de face não é onerada, já que o usuário não toma ciência de que uma checagem de sua presença em frente a câmera está sendo efetuada. Dada a vantagem descrita, métodos dessa natureza serão explorados neste trabalho.
 
 Estratégias não colaborativas podem ser classificados em estratégias que exploram:
 
 \begin{itemize}
-        \item Presença de vitalidade (liveness detection);
+        \item Presença de vitalidade (\textit{liveness detection});
         \item Características da cena;
         \item Discrepância relativa a qualidade da imagem;
 \end{itemize}
@@ -156,12 +153,12 @@ Presença de vitalidade ou \textit{liveness detection} consiste na seleção de car
 
 O piscar de olhos é uma tarefa involutária que os seres humanos executam constantemente. Um ser humano comum pisca de forma involuntária em média uma vez a cada 2 ou 6 segundos para manter os olhos limpos e umedecidos. Este intervalo pode variar drasticamente em situações de \textit{stress} e/ou de alta concentração aumentando este intervalo para mais de 20 segundos. Contudo, não importa a situação de \textit{stress} em que se está submetido; em algum momento este movimento irá ocorrer e não há estabelecido um limite máximo estabelecido em que um ser humano consegue suportar sem piscar os olhos. Apoiado nesta hipótese, \cite{pan2007eyeblink} desenvolveu uma contramedida baseada no piscar dos olhos com o objetivo de bloquear ataques efetuados com fotografia. O sistema desenvolvido modela a piscadela utilizando cadeias escondidas de de Markov (HMM) mapeando os estados de olho aberto para olho fechado e olho aberto novamente. Experimentos foram conduzidos utilizando uma base de dados criada pelos autores e livremente disponível para download\footnote{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html} mostraram uma acurácia de 95,7\% contra uma taxa de falsos positivos abaixo de 0,1\%.
 
-Apoiado na hipótese de que faces vivas apresentam padrões de movimento em certas regiões da face altamente descorrelacionados se comparados ataques \cite{kollreider2009non} desenvolveu uma heurística baseada em fluxo ótico para explorar tal característica. Como referência para a heurística foram selecionados a região do centro da face e das orelhas com pode ser observado na Figura \ref{img_kollreider}.
+Apoiado na hipótese de que faces vivas apresentam padrões de movimento em certas regiões da face altamente descorrelacionados se comparados ataques, \cite{kollreider2009non} desenvolveu uma heurística baseada em fluxo ótico para explorar tal característica. Como referência para a heurística foram selecionados a região do centro da face e das orelhas com pode ser observado na Figura \ref{img_kollreider}.
 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=14cm] {images/kollreider.pdf}
-\caption{Seleção de partes faciais} \label{img_kollreider}
+\caption{Seleção de partes faciais para a execução da heurística apresentada em (KOLLREIDER)} \label{img_kollreider}
 \end{center}
 \end{figure}
 
@@ -171,7 +168,7 @@ A estratégia  da contramedida pode ser sumarizada como segue:
 \begin{enumerate}
         \item Detectar a região da face;
         \item Definir se região facial está se movendo mais horizontalmente ou mais verticalmente observando as velocidades do movimento; %Para cada direção (horizontal ou vertical) há um limiar (\alpha) para detecção de ataques de spoofing;
-        \item Delimitar a região do centro da face e das orelhas verticalmente (Figura \ref{img_kollreider});
+        \item Delimitar a região do centro da face e das orelhas (Figura \ref{img_kollreider});
         \item Se o movimento for mais horizontal, computar a razão das velocidades dos movimentos das orelhas e do centro da face das componentes horizontais; caso contrário utilizar as componentes verticais;
         \item Será considerado ataque se a razão das velocidades de  movimento das orelhas e do centro da face for maior que um determinado limiar $\alpha$.
 \end{enumerate}
@@ -200,7 +197,7 @@ M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|
 \end{equation}
 em que $D$ é o RoI, $S_D$ é a área do RoI e $I_t$ é a intensidade de um pixel na imagem $t$.
 
-Para introduzir o coeficiente de movimento em um classificador, 5 medidas são computadas em uma janela de $n$ segundos. As medidas são as seguintes: o mínimo de $M_D$, o máximo, a média, o desvio padrão e a proporção $R$ composta entre a soma de todos os componentes não-DC e DC (Direct Current) tomadas como base o $N$ pontos transformada de Fourier do sinal gerado por $M_D$(ver Equação \ ref {eq: motionR}). Estas medidas computadas servem de entrada para uma rede Neural do tipo MLP (Multi-Layer Perceptron) a fim de detectar ataques.
+Para introduzir o coeficiente de movimento em um classificador, 5 medidas são computadas em uma janela de $n$ segundos. As medidas são as seguintes: o mínimo de $M_D$, o máximo, a média, o desvio padrão e a proporção $R$ composta entre a soma de todos os componentes não-DC e DC (Direct Current) tomadas como base na transformada de Fourier do sinal gerado por $M_D$(ver Equação \ref{eq:motionR}). Estas medidas são a entrada para uma rede Neural do tipo MLP (Multi-Layer Perceptron) a fim de detectar ataques.
 
 \begin{equation}
 R = \frac{\sum_{i=1}^{N}|FFT_i|}{|FFT_0|}
@@ -213,9 +210,9 @@ Configurada com uma camada intermediária com 5 neurônios e considerando janelas 
 
 \subsection{Discrepância relativa à qualidade da imagem}
 
-Contramedidas baseada na discrepância relativa à qualidade da imagem apoia-se na hipótese que o processo de amostragem de quantização de uma mídia de ataque (Fotografias, vídeos e etc.) geram padrões de imagem degradados em relação a captura de pessoas reais.
+Contramedidas baseada na discrepância relativa à qualidade da imagem apoia-se na hipótese que o processo de amostragem e quantização de uma mídia de ataque (fotografias, vídeos e etc.) geram padrões de imagem degradados em relação a captura de pessoas reais.
 
-Pela razão de possuir propriedades reflexivas distintas, mídias de ataque apresenta padrões distintos de faces reais. Apoiada nesta hipótese \cite{ChingovskaBIOSIG2012}\footnote{http://pypi.python.org/pypi/antispoofing.lbp} explora características de textura utilizando LBP analizando quadros individuais. A Figura \ref{img_flow-LBP} exibe o diagrama de blocos da contramedida proposta.
+Pela razão de possuir propriedades reflexivas distintas, mídias de ataque apresentam padrões distintos de faces reais. Apoiada nesta hipótese, \cite{ChingovskaBIOSIG2012} explora características de textura utilizando LBP analizando quadros individuais. A Figura \ref{img_flow-LBP} exibe o diagrama de blocos da contramedida proposta.
 
 \begin{figure}[!htb]
 \begin{center}
@@ -261,10 +258,10 @@ Ainda analizando texturas, (MINHAS REF) propôs uma contramedida utilizando a din
 \end{figure}
 
 
-Neste trabalho, as faces são segmentadas e geométricamente normalizadas para $64\times64$ pixels. Em seguida os parâmetros $LBP-TOP$ seguindo a configuração $LBP-TOP_{8,8,8,1,1,1}^{u2}$ são extraídos e histogramados. Estes histogramas são a entrada de um classificador do tipo SVM que detecta ataques. Avaliado utilizando a base de dados Replay Attack, esta contramedida apresentou um $HTER=7.60\%$ superando o trabalho apresentado em (IVANA) em $\sim50\%$
+Neste trabalho, as faces são segmentadas e geométricamente normalizadas para $64\times64$ pixels. Em seguida os parâmetros $LBP-TOP$ seguindo a configuração $LBP-TOP_{8,8,8,1,1,1}^{u2}$ são extraídos e histogramados. Estes histogramas são a entrada de um classificador do tipo SVM que detecta ataques. Avaliado utilizando a base de dados Replay Attack, esta contramedida apresentou um $HTER=7.60\%$ superando o trabalho apresentado em (IVANA) em $\sim50\%$ nesta base de dados.
 
 
-Apoiados na hipótese que imagens/vídeos utilizadas para ataques concentram mais informação em uma banda específica de frequência, \cite{zhangface} apresenta uma contramedida separando bandas específicas de frequência utilizando filtros de diferença de gaussianas (DoG).
+Apoiados na hipótese que imagens/vídeos utilizadas para ataques concentram mais informação em uma banda específica de frequência, \cite{zhangface} apresenta uma contramedida explorando tal característica utilizando filtros de diferença de gaussianas (DoG).
 
 Como pode ser observado no diagrama de blocos da Figura \ref{img:flow_DoG}, quatro sequências de filtros DoG são aplicados na imagem. Cada filtro possuí uma máscara de $3\times3$ e as configurações das variâncias de cada filtro são:
 
@@ -284,14 +281,13 @@ Como pode ser observado no diagrama de blocos da Figura \ref{img:flow_DoG}, quat
 \end{figure}
 
 
-Após a filtragem as imagens são reescaladas para $128\times128$ e estes dados são a entrada de um classificador SVM. A performance foi avaliada utilizando a base de dados CASIA é um EER de $17\%$ foi alcançado. 
+Após a filtragem as imagens são reescaladas para $128\times128$ e estes dados são a entrada de um classificador SVM. Avaliada utilizando a base de dados CASIA FASD, esta contramedida apresentou um EER de $17\%$.
 
 
-Apoiado na hipótese de que as dimensões de uma face utilizando uma mídia para ataque em são menores do que uma face real e as variações de movimento facial em um ataque são menores do que em uma face real, (REF FOURIER) propôs uma contramedia analizando o espectro Fourier. A expectativa com esta análise é que as imagens utilizadas para ataque contém menos componentes de alta frequência do que imagens de acessos reais. Avaliado utilizando uma base de dados construída pelos próprios autores e não disponibilizada publicamente, obteve-se uma acurácia de $100\%$
+Apoiado na hipótese de que as dimensões de uma face utilizando uma mídia para ataque são menores do que uma face real e que as variações de movimento facial em um ataque também são menores, (REF FOURIER) propôs uma contramedia analizando o espectro Fourier. A expectativa com esta análise é que as imagens utilizadas para ataque contém menos componentes de alta frequência do que imagens de acessos reais. Avaliado utilizando uma base de dados construída pelos próprios autores e não disponibilizada publicamente, obteve-se uma acurácia de $100\%$ na detecção dos ataques.
 
 
-Para detectar padrões de ruído em ataques de spoofing, Pinto et al. desenvolveu uma contramedida analizando vídeos combinando diversos elementos. Primeiramente os quadros capturados são filtrados utilizando um filtro Gaussiano e uma filtro na Mediana respectivamente. Estas imagens filtradas são subtraídas na imagem original obtendo o ruído residual da imagem. Este ruído residual é analizado no domínio da frequência através da transformada de Fourier 2D. Todos os quadros de um vídeo capturado são combinados utilizando a técnica chamada Rítmo Visual (REF 25 DO PAPER DO HELIO) gerando uma imagem única caracterizando toda aquisição. Com esta etapa de pré-processamento concluída uma descrição utilizando Matriz de Co-ocorrência (GLCM) com 4 orientações são computadas. Uma matriz de co-ocorrência descreve a frequência de ocorrência de níveis de cinza entre pares de pixels. Através dessa matriz 12 medidas são extraídas e são elas: ESCREVER. Estas medidas são a entrada do classificador que detectará os ataques. Os classificadores avaliados foram o PLS e o SVM.
-
+Para detectar padrões de ruído em ataques de spoofing, Pinto et al. desenvolveu uma contramedida analizando vídeos combinando diversos elementos. Primeiramente os quadros capturados são filtrados aplicando na sequência um filtro Gaussiano e um filtro da Mediana respectivamente. Estas imagens filtradas são subtraídas da imagem original obtendo o chamado ruído residual da imagem. Este ruído residual é analizado no domínio da frequência através da transformada de Fourier 2D. Todos os quadros de um vídeo capturado são combinados utilizando a técnica chamada Rítmo Visual (REF 25 DO PAPER DO HELIO) gerando uma imagem única caracterizando toda uma aquisição. Com esta etapa de pré-processamento concluída uma descrição utilizando Matriz de Co-ocorrência (GLCM) com 4 orientações são computadas. Uma matriz de co-ocorrência descreve a frequência de ocorrência de níveis de cinza entre pares de pixels. Através dessa matriz 12 medidas são extraídas e são elas: ESCREVER. Estas medidas são a entrada do classificador que detectará os ataques. Os classificadores avaliados foram o PLS e o SVM.
 
 Com uma base de dados combinando o subconjunto de ataques utilizando fotografias da base de dados Replay Attack e uma base de dados criado pelos autores uma performance $\sim100\%$ em termos de AUC foi obtida.
 

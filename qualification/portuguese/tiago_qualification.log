@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.27)  15 JAN 2013 16:38
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.27)  15 JAN 2013 19:59
 entering extended mode
 **tiago_qualification.tex
 
@@ -437,25 +437,9 @@ go_qualification.aux
 (C:\Users\tpereira\Documents\GitHub\masters_thesis\qualification\portuguese\cap
 1.aux)
 (C:\Users\tpereira\Documents\GitHub\masters_thesis\qualification\portuguese\cap
-2.aux
-
-LaTeX Warning: Label `cap:review' multiply defined.
-
-
-LaTeX Warning: Label `sec_db' multiply defined.
-
-
-LaTeX Warning: Label `sec_review' multiply defined.
-
-
-LaTeX Warning: Label `sec_consideracoes_finais' multiply defined.
-
-)
+2.aux)
 (C:\Users\tpereira\Documents\GitHub\masters_thesis\qualification\portuguese\cap
 3.aux
-
-LaTeX Warning: Label `cap:metodology' multiply defined.
-
 
 LaTeX Warning: Label `eq:HTER' multiply defined.
 
@@ -623,11 +607,7 @@ e 50.
 LaTeX Warning: Citation 'jain1999biometrics' on page 13 undefined on input line
  50.
 
-
-LaTeX Warning: Reference `fig:diagram_attacks' on page 13 undefined on input li
-ne 70.
-
-<images/diagram_attacks.pdf, id=205, 634.37pt x 379.4175pt>
+<images/diagram_attacks.pdf, id=206, 634.37pt x 379.4175pt>
 File: images/diagram_attacks.pdf Graphic file (type pdf)
 
 <use images/diagram_attacks.pdf>
@@ -688,6 +668,9 @@ LaTeX Warning: Citation 'eveno2005speaker' on page 15 undefined on input line 9
 LaTeX Warning: Citation 'xiao2005security' on page 15 undefined on input line 9
 7.
 
+
+LaTeX Warning: Reference `fig_diagram' on page 15 undefined on input line 97.
+
 ) [15]
 (C:\Users\tpereira\Documents\GitHub\masters_thesis\qualification\portuguese\cap
 2.tex [16
@@ -704,7 +687,7 @@ LaTeX Warning: Citation 'flynn2008handbook' on page 17 undefined on input line
 LaTeX Warning: Citation ' li2011handbook' on page 17 undefined on input line 4.
 
 
-<images/information_flow.pdf, id=347, 718.685pt x 450.68375pt>
+<images/information_flow.pdf, id=354, 718.685pt x 450.68375pt>
 File: images/information_flow.pdf Graphic file (type pdf)
 
 <use images/information_flow.pdf>
@@ -714,215 +697,190 @@ Package pdftex.def Info: images/information_flow.pdf used on input line 8.
 
 LaTeX Warning: Citation 'BlackHat2009' on page 17 undefined on input line 15.
 
-[17 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portuguese
-/images/information_flow.pdf>]
-
-LaTeX Warning: Citation 'uludag2004attacks' on page 18 undefined on input line 
-18.
-
-
-LaTeX Warning: Citation ' leyden2002gummi' on page 18 undefined on input line 1
-8.
-
-
-LaTeX Warning: Citation ' matsumoto2002impact' on page 18 undefined on input li
-ne 18.
-
-
-LaTeX Warning: Citation 'johnson2010multimodal' on page 18 undefined on input l
-ine 18.
-
-
-LaTeX Warning: Citation ' kanematsu2007highly' on page 18 undefined on input li
-ne 18.
-
-
-LaTeX Warning: Citation 'eveno2005speaker chetty2004liveness' on page 18 undefi
-ned on input line 18.
-
-
-LaTeX Warning: Citation '' on page 18 undefined on input line 18.
-
-<images/NUAA.png, id=457, 516.93124pt x 191.71625pt>
+[17] <images/NUAA.png, id=365, 516.93124pt x 191.71625pt>
 File: images/NUAA.png Graphic file (type png)
- <use images/NUAA.png>
+
+<use images/NUAA.png>
 Package pdftex.def Info: images/NUAA.png used on input line 34.
 (pdftex.def)             Requested size: 213.39566pt x 79.14243pt.
 
-[18 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portuguese
-/images/NUAA.png>]
 
-LaTeX Warning: Citation 'ChingovskaBIOSIG2012' on page 19 undefined on input li
+LaTeX Warning: Citation 'ChingovskaBIOSIG2012' on page 18 undefined on input li
 ne 44.
 
-<images/Replay_database.png, id=464, 721.69624pt x 277.035pt>
+
+Underfull \vbox (badness 4954) has occurred while \output is active []
+
+ [18 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portugues
+e/images/information_flow.pdf> <C:/Users/tpereira/Documents/GitHub/masters_thes
+is/qualification/portuguese/images/NUAA.png>]
+<images/Replay_database.png, id=474, 721.69624pt x 277.035pt>
 File: images/Replay_database.png Graphic file (type png)
 
 <use images/Replay_database.png>
 Package pdftex.def Info: images/Replay_database.png used on input line 69.
 (pdftex.def)             Requested size: 426.79134pt x 163.82967pt.
-
-
-LaTeX Warning: Reference `fig: casia_db' on page 19 undefined on input line 107
-.
-
-[19] <images/casia_db.png, id=479, 585.387pt x 149.96025pt>
+ [19] [20 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/port
+uguese/images/Replay_database.png>]
+<images/casia_db.png, id=497, 585.387pt x 149.96025pt>
 File: images/casia_db.png Graphic file (type png)
 
 <use images/casia_db.png>
 Package pdftex.def Info: images/casia_db.png used on input line 115.
 (pdftex.def)             Requested size: 486.25761pt x 124.56764pt.
- [20 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portugues
-e/images/Replay_database.png>]
+
 
 LaTeX Warning: Citation 'pan2008liveness' on page 21 undefined on input line 12
-8.
+5.
 
 
 LaTeX Warning: Citation 'faraj2007synergy' on page 21 undefined on input line 1
-39.
+36.
 
 
 LaTeX Warning: Citation 'chetty2009biometric' on page 21 undefined on input lin
-e 139.
+e 136.
 
 [21 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portuguese
 /images/casia_db.png>]
 
 LaTeX Warning: Citation 'pan2007eyeblink' on page 22 undefined on input line 15
-7.
+4.
 
 
 LaTeX Warning: Citation 'kollreider2009non' on page 22 undefined on input line 
-159.
+156.
 
-<images/kollreider.pdf, id=493, 560.0925pt x 133.49875pt>
+<images/kollreider.pdf, id=504, 560.0925pt x 133.49875pt>
 File: images/kollreider.pdf Graphic file (type pdf)
 
 <use images/kollreider.pdf>
-Package pdftex.def Info: images/kollreider.pdf used on input line 163.
+Package pdftex.def Info: images/kollreider.pdf used on input line 160.
 (pdftex.def)             Requested size: 398.33858pt x 94.94771pt.
  [22]
 
-LaTeX Warning: Citation 'AnjosIJCB2011' on page 23 undefined on input line 195.
+LaTeX Warning: Citation 'AnjosIJCB2011' on page 23 undefined on input line 192.
 
 
 [23 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portuguese
 /images/kollreider.pdf>]
 
 LaTeX Warning: Citation 'ChingovskaBIOSIG2012' on page 24 undefined on input li
-ne 218.
+ne 215.
 
-<images/lbp_flow.pdf, id=575, 705.63625pt x 155.58125pt>
+<images/lbp_flow.pdf, id=587, 705.63625pt x 155.58125pt>
 File: images/lbp_flow.pdf Graphic file (type pdf)
 
 <use images/lbp_flow.pdf>
-Package pdftex.def Info: images/lbp_flow.pdf used on input line 222.
+Package pdftex.def Info: images/lbp_flow.pdf used on input line 219.
 (pdftex.def)             Requested size: 426.79134pt x 94.09962pt.
  [24 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portugues
 e/images/lbp_flow.pdf>]
-<IMAGES/LBPTOP.pdf, id=658, 399.4925pt x 224.84pt>
+<IMAGES/LBPTOP.pdf, id=668, 399.4925pt x 224.84pt>
 File: IMAGES/LBPTOP.pdf Graphic file (type pdf)
  <use IMAGES/LBPTOP.pdf>
-Package pdftex.def Info: IMAGES/LBPTOP.pdf used on input line 258.
+Package pdftex.def Info: IMAGES/LBPTOP.pdf used on input line 255.
 (pdftex.def)             Requested size: 213.39566pt x 120.10123pt.
 
 
-LaTeX Warning: Citation 'zhangface' on page 25 undefined on input line 267.
+LaTeX Warning: Citation 'zhangface' on page 25 undefined on input line 264.
 
-<images/flow_DoG.pdf, id=660, 681.54625pt x 247.92625pt>
+<images/flow_DoG.pdf, id=670, 681.54625pt x 247.92625pt>
 File: images/flow_DoG.pdf Graphic file (type pdf)
 
 <use images/flow_DoG.pdf>
-Package pdftex.def Info: images/flow_DoG.pdf used on input line 281.
+Package pdftex.def Info: images/flow_DoG.pdf used on input line 278.
 (pdftex.def)             Requested size: 426.79134pt x 155.25616pt.
  [25 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portugues
-e/IMAGES/LBPTOP.pdf>]) [26 <C:/Users/tpereira/Documents/GitHub/masters_thesis/q
-ualification/portuguese/images/flow_DoG.pdf>]
+e/IMAGES/LBPTOP.pdf>] [26 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qu
+alification/portuguese/images/flow_DoG.pdf>]) [27]
 (C:\Users\tpereira\Documents\GitHub\masters_thesis\qualification\portuguese\cap
-3.tex
-Cap\'{\i }tulo 3.
-[27
-
-
-
-]) [28]
-(C:\Users\tpereira\Documents\GitHub\masters_thesis\qualification\portuguese\con
-clusao.tex
-Cap\'{\i }tulo 4.
-
-LaTeX Warning: Citation 'AnjosIJCB2011' on page 29 undefined on input line 8.
-
-
-LaTeX Warning: Citation 'ChingovskaBIOSIG2012' on page 29 undefined on input li
-ne 9.
-
-
-LaTeX Warning: Citation 'AnjosIJCB2011' on page 29 undefined on input line 13.
-
-[29
+3.tex [28
 
 
 
 ]
-Overfull \hbox (62.81036pt too wide) in paragraph at lines 56--73
+Cap\'{\i }tulo 3.
+[29]) [30]
+(C:\Users\tpereira\Documents\GitHub\masters_thesis\qualification\portuguese\con
+clusao.tex
+Cap\'{\i }tulo 4.
+
+LaTeX Warning: Citation 'AnjosIJCB2011' on page 31 undefined on input line 7.
+
+
+LaTeX Warning: Citation 'ChingovskaBIOSIG2012' on page 31 undefined on input li
+ne 8.
+
+
+LaTeX Warning: Citation 'AnjosIJCB2011' on page 31 undefined on input line 12.
+
+
+LaTeX Warning: Citation 'AnjosIJCB2011' on page 31 undefined on input line 14.
+
+[31
+
+
+
+]
+Overfull \hbox (62.81036pt too wide) in paragraph at lines 57--74
  [] 
  []
 
-[30]
-<plots/CROSS-DATABASE/MOTION/roc_replay-machine.pdf, id=776, 578.16pt x 433.62p
+[32]
+<plots/CROSS-DATABASE/MOTION/roc_replay-machine.pdf, id=804, 578.16pt x 433.62p
 t>
 File: plots/CROSS-DATABASE/MOTION/roc_replay-machine.pdf Graphic file (type pdf
 )
  <use plots/CROSS-DATABASE/MOTION/roc_replay-machine.pdf>
 Package pdftex.def Info: plots/CROSS-DATABASE/MOTION/roc_replay-machine.pdf use
-d on input line 84.
+d on input line 85.
 (pdftex.def)             Requested size: 156.49014pt x 117.36346pt.
 
-<plots/CROSS-DATABASE/LBPTOP/roc_replay-machine.pdf, id=777, 578.16pt x 433.62p
+<plots/CROSS-DATABASE/LBPTOP/roc_replay-machine.pdf, id=805, 578.16pt x 433.62p
 t>
 File: plots/CROSS-DATABASE/LBPTOP/roc_replay-machine.pdf Graphic file (type pdf
 )
  <use plots/CROSS-DATABASE/LBPTOP/roc_replay-machine.pdf>
 Package pdftex.def Info: plots/CROSS-DATABASE/LBPTOP/roc_replay-machine.pdf use
-d on input line 85.
+d on input line 86.
 (pdftex.def)             Requested size: 156.49014pt x 117.36346pt.
 
-<plots/CROSS-DATABASE/LBP/roc_replay-machine.pdf, id=778, 578.16pt x 433.62pt>
+<plots/CROSS-DATABASE/LBP/roc_replay-machine.pdf, id=806, 578.16pt x 433.62pt>
 File: plots/CROSS-DATABASE/LBP/roc_replay-machine.pdf Graphic file (type pdf)
 
 <use plots/CROSS-DATABASE/LBP/roc_replay-machine.pdf>
 Package pdftex.def Info: plots/CROSS-DATABASE/LBP/roc_replay-machine.pdf used o
-n input line 86.
+n input line 87.
 (pdftex.def)             Requested size: 156.49014pt x 117.36346pt.
 
-<plots/CROSS-DATABASE/MOTION/roc_casia_fasd-machine.pdf, id=779, 578.16pt x 433
+<plots/CROSS-DATABASE/MOTION/roc_casia_fasd-machine.pdf, id=807, 578.16pt x 433
 .62pt>
 File: plots/CROSS-DATABASE/MOTION/roc_casia_fasd-machine.pdf Graphic file (type
  pdf)
  <use plots/CROSS-DATABASE/MOTION/roc_casia_fasd-machine.pdf>
 Package pdftex.def Info: plots/CROSS-DATABASE/MOTION/roc_casia_fasd-machine.pdf
- used on input line 88.
+ used on input line 89.
 (pdftex.def)             Requested size: 156.49014pt x 117.36346pt.
 
-<plots/CROSS-DATABASE/LBPTOP/roc_casia_fasd-machine.pdf, id=780, 578.16pt x 433
+<plots/CROSS-DATABASE/LBPTOP/roc_casia_fasd-machine.pdf, id=808, 578.16pt x 433
 .62pt>
 File: plots/CROSS-DATABASE/LBPTOP/roc_casia_fasd-machine.pdf Graphic file (type
  pdf)
  <use plots/CROSS-DATABASE/LBPTOP/roc_casia_fasd-machine.pdf>
 Package pdftex.def Info: plots/CROSS-DATABASE/LBPTOP/roc_casia_fasd-machine.pdf
- used on input line 89.
+ used on input line 90.
 (pdftex.def)             Requested size: 156.49014pt x 117.36346pt.
 
-<plots/CROSS-DATABASE/LBP/roc_casia_fasd-machine.pdf, id=781, 578.16pt x 433.62
+<plots/CROSS-DATABASE/LBP/roc_casia_fasd-machine.pdf, id=809, 578.16pt x 433.62
 pt>
 File: plots/CROSS-DATABASE/LBP/roc_casia_fasd-machine.pdf Graphic file (type pd
 f)
  <use plots/CROSS-DATABASE/LBP/roc_casia_fasd-machine.pdf>
 Package pdftex.def Info: plots/CROSS-DATABASE/LBP/roc_casia_fasd-machine.pdf us
-ed on input line 90.
+ed on input line 91.
 (pdftex.def)             Requested size: 156.49014pt x 117.36346pt.
- [31 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portugues
+ [33 <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualification/portugues
 e/plots/CROSS-DATABASE/MOTION/roc_replay-machine.pdf> <C:/Users/tpereira/Docume
 nts/GitHub/masters_thesis/qualification/portuguese/plots/CROSS-DATABASE/LBPTOP/
 roc_replay-machine.pdf> <C:/Users/tpereira/Documents/GitHub/masters_thesis/qual
@@ -931,7 +889,7 @@ ification/portuguese/plots/CROSS-DATABASE/LBP/roc_replay-machine.pdf> <C:/Users
 DATABASE/MOTION/roc_casia_fasd-machine.pdf> <C:/Users/tpereira/Documents/GitHub
 /masters_thesis/qualification/portuguese/plots/CROSS-DATABASE/LBPTOP/roc_casia_
 fasd-machine.pdf> <C:/Users/tpereira/Documents/GitHub/masters_thesis/qualificat
-ion/portuguese/plots/CROSS-DATABASE/LBP/roc_casia_fasd-machine.pdf>]) [32]
+ion/portuguese/plots/CROSS-DATABASE/LBP/roc_casia_fasd-machine.pdf>]) [34]
 No file tiago_qualification.bbl.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
@@ -948,15 +906,9 @@ go_qualification.aux
 clusao.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
+Package rerunfilecheck Info: File `tiago_qualification.out' has not changed.
+(rerunfilecheck)             Checksum: 2085DAD9E86D251AC41A2F33520F18A4;2109.
 
-
-Package rerunfilecheck Warning: File `tiago_qualification.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `tiago_qualification.out':
-(rerunfilecheck)             Before: 7964C39098F227509F6FD96FA7A98551;2117
-(rerunfilecheck)             After:  9949106D3229738A2CCDDDC327FDF4B0;2110.
 
 LaTeX Warning: There were undefined references.
 
@@ -965,39 +917,33 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8367 strings out of 494045
- 119720 string characters out of 3145960
- 220487 words of memory out of 3000000
- 11306 multiletter control sequences out of 15000+200000
+ 8364 strings out of 494045
+ 119586 string characters out of 3145960
+ 222598 words of memory out of 3000000
+ 11301 multiletter control sequences out of 15000+200000
  51547 words of font info for 105 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 44i,12n,43p,1696b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsection.4.1.2} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.1.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/tim
-es/utmr8a.pfb>
-Output written on tiago_qualification.pdf (32 pages, 5885953 bytes).
+ 44i,12n,43p,1744b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/t
+imes/utmr8a.pfb>
+Output written on tiago_qualification.pdf (34 pages, 5891699 bytes).
 PDF statistics:
- 1139 PDF objects out of 1200 (max. 8388607)
- 98 named destinations out of 1000 (max. 500000)
+ 1164 PDF objects out of 1200 (max. 8388607)
+ 100 named destinations out of 1000 (max. 500000)
  297 words of extra memory for PDF output out of 10000 (max. 10000000)
 

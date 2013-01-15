@@ -1,14 +1,14 @@
-\chapter{Metodologia de avaliação}
+\chapter{Metodologia de Avaliação}
 \label{cap:metodology}
 
 Neste capítulo é apresentada a metodologia de avaliação do projeto em questão. 
 
-As contramedidas serão avaliadas seguindo dois critérios. O primeiro critério avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, utilizando cada uma das bases de dados de referência. Este critério de avaliação é chamado de Protocolo de Avaliação Intra Base de Dados. O segundo critério avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, em um cenário mais realístico avaliando assim a capacidade de generalização das mesmas. Este critério de avaliação é chamado de Protocolo de Avaliação Inter Base de Dados.
+As contramedidas serão avaliadas seguindo dois critérios. O primeiro critério avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, utilizando cada uma das bases de dados de referência. Este critério de avaliação é chamado de Protocolo de Avaliação Intra Base de Dados. O segundo critério também avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, mas simulando um cenário mais realístico. Tal cenário procurará avaliar a capacidade de generalização da detecção dos ataques. Este critério de avaliação é chamado de Protocolo de Avaliação Inter Base de Dados.
 
 Este capítulo está organizado da seguinte maneira: A Seção \ref{sec:performance} descreve as medidas de desempenho que serão utilizadas neste projeto. Já Seção \ref{sec:intra-protocol} apresenta o Protocolo de Avaliação Intra Base de Dados. Por fim  a Seção \ref{sec:intra-protocol} apresenta o Protocolo de Avaliação Inter Base de Dados.
 
 
-\section{Medidas de desempenho}
+\section{Medidas de Desempenho}
 \label{sec:performance}
 
 Serão utilizadas as seguintes métricas de desempenho para avaliar as contramedidas:
@@ -21,13 +21,13 @@ Serão utilizadas as seguintes métricas de desempenho para avaliar as contramedid
 \label{eq:HTER}
 HTER=\frac{FAR(\tau,D)+ FRR(\tau,D)} {2},
 \end{equation}
-onde $\tau$ é o limiar, $D$ é a base de dados, $FAR$ é a taxa de falsas aceitações na base de dados $D$ e FRR é a taxa de falsas rejeições na base de dados $D$;
+onde $\tau$ é o limiar de detecção, $D$ é a base de dados, $FAR$ é a taxa de falsas aceitações na base de dados $D$ e FRR é a taxa de falsas rejeições na base de dados $D$;
 
 
-\item \textbf{$FAR100$}: Valor esperado para a Taxa de Falsa Rejeição (FRR) quando a Taxa
+\item \textbf{$FAR 100$}: Valor esperado para a Taxa de Falsa Rejeição (FRR) quando a Taxa
 de Falsa Aceitação (FAR) é igual a 1/100. Esta medida é útil para avaliar contramedidas com requisitos de segurança mais rigorosos;
 
-\item \textbf{$FAR1000$}: Semelhante a medida FAR100, onde obtém-se o valor esperado para
+\item \textbf{$FAR 1000$}: Semelhante a medida FAR100, onde obtém-se o valor esperado para
 a Taxa de Falsa Rejeição (FRR) quando a Taxa de Falsa Aceitação (FAR) é igual
 a 1/1000. Sistemas com requisitos ainda mais rigorosos adotam tal medida.
 
@@ -36,11 +36,12 @@ a 1/1000. Sistemas com requisitos ainda mais rigorosos adotam tal medida.
 \section{Protocolo de Avaliação Intra Base de Dados}
 \label{sec:intra-protocol}
 
-Este protocolo avaliará a performance das contramedidas em termos de detecção de ataques. As contramedidas serão treinadas, calibradas e os resultados serão reportados em cada uma das bases de dados de referência utilizando as métricas descritas na seção \ref{sec:performance}.
+Este protocolo avaliará a performance das contramedidas em termos de detecção de ataques. As contramedidas serão treinadas, calibradas e os resultados serão reportados em cada uma das bases de dados de referência utilizando as métricas descritas na seção \ref{sec:performance}. O valor de $\tau$ na Equação \ref{eq:HTER} será obtido estimando o valor da pontuação no ponto de EER no subconjunto de desenvolvimento. Os resultados serão reportados na subconjunto de teste.
 
 \section{Protocolo de avaliação Inter-base de dados}
 \label{sec:inter-protocol}
 
-Mesmo utilizando conjuntos distintos de treinamento, calibração e teste com o objetivo de mitigar qualquer tipo de enviesamento certos viéses no processo de construção da base de dados podem acontecer. Este protocolo tem o objetivo de mitigar este tipo de viés e fornecer uma métrica de avaliação justa das contramedidas apresentadas na literatura.
+Com o objetivo de mitigar qualquer tipo de viés no processo de aferição de performance em classificadores, comumente bases de dados são divididas em conjuntos mutuamente exclusivos de treinamento e teste. Mesmo com este cuidado, viéses relativos à construção da base de dados podem acontecer prejudicando a avaliação de uma contramedida. O Protocolo de Avaliação Inter Base de Dados tem o objetivo de mitigar este problema. Neste protocolo cada uma das contramedidas serão treinadas e calibradas utilizando uma base de dados. Resultados serão reportados utilizando outras base de dados.
 
-Neste protocolo cada uma das contramedidas será treinada e calibrada utilizando uma base de dados. Resultados serão reportados utilizando outra base de dados.
+O valor de $\tau$ na Equação \ref{eq:HTER} será obtido estimando o valor da pontuação no ponto de EER no subconjunto de desenvolvimento em uma base de dados. Os resultados serão reportados no subconjunto de teste de outras bases de dados.
+
