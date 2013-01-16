@@ -41,7 +41,7 @@ Este protocolo avaliará a performance das contramedidas em termos de detecção de
 \section{Protocolo de avaliação Inter-base de dados}
 \label{sec:inter-protocol}
 
-Com o objetivo de mitigar qualquer tipo de viés no processo de aferição de performance em classificadores, comumente bases de dados são divididas em conjuntos mutuamente exclusivos de treinamento e teste. Mesmo com este cuidado, viéses relativos à construção da base de dados podem acontecer prejudicando a avaliação de uma contramedida. O Protocolo de Avaliação Inter Base de Dados tem o objetivo de mitigar este problema. Neste protocolo cada uma das contramedidas serão treinadas e calibradas utilizando uma base de dados. Resultados serão reportados utilizando outras base de dados.
+Com o objetivo de mitigar qualquer tipo de viés no processo de aferição de performance em classificadores, comumente bases de dados são divididas em conjuntos mutuamente exclusivos de treinamento e teste. Mesmo com este cuidado, viéses relativos à construção da base de dados podem acontecer, prejudicando a avaliação de uma contramedida. O Protocolo de Avaliação Inter Base de Dados tem o objetivo de mitigar este problema. Neste protocolo cada uma das contramedidas serão treinadas e calibradas utilizando uma base de dados. Resultados serão reportados utilizando outras base de dados.
 
 O valor de $\tau$ na Equação \ref{eq:HTER} será obtido estimando o valor da pontuação no ponto de EER no subconjunto de desenvolvimento em uma base de dados. Os resultados serão reportados no subconjunto de teste de outras bases de dados.
 

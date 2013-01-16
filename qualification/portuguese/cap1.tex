@@ -94,22 +94,15 @@ O ataque \textit{man-in-the-middle} ou homem do meio é uma forma de ataque em qu
 
 O ataque de \textit{spoofing} em sistemas de autenticação biométrica, é um tipo de ataque em que o atacante forja o trato biométrico alvo apresentando uma biometria falsa ao sensor, burlando o sistema de autenticação. Em sistemas de autenticação baseados em biometria há duas motivações para se forjar um trato biométrico. A \textbf{primeira} motivação é o atacante obter o trato biométrico de outra pessoa a fim de tomar sua identidade para obter privilégios. Em sistemas de autenticação baseados na voz, o atacante pode gravar a voz da identidade alvo e usar esta gravação como entrada em sistema de autenticação baseado na biometria da voz. Em sistemas de autenticação baseados em impressões digitais o atacante pode obter alguma impressão latente da identidade alvo e gerar um dedo artificial contento a impressão digital roubada. A saber em \cite{uludag2004attacks}, \cite{leyden2002gummi} e \cite{matsumoto2002impact} são trabalhos relacionados a ataques de \textit{spoofing} em sistemas de autenticação baseados em impressões digitais, em \cite{johnson2010multimodal}, \cite{kanematsu2007highly} e \cite{pacut2006aliveness} são trabalhos relacionados a ataques de \textit{spoofing} baseados na biometria da iris e em \cite{chetty2004liveness} e \cite{eveno2005speaker} são trabalhos relacionados a ataques de \textit{spoofing} em sistemas de autenticação baseados na biometria de locutor. A \textbf{segunda} motivação é um atacante gerar um trato biométrico totalmente artificial (sem se basear em uma biometria real), a fim de enganar o sistema de cadastro e autenticação biométricos. Com isso, o atacante pode compartilhar esta biometria falsa com outros atacantes.
 
-Melhores práticas de segurança orientam utilizar mecanismos como: criptografia de dados e criação de canais seguros para mitigar ataques na maioria dos casos citados anteriormente \cite{xiao2005security}. No caso dos ataques de \textit{spoofing}, o sensor de biometria (ponto alvo deste tipo de ataque) é o único ponto do fluxograma da Figura \ref{fig_diagram} em que nenhum dos mecanismos são efetivos para mitigá-los, tornando-se assim o ponto mais frágil a ataques. Por esta razão, ataques dessa natureza serão o ponto central desta dissertação.
+Melhores práticas de segurança orientam utilizar mecanismos como: criptografia de dados e criação de canais seguros para mitigar ataques na maioria dos casos citados anteriormente \cite{xiao2005security}. No caso dos ataques de \textit{spoofing}, o sensor de biometria (ponto alvo deste tipo de ataque) é o único ponto do fluxograma da Figura \ref{fig:diagram_attacks} em que nenhum dos mecanismos são efetivos para mitigá-los, tornando-se assim o ponto mais frágil a ataques. Por esta razão, ataques dessa natureza serão o ponto central desta dissertação.
 
 
 %%%%%%%%
 % Objetivos, Hipóteses e Resultados esperados
 %%%%%%%%
-\section{Objetivos, Hipóteses e Resultados Esperados}
+\section{Objetivos}
 
-Avaliação das contramedidas e generalização.
-
-%Este projeto verificará duas hipóteses.
-%\begin{enumerate}
-       % \item 
-        %\item Fusão de contramedidas apresentará resultados 
-%\end{enumerate}
-
+Este trabalho tem como objetivo desenvolver uma metodologia para avaliar contramedidas para detecção de ataques de \textit{spoofing} em sistemas de autenticação de face.
 
 
 %%%%%%%%
@@ -121,5 +114,7 @@ Este trabalho está organizado na forma que segue. No Capítulo \ref{cap:review} s
 
 Já no Capítulo \ref{cap:metodology} é apresentado a metodologia de avaliação do projeto de mestrado em questão.
 
-Por fim o Capítulo \ref{cap:Results} apresenta os resultados parciais obtidos com a aplicação da metodologia apresentada no capítulo \ref{cap:metodology}.
+O Capítulo \ref{cap:Results} apresenta os resultados parciais obtidos com a aplicação da metodologia apresentada no capítulo \ref{cap:metodology}.
+
+Por fim, no Capítulo \ref{cap:conclusion} são apresentadas as conclusões parciais obtidas no projeto de mestrado em questão .
 

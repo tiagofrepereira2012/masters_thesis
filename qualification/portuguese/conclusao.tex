@@ -1,112 +1,14 @@
-\chapter{Resultados e Conclusões Parciais}
-\label{cap:Results}
+\chapter{Conclusões Parciais}
+\label{cap:conclusion}
 
-Neste capítulo são apresentados os primeiros experimentos realizados seguindo a metodologia proposta no capítulo \ref{cap:metodology}. A metodologia foi aplicada em três contramedidas sendo duas explorando a características relativas a qualidade da imagem e uma relativa às características da cena. Os códigos fontes destas contramedidas estão livremente disponíveis na WEB e são elas:
+O estudo de detecção de ataques de \textit{spoofing} em sistemas de autenticação de face é bastante recente. Diversas contramedidas vem sendo publicadas nos últimos meses, porém cada trabalho apresenta avaliações utilizando métricas diferentes em bases de dados muitas vezes privadas impossibilitando a reprodução de resultados e eventual comparação. 
+
+A principal contribuição deste projeto de mestrado é prover uma metodologia de avaliação de contramedidas contra ataques de \textit{spoofing} que possibilite uma comparação justa entre as mesmas. Para tal, a metodologia define dois protocolos de avaliação com a finalidade de medir a:
 
 \begin{itemize}
-	\item Contramedida que explora a relação de movimento da face em relação a cena proposta por \cite{AnjosIJCB2011}\footnote{http://pypi.python.org/pypi/antispoofing.motion/1.0.2};
-	\item Contramedida que explora texturas utilizando LBP proposta por \cite{ChingovskaBIOSIG2012}\footnote{http://pypi.python.org/pypi/antispoofing.lbp/1.1.0};
-	\item Contramedida que explora a dinâmica de uma textura ao longo do tempo utilizando $LBP-TOP$(MINHA REF)\footnote{http://pypi.python.org/pypi/antispoofing.lbptop/}.
+        \item Performance, em termos de detecção de ataques, em bases de dados de referência;
+        \item Performance, em termos de detecção de ataques, em um cenário similar a um cenário real;
 \end{itemize}
 
-As contramedidas propostas por \cite{AnjosIJCB2011} e (MINHA REF) admitem apenas vídeos como entrada. Por esta razão a metodologia foi aplicada apenas nas bases de dados Replay Attack e CASIA FASD que possuem apenas vídeos. Neste experimento, a configuração de cada contramedida foi selecionada seguindo orientações apresentadas em cada trabalho de referência. Mais detalhes sobre as configurações de cada contramedida podem ser obtidos na Capítulo \ref{cap:review}.
-
-Em especial, a contramedida proposta por \cite{AnjosIJCB2011} utiliza redes neurais do tipo MLP para classificação. Dada a natureza aleatória na inicialização dos pesos sinápticos, experimentos com esta contramedida foram executados cinco vezes. A média dos resultados é reportada como resultado final.
-
-\section{Protocolo de Avaliação Intra Base de Dados}
-
-A Tabela \ref{tb:intraTest} exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Intra Base de Dados.
-
-\begin{table}[ht!]
-\caption{Performance de três contramedidas utilizando o Protocolo de Avaliação Intra Test}
-\begin{center}
-  \begin{tabular}{ | c | c |  c  c |  c  | c |}
-    \hline
-
-   \multirow{2}{*}{\textbf{Countermeasure}} & \multirow{2}{*}{\textbf{Database}}  & \multicolumn{2}{c|}{\textbf{HTER(\%)}} &  \multirow{2}{*}{\textbf{FAR100 (\%)}} &  \multirow{2}{*}{\textbf{FAR1000 (\%)}} \\ 
-     &  & \textbf{dev} & \textbf{test} & & \\ \hline
-    
-    Correlação de & Replay Attack  & 11.66 & 11.79 & &\\ 
-               Movimento& CASIA  FASD &  24.91 & 31.36 & &\\ \hline \hline
-
-    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay &  8.17 & 8.51 & 28.77 & 53.72 \\
-               & CASIA FASD   &  21.77 & 22.27  & 86.15 & 98.42 \\ \hline \hline
-
-    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay   & 14.41 &15.45 & 46.10 & 73.38 \\
-               & CASIA FASD & 23.00  & 22.54  & 86.48 & 98.84\\
-            
-    \hline
-  \end{tabular}
-\end{center}
-\label{tb:intraTest}
-\end{table}
-
-
-Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e vermelhas (linha pontilhada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na Tabela \ref{tb:intraTest}. Porém, analisando a performance das contramedidas com restrições de segurança mais rigorosas os resultados não são satisfatórios.  Analisando a taxa de Falsa Rejeições quando a Taxa de Falsas Aceitações está em 0,1\% (FAR 1000) temos um FRR acima de 98\% para todas as contramedidas inviabilizando o seu uso para aplições que necessitam altos requisitos de segurança.
-
-A comparação da performance de cada contramedida em diferentes bases de dados sugere que a base de dados CASIA FASD possui ataques mais difíceis de serem detectados que os da base de dados Replay Attack.
-
-
-\section{Protocolo de Avaliação Inter Base de Dados}
-
-A Tabela \ref{tb:interTest} exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Inter Base de Dados.
-
-\begin{table}[ht!]
-\caption{$HTER(\%)$ of each countermeasure applying the intra-test ($D_1=D_2$) and the inter-test ($D_1 \neq D_2$) protocol.}
-\begin{center}
-  \begin{tabular}{ | c | c | c |  c  c |  c  | c |}
-    \hline
-
-   \multirow{2}{*}{\textbf{Contramedida}} & \textbf{Conj. de treino} & \textbf{Conj. de} & \multicolumn{2}{c|}{\textbf{HTER(\%)}} &  \multirow{2}{*}{\textbf{FAR100 (\%)}} &  \multirow{2}{*}{\textbf{FAR1000 (\%)}} \\ 
-     &  \textbf{e calibração} & \textbf{teste} & \textbf{dev} & \textbf{test} & & \\ \hline
-    
-    Correlação de & Replay Attack  & CASIA  FASD & 11.66 & 61.78 & &\\ 
-    Movimento          & CASIA  FASD & Replay Attack &  24.91 & 54.56 & &\\ \hline \hline
-
-    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay Attack & CASIA FASD &  8.17 & 51.05 & 100 & 100 \\
-               & CASIA FASD  & Replay Attack &  21.77 & 61.11 & 99.52 & 99.99 \\ \hline \hline
-
-    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay Attack & CASIA FASD & 14.41 &48.06 & 100 & 100 \\
-               & CASIA FASD & Replay Attack & 23.00  & 57.64  & 98.65 & 99.90\\
-            
-    \hline
-  \end{tabular}
-\end{center}
-\label{tb:interTest}
-\end{table}
-
-
-Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas não possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e verdes (linha pontilhada e linha tracejada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para qualquer valor de limiar $\tau$. Corroborando com estes resultados, uma análise das Taxas de Falsas Rejeições quando as Taxas de Falsas Aceitações estão em 0,1\% (FAR 1000) temos um FRR acima de 98\% para todas as contramedidas impossibilitando o seu uso para aplições que necessitam altos requisitos de segurança.
-
-
-\begin{figure}[ht]
-\begin{center}
-
-\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/MOTION/roc_replay-machine.pdf} 
-\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/LBPTOP/roc_replay-machine.pdf}
-\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/LBP/roc_replay-machine.pdf}
-
-\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/MOTION/roc_casia_fasd-machine.pdf} 
-\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/LBPTOP/roc_casia_fasd-machine.pdf}
-\includegraphics [width=5.5cm] {plots/CROSS-DATABASE/LBP/roc_casia_fasd-machine.pdf}
-
-\caption{ROC curves of each countermeasure using the intra-test and the inter-test protocol. (a) Correlation with frame differences countermeasure trained and tuned with the Replay Attack Database (b) $LBP-TOP$ countermeasure trained and tuned with the Replay Attack Database (c) $LBP$ countermeasure trained and tuned with the Replay Attack Database (d) Correlation with frame differences countermeasure trained and tuned with the CASIA-FASD (e) $LBP-TOP$ countermeasure trained and tuned with the CASIA-FASD (f) $LBP$ countermeasure trained and tuned with the CASIA-FASD.} 
-\label{fig:ROC_cross}
-\end{center}
-\end{figure}
-
-\section{Conclusões parciais}
-
-O estudo de detecção de ataques de \textit{spoofing} em sistemas de autenticação de face é bastante recente. BLA BLA
-
-
-Diversas contramedidas vem sendo publicadas nos últimos meses, porém cada trabalho apresentam avaliações utilizando métricas diferentes e bases de dados muitas vezes privadas impossibilitando a reprodução de resultados e eventual comparação. 
-
-O objetivo dessa dissertação de mestrado é prover uma metodologia de avaliação de contramedidas de ataques de spoofing explorando dois aspectos. O primeiro deles é a aferição da performance de contramedidas em termos de detecção de ataques em bases de dados públicas. O segundo aspecto consiste da aferição da performance das contramedidas em termos de detecção de ataques em um cenário mais realístico avaliando a capacidade de generalização de cada contramedida. Para isso dois protocolos foram propostos, respectivamente o Protocolo de Avaliação Intra Base de Dados e o Protocolo de Avaliação Inter Base de Dados.
-
-Aplicada a três contramedidas o Protocolo de Avaliação Intra Base de Dados evidenciou uma boa capacidade de generalização de todas porém a performance das mesmas com requisitos de segurança mais rigorosos não foi satisfatória. O Protocolo de Avaliação Inter Base de Dados ajudou a evidenciar que todas as contramedidas avaliadas possuem um forte enviesamento por conta da base dados sugerindo sobretreinamento inviabilizando a aplicabilidade de tais contramedidas em um cenário real.
-
-\section{Trabalhos futuros e cronograma}
-
-Aplicação de pelo menos uma contramedida relativa a liveness. Mais 3 contramedidas.
+Como avaliação preliminar, a metodologia foi aplicada a três contramedidas da literatura.  Os resultados obtidos indicam que as contramedidas apesar de apresentarem resultados satisfatórios em testes nas bases de dados de referência, sua aplicabilidade em um cenário real ainda é impossibilitada.
 

@@ -1,12 +1,12 @@
 \chapter{Revisão da Literatura}
 \label{cap:review}
 
-Por sua natureza não intrusiva, autenticação utilizando a biometria da face é uma das áreas mais ativas e desafiadoras no campo da biometria. Apesar do significativo progresso da tecnologia de reconhecimento facial nas últimas décadas em uma série de tópicos como o envelhecimento dos indivíduos e reconhecimento em cenários de iluminação complexa ainda são desafios de pesquisa na área. Avanços na área foram amplamente relatados em \cite {flynn2008handbook, li2011handbook}. No entanto, a tarefa de verificar se o rosto apresentado a uma câmera é realmente um rosto de uma pessoa real, e não uma tentativa de forjar uma identidade (\textit{spoof}) tem sido quase sempre esquecido. A Figura \ref{img_information_flow} apresenta dois fluxos de execução. O primeiro (\textbf{a})  apresenta o processo de aquisição da biometria da face em um acesso real. Já o segundo fluxo apresenta o processo de aquisição da biometria da face em uma tentativa de ataque de \textit{spoofing}.
+Por sua natureza não intrusiva, autenticação utilizando a biometria da face é uma das áreas mais ativas e desafiadoras no campo da biometria. Apesar do significativo progresso da tecnologia de reconhecimento facial nas últimas décadas em uma série de tópicos como o envelhecimento dos indivíduos e reconhecimento em cenários de iluminação complexa ainda são desafios de pesquisa na área. Avanços na área foram amplamente relatados em \cite{flynn2008handbook} e em \cite{li2011handbook}. No entanto, a tarefa de verificar se o rosto apresentado a uma câmera é realmente um rosto de uma pessoa real, e não uma tentativa de forjar uma identidade (\textit{spoof}) tem sido quase sempre esquecido. A Figura \ref{img_information_flow} apresenta dois fluxos de execução. O primeiro (\textbf{a})  apresenta o processo de aquisição da biometria da face em um acesso real. Já o segundo fluxo apresenta o processo de aquisição da biometria da face em uma tentativa de ataque de \textit{spoofing}.
 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=15cm] {images/information_flow.pdf}
-\caption{(a) Fluxo da informação em um acesso real (b) Fluxo da informação em um ataque de spoofing
+\caption[Fluxo dos dados no processo de autenticação de faces]{(a) Fluxo da informação em um acesso real (b) Fluxo da informação em um ataque de spoofing
 } \label{img_information_flow}
 \end{center}
 \end{figure}
@@ -67,7 +67,7 @@ A Figura \ref{fig:Database} apresenta alguns exemplos de acessos reais e ataques
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=15cm] {images/Replay_database.png}
-\caption{Algumas capturas da base de dados Replay Attack (cortesia de (REF IVANA)).} \label{fig:Database}
+\caption[Algumas capturas da base de dados Replay Attack]{Algumas capturas da base de dados Replay Attack (cortesia de \cite{ChingovskaBIOSIG2012}).} \label{fig:Database}
 \end{center}
 \end{figure}
 
@@ -83,7 +83,7 @@ onde $\tau$ é o limiar de detecção de ataques, $D$ é um subconjunto da base de d
 
 \begin{table}
    \label{tb_Database}
-   \caption{Número de vídeos e cada subconjunto da base de dados. Células sinalizadas com o operador "+", indicam a quantidade de vídeos com suporte manual e com suporte fixo respectivamente.}
+   \caption[Número de vídeos em cada subconjunto da base de dados]{Número de vídeos em cada subconjunto da base de dados. Células sinalizadas com o operador "+", indicam a quantidade de vídeos com suporte manual e com suporte fixo respectivamente.}
    \begin{center}
      \begin{tabular}{ | l | c | c | c || c | }
       \hline
@@ -113,7 +113,7 @@ Como métrica para reportar os resultados, recomenda-se o cálculo do EER no subco
 \begin{figure}[!btb]
 \begin{center}
 \includegraphics [width=1.0\linewidth] {images/casia_db.png}
-\caption{Exemplos de acessos reais e ataques da base de dados CASIA FASD (cortesia de ZHANG)} 
+\caption[Exemplos de acessos reais e ataques da base de dados CASIA FASD]{Exemplos de acessos reais e ataques da base de dados CASIA FASD (cortesia de \cite{zhangface})} 
 \label{fig:casia_db}
 \end{center}
 \end{figure}
@@ -158,7 +158,7 @@ Apoiado na hipótese de que faces vivas apresentam padrões de movimento em certas
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=14cm] {images/kollreider.pdf}
-\caption{Seleção de partes faciais para a execução da heurística apresentada em (KOLLREIDER)} \label{img_kollreider}
+\caption[Seleção de partes faciais]{Seleção de partes faciais para a execução da heurística apresentada em \cite{kollreider2009non} } \label{img_kollreider}
 \end{center}
 \end{figure}
 
@@ -173,7 +173,7 @@ A estratégia  da contramedida pode ser sumarizada como segue:
         \item Será considerado ataque se a razão das velocidades de  movimento das orelhas e do centro da face for maior que um determinado limiar $\alpha$.
 \end{enumerate}
 
-A performance foi avaliada utilizando uma base de dados construída sobre a base de dados de face XM2VTS (REF). Os acessos reais foram gerados utilizando o subconjunto \textit{Head Rotation Shot} desta base de dados e o ataques foram gerados com fotografias impressas em papel das mesmas imagens utilizadas para os acessos reais e regravados utilizando uma câmera de computador. Com esta base de dados criada um $EER=0,5\%$ foi obtido. Esta base dados não foi disponibilizada publicamente pelos autores de modo que qualquer tentativa de reprodução dos resultados fica impossibilitada. 
+A performance foi avaliada utilizando uma base de dados construída sobre a base de dados de face XM2VTS\footnote{http://www.ee.surrey.ac.uk/CVSSP/xm2vtsdb/}. Os acessos reais foram gerados utilizando o subconjunto \textit{Head Rotation Shot} desta base de dados e o ataques foram gerados com fotografias impressas em papel das mesmas imagens utilizadas para os acessos reais e regravados utilizando uma câmera de computador. Com esta base de dados criada um $EER=0,5\%$ foi obtido. Esta base dados não foi disponibilizada publicamente pelos autores de modo que qualquer tentativa de reprodução dos resultados fica impossibilitada. 
 
 %%% BAO
 
@@ -204,7 +204,7 @@ R = \frac{\sum_{i=1}^{N}|FFT_i|}{|FFT_0|}
 \label{eq:motionR}
 \end{equation}
 
-Configurada com uma camada intermediária com 5 neurônios e considerando janelas de tempo com 20 quadros, esta contramedida foi avaliada utilizando o subconjunto de ataques de fotografia da base de dados Replay Attack (IVANA REF) e apresentou $HTER=9\%$. 
+Configurada com uma camada intermediária com 5 neurônios e considerando janelas de tempo com 20 quadros, esta contramedida foi avaliada utilizando o subconjunto de ataques de fotografia da base de dados Replay Attack \cite{ChingovskaBIOSIG2012}  e apresentou $HTER=9\%$. 
 %A Figura X apresenta a curva DET (Detection Error Trade-off) da contramedida. Uma análise da performance nos conjuntos de desenvolvimento e teste nesta base de dados para diferentes limiares de operação sugere que a contramedida possui uma boa capacidade de generização.
 
 
@@ -247,7 +247,7 @@ A Tabela \ref{tb_LBP-Countermeasure} apresenta a performance do algorítmo em ter
 
 Pode-se observar uma performance satisfatória nas três bases de dados entre $\sim15\%$ e $\sim20\%$. Contudo uma análise da performance nos conjuntos de desenvolvimento e teste na base de dados NUAA sugere uma baixa capacidade de generalização da contramedida.
 
-Ainda analizando texturas, (MINHAS REF) propôs uma contramedida utilizando a dinâmica de uma textura ao longo do tempo utilizando o descritor $LBP-TOP$. Complementar ao descritor $LBP$, o descritor $LBP-TOP$ além de observar as componentes espaciais (direção X e Y), ele observa padrões de textura orientados no tempo (direção X e T e direção Y e T) como pode-se observar na Figura \ref{img:LBPTOP}.
+Ainda analizando texturas, \cite{Pereira_LBP_2012} propôs uma contramedida utilizando a dinâmica de uma textura ao longo do tempo utilizando o descritor $LBP-TOP$. Complementar ao descritor $LBP$, o descritor $LBP-TOP$ além de observar as componentes espaciais (direção X e Y), ele observa padrões de textura orientados no tempo (direção X e T e direção Y e T) como pode-se observar na Figura \ref{img:LBPTOP}.
 
 
 \begin{figure}[!htb]
@@ -258,7 +258,7 @@ Ainda analizando texturas, (MINHAS REF) propôs uma contramedida utilizando a din
 \end{figure}
 
 
-Neste trabalho, as faces são segmentadas e geométricamente normalizadas para $64\times64$ pixels. Em seguida os parâmetros $LBP-TOP$ seguindo a configuração $LBP-TOP_{8,8,8,1,1,1}^{u2}$ são extraídos e histogramados. Estes histogramas são a entrada de um classificador do tipo SVM que detecta ataques. Avaliado utilizando a base de dados Replay Attack, esta contramedida apresentou um $HTER=7.60\%$ superando o trabalho apresentado em (IVANA) em $\sim50\%$ nesta base de dados.
+Neste trabalho, as faces são segmentadas e geométricamente normalizadas para $64\times64$ pixels. Em seguida os parâmetros $LBP-TOP$ seguindo a configuração $LBP-TOP_{8,8,8,1,1,1}^{u2}$ são extraídos e histogramados. Estes histogramas são a entrada de um classificador do tipo SVM que detecta ataques. Avaliado utilizando a base de dados Replay Attack, esta contramedida apresentou um $HTER=7.60\%$ superando o trabalho apresentado por \cite{ChingovskaBIOSIG2012}  em $\sim50\%$ nesta base de dados.
 
 
 Apoiados na hipótese que imagens/vídeos utilizadas para ataques concentram mais informação em uma banda específica de frequência, \cite{zhangface} apresenta uma contramedida explorando tal característica utilizando filtros de diferença de gaussianas (DoG).
@@ -284,10 +284,10 @@ Como pode ser observado no diagrama de blocos da Figura \ref{img:flow_DoG}, quat
 Após a filtragem as imagens são reescaladas para $128\times128$ e estes dados são a entrada de um classificador SVM. Avaliada utilizando a base de dados CASIA FASD, esta contramedida apresentou um EER de $17\%$.
 
 
-Apoiado na hipótese de que as dimensões de uma face utilizando uma mídia para ataque são menores do que uma face real e que as variações de movimento facial em um ataque também são menores, (REF FOURIER) propôs uma contramedia analizando o espectro Fourier. A expectativa com esta análise é que as imagens utilizadas para ataque contém menos componentes de alta frequência do que imagens de acessos reais. Avaliado utilizando uma base de dados construída pelos próprios autores e não disponibilizada publicamente, obteve-se uma acurácia de $100\%$ na detecção dos ataques.
+Apoiado na hipótese de que as dimensões de uma face utilizando uma mídia para ataque são menores do que uma face real e que as variações de movimento facial em um ataque também são menores, \cite{li2004live} propôs uma contramedia analizando o espectro Fourier. A expectativa com esta análise é que as imagens utilizadas para ataque contém menos componentes de alta frequência do que imagens de acessos reais. Avaliado utilizando uma base de dados construída pelos próprios autores e não disponibilizada publicamente, obteve-se uma acurácia de $100\%$ na detecção dos ataques.
 
 
-Para detectar padrões de ruído em ataques de spoofing, Pinto et al. desenvolveu uma contramedida analizando vídeos combinando diversos elementos. Primeiramente os quadros capturados são filtrados aplicando na sequência um filtro Gaussiano e um filtro da Mediana respectivamente. Estas imagens filtradas são subtraídas da imagem original obtendo o chamado ruído residual da imagem. Este ruído residual é analizado no domínio da frequência através da transformada de Fourier 2D. Todos os quadros de um vídeo capturado são combinados utilizando a técnica chamada Rítmo Visual (REF 25 DO PAPER DO HELIO) gerando uma imagem única caracterizando toda uma aquisição. Com esta etapa de pré-processamento concluída uma descrição utilizando Matriz de Co-ocorrência (GLCM) com 4 orientações são computadas. Uma matriz de co-ocorrência descreve a frequência de ocorrência de níveis de cinza entre pares de pixels. Através dessa matriz 12 medidas são extraídas e são elas: ESCREVER. Estas medidas são a entrada do classificador que detectará os ataques. Os classificadores avaliados foram o PLS e o SVM.
+Para detectar padrões de ruído em ataques de spoofing, Pinto et al. desenvolveu uma contramedida analizando vídeos combinando diversos elementos. Primeiramente os quadros capturados são filtrados aplicando na sequência um filtro Gaussiano e um filtro da Mediana respectivamente. Estas imagens filtradas são subtraídas da imagem original obtendo o chamado ruído residual da imagem. Este ruído residual é analizado no domínio da frequência através da transformada de Fourier 2D. Todos os quadros de um vídeo capturado são combinados utilizando a técnica chamada Rítmo Visual \cite{zhang1995video} gerando uma imagem única caracterizando toda uma aquisição. Com esta etapa de pré-processamento concluída uma descrição utilizando Matriz de Co-ocorrência (GLCM) com 4 orientações são computadas. Uma matriz de co-ocorrência descreve a frequência de ocorrência de níveis de cinza entre pares de pixels. Através dessa matriz 12 medidas são extraídas para ser a entrada do classificador que detectará os ataques. Os classificadores avaliados foram o PLS e o SVM.
 
 Com uma base de dados combinando o subconjunto de ataques utilizando fotografias da base de dados Replay Attack e uma base de dados criado pelos autores uma performance $\sim100\%$ em termos de AUC foi obtida.
 
