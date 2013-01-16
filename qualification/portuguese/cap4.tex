@@ -1,7 +1,7 @@
 \chapter{Resultados Parciais e Plano de Trabalho}
 \label{cap:Results}
 
-Neste capítulo são apresentados os primeiros experimentos realizados seguindo a metodologia proposta no capítulo \ref{cap:metodology}. A metodologia foi aplicada em três contramedidas sendo duas explorando a características relativas a qualidade da imagem e uma relativa às características da cena. Os códigos fontes destas contramedidas estão livremente disponíveis na WEB e são elas:
+Neste capítulo são apresentados os primeiros experimentos realizados seguindo a metodologia proposta no Capítulo \ref{cap:metodology}. A metodologia foi aplicada em três contramedidas sendo duas explorando as características relativas a qualidade da imagem e uma relativa às características da cena. Os códigos fontes destas contramedidas estão livremente disponíveis na WEB e são elas:
 
 \begin{itemize}
 	\item Contramedida que explora a relação de movimento da face em relação a cena proposta por \cite{AnjosIJCB2011}\footnote{http://pypi.python.org/pypi/antispoofing.motion/1.0.2};
@@ -9,7 +9,7 @@ Neste capítulo são apresentados os primeiros experimentos realizados seguindo a 
 	\item Contramedida que explora a dinâmica de uma textura ao longo do tempo utilizando $LBP-TOP$\cite{Pereira_LBP_2012}\footnote{http://pypi.python.org/pypi/antispoofing.lbptop/}.
 \end{itemize}
 
-As contramedidas propostas por \cite{AnjosIJCB2011} e (MINHA REF) admitem apenas vídeos como entrada. Por esta razão a metodologia foi aplicada apenas nas bases de dados Replay Attack e CASIA FASD que possuem apenas vídeos. Neste experimento, a configuração de cada contramedida foi selecionada seguindo orientações apresentadas em cada trabalho de referência. Mais detalhes sobre as configurações de cada contramedida podem ser obtidos na Capítulo \ref{cap:review}.
+As contramedidas propostas por \cite{AnjosIJCB2011} e \cite{Pereira_LBP_2012} admitem apenas vídeos como entrada. Por esta razão a metodologia foi aplicada apenas nas bases de dados Replay Attack e CASIA FASD que possuem apenas vídeos. Neste experimento, a configuração de cada contramedida foi selecionada seguindo orientações apresentadas em cada trabalho de referência. Mais detalhes sobre as configurações de cada contramedida podem ser obtidos no Capítulo \ref{cap:review}.
 
 Em especial, a contramedida proposta por \cite{AnjosIJCB2011} utiliza redes neurais do tipo MLP para classificação. Dada a natureza aleatória na inicialização dos pesos sinápticos, experimentos com esta contramedida foram executados cinco vezes. A média dos resultados é reportada como resultado final.
 
@@ -42,7 +42,7 @@ A Tabela \ref{tb:intraTest} exibe a performance obtida com cada contramedida uti
 \end{table}
 
 
-Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e vermelhas (linha pontilhada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na Tabela \ref{tb:intraTest}. Porém, analisando a performance das contramedidas com restrições de segurança mais rigorosas os resultados não são satisfatórios.  Analisando a taxa de Falsa Rejeições quando a Taxa de Falsas Aceitações está em 0,1\% (FAR 1000) temos um FRR acima de 98\% para todas as contramedidas inviabilizando o seu uso para aplições que necessitam altos requisitos de segurança.
+Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e vermelhas (linha pontilhada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na Tabela \ref{tb:intraTest}. Porém, analisando a performance das contramedidas com restrições de segurança mais rigorosas os resultados não são satisfatórios.  Analisando a taxa de Falsa Rejeições quando a Taxa de Falsas Aceitações está em 0,1\% (FAR 1000) temos um FRR acima de 98\% para todas as contramedidas inviabilizando o seu uso para aplicações que necessitam de altos requisitos de segurança.
 
 A comparação da performance de cada contramedida em diferentes bases de dados sugere que a base de dados CASIA FASD possui ataques mais difíceis de serem detectados que os da base de dados Replay Attack.
 
@@ -76,7 +76,7 @@ A Tabela \ref{tb:interTest} exibe a performance obtida com cada contramedida uti
 \end{table}
 
 
-Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas não possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e verdes (linha pontilhada e linha tracejada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para qualquer valor de limiar $\tau$. Corroborando com estes resultados, uma análise das Taxas de Falsas Rejeições quando as Taxas de Falsas Aceitações estão em 0,1\% (FAR 1000) temos um FRR acima de 98\% para todas as contramedidas impossibilitando o seu uso para aplições que necessitam altos requisitos de segurança.
+Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas não possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e verdes (linha pontilhada e linha tracejada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para qualquer valor de limiar $\tau$. Corroborando com estes resultados, uma análise das Taxas de Falsas Rejeições quando as Taxas de Falsas Aceitações estão em 0,1\% (FAR 1000) temos um FRR acima de 98\% para todas as contramedidas impossibilitando o seu uso para aplicações que necessitam de altos requisitos de segurança.
 
 
 \begin{figure}[ht]

@@ -72,7 +72,7 @@ A Figura \ref{fig:Database} apresenta alguns exemplos de acessos reais e ataques
 \end{figure}
 
 
-A base de dados Replay Attack fornece um protocolo para avaliar objetivamente uma dada contramedida. Tal protocolo define três conjuntos mutuamente exclusívos e são eles o conjunto de treino (train set), calibração (devel set) e o conjunto de teste (test set). O conjunto de treino deve ser utilizado para treinar uma contramedida, o conjunto de calibração é usado ajustar hiper-parâmetros de uma contramedida e para definir uma valor de limiar de detecção de ataques para ser utilizado no conjunto de teste que deve ser utilizado apenas para reportar resultados. Como medida de desempenho, o protocolo recomenda o uso da medida ($HTER$) que é definida como:
+A base de dados Replay Attack fornece um protocolo para avaliar objetivamente uma dada contramedida. Tal protocolo define três conjuntos mutuamente exclusivos e são eles o conjunto de treino (train set), calibração (devel set) e o conjunto de teste (test set). O conjunto de treino deve ser utilizado para treinar uma contramedida, o conjunto de calibração é usado ajustar hiper-parâmetros de uma contramedida e para definir uma valor de limiar de detecção de ataques para ser utilizado no conjunto de teste que deve ser utilizado apenas para reportar resultados. Como medida de desempenho, o protocolo recomenda o uso da medida ($HTER$) que é definida como:
 
 \begin{equation}
 \label{eq:HTER}
@@ -119,7 +119,7 @@ Como métrica para reportar os resultados, recomenda-se o cálculo do EER no subco
 \end{figure}
 
 
-\section{Spoofing em reconhecimento de face}
+\section{Spoofing em Reconhecimento de Face}
 \label{sec_review}
 
 Um sistema de autenticação baseado na biometria de face pode ser forjada de diversas maneiras \cite{pan2008liveness} e são elas a apresentação para a câmera de:
@@ -147,7 +147,7 @@ Estratégias não colaborativas podem ser classificados em estratégias que explora
 
 As próximas sub-seções apresentam cada uma das estratégias e os trabalhos relacionados a elas.
 
-\subsection{Presença de vitalidade}
+\subsection{Presença de Vitalidade}
 
 Presença de vitalidade ou \textit{liveness detection} consiste na seleção de características faciais que apenas pessoas vivas conseguem reproduzir.
 
@@ -184,7 +184,7 @@ A performance foi avaliada utilizando uma base de dados construída sobre a base 
 %Com a seguinte euristica.
 
 
-\subsection{Características da cena}
+\subsection{Características da Cena}
 
 Contramedidas que buscam características da cena buscam combinar a relação das características faciais com as caracteríscas de onde a face está inserida.
 
@@ -192,7 +192,7 @@ Contramedidas que buscam características da cena buscam combinar a relação das c
 A contramedida proposta por \cite{AnjosIJCB2011} mede a correlação do movimento da região facial em relação ao seu fundo. Como medida de movimento é utilizada uma simples diferença das intensidades dos pixels em quadros sucessivos. O movimento acumulado entre esta diferença ($M_D$), para um determinado $RoI$ e seu respectivo fundo, é calculado usando a seguinte equação:
 
 \begin{equation}
-M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|
+M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|,
 \label{eq:motion}
 \end{equation}
 em que $D$ é o RoI, $S_D$ é a área do RoI e $I_t$ é a intensidade de um pixel na imagem $t$.
@@ -200,7 +200,7 @@ em que $D$ é o RoI, $S_D$ é a área do RoI e $I_t$ é a intensidade de um pixel na
 Para introduzir o coeficiente de movimento em um classificador, 5 medidas são computadas em uma janela de $n$ segundos. As medidas são as seguintes: o mínimo de $M_D$, o máximo, a média, o desvio padrão e a proporção $R$ composta entre a soma de todos os componentes não-DC e DC (Direct Current) tomadas como base na transformada de Fourier do sinal gerado por $M_D$(ver Equação \ref{eq:motionR}). Estas medidas são a entrada para uma rede Neural do tipo MLP (Multi-Layer Perceptron) a fim de detectar ataques.
 
 \begin{equation}
-R = \frac{\sum_{i=1}^{N}|FFT_i|}{|FFT_0|}
+R = \frac{\sum_{i=1}^{N}|FFT_i|}{|FFT_0|}.
 \label{eq:motionR}
 \end{equation}
 
@@ -208,7 +208,7 @@ Configurada com uma camada intermediária com 5 neurônios e considerando janelas 
 %A Figura X apresenta a curva DET (Detection Error Trade-off) da contramedida. Uma análise da performance nos conjuntos de desenvolvimento e teste nesta base de dados para diferentes limiares de operação sugere que a contramedida possui uma boa capacidade de generização.
 
 
-\subsection{Discrepância relativa à qualidade da imagem}
+\subsection{Discrepância Relativa à Qualidade da Imagem}
 
 Contramedidas baseada na discrepância relativa à qualidade da imagem apoia-se na hipótese que o processo de amostragem e quantização de uma mídia de ataque (fotografias, vídeos e etc.) geram padrões de imagem degradados em relação a captura de pessoas reais.
 
@@ -222,13 +222,13 @@ Pela razão de possuir propriedades reflexivas distintas, mídias de ataque aprese
 \end{figure}
 
 
-Neste trabalho, as faces são segmentadas e geométricamente normalizadas para $64\times64$ pixels. Em seguida os parâmetros LBP configurado seguindo a configuração $LBP_{8,1}^{u2}$ são extraídos e histogramados. Estes histogramas são a entrada do classificador que detecta ataques.
+Neste trabalho, as faces são segmentadas e geometricamente normalizadas para $64\times64$ pixels. Em seguida os parâmetros LBP configurado seguindo a configuração $LBP_{8,1}^{u2}$ são extraídos e histogramados. Estes histogramas são a entrada do classificador que detecta ataques.
 
-A Tabela \ref{tb_LBP-Countermeasure} apresenta a performance do algorítmo em termos de HTER em três bases de dados de referência; a base de dados Replay Attack, a base de dados CASIA FASD e a base de dados NUAA utilizando SVM e LDA como classificadores.
+A Tabela \ref{tb_LBP-Countermeasure} apresenta a performance do algoritmo em termos de HTER em três bases de dados de referência; a base de dados Replay Attack, a base de dados CASIA FASD e a base de dados NUAA utilizando SVM e LDA como classificadores.
 
 
 \begin{table}[ht]
-\caption{Performance em termos de $HTER(\%)$ da contramedida proposta pela (REF) nas três principais bases de dados de refrência.}
+\caption{Performance em termos de $HTER(\%)$ da contramedida proposta pela (REF) nas três principais bases de dados de referência.}
 \begin{center}
   \begin{tabular}{ c | c c | c c | c c | }
 
@@ -253,12 +253,12 @@ Ainda analizando texturas, \cite{Pereira_LBP_2012} propôs uma contramedida utili
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=7.5cm] {IMAGES/LBPTOP.pdf}
-\caption{Representação da extração de parâmetros utilzando $LBP-TOP$} \label{img:LBPTOP}
+\caption{Representação da extração de parâmetros utilizando $LBP-TOP$} \label{img:LBPTOP}
 \end{center}
 \end{figure}
 
 
-Neste trabalho, as faces são segmentadas e geométricamente normalizadas para $64\times64$ pixels. Em seguida os parâmetros $LBP-TOP$ seguindo a configuração $LBP-TOP_{8,8,8,1,1,1}^{u2}$ são extraídos e histogramados. Estes histogramas são a entrada de um classificador do tipo SVM que detecta ataques. Avaliado utilizando a base de dados Replay Attack, esta contramedida apresentou um $HTER=7.60\%$ superando o trabalho apresentado por \cite{ChingovskaBIOSIG2012}  em $\sim50\%$ nesta base de dados.
+Neste trabalho, as faces são segmentadas e geometricamente normalizadas para $64\times64$ pixels. Em seguida os parâmetros $LBP-TOP$ seguindo a configuração $LBP-TOP_{8,8,8,1,1,1}^{u2}$ são extraídos e histogramados. Estes histogramas são a entrada de um classificador do tipo SVM que detecta ataques. Avaliado utilizando a base de dados Replay Attack, esta contramedida apresentou um $HTER=7.60\%$ superando o trabalho apresentado por \cite{ChingovskaBIOSIG2012}  em $\sim50\%$ nesta base de dados.
 
 
 Apoiados na hipótese que imagens/vídeos utilizadas para ataques concentram mais informação em uma banda específica de frequência, \cite{zhangface} apresenta uma contramedida explorando tal característica utilizando filtros de diferença de gaussianas (DoG).
@@ -284,10 +284,10 @@ Como pode ser observado no diagrama de blocos da Figura \ref{img:flow_DoG}, quat
 Após a filtragem as imagens são reescaladas para $128\times128$ e estes dados são a entrada de um classificador SVM. Avaliada utilizando a base de dados CASIA FASD, esta contramedida apresentou um EER de $17\%$.
 
 
-Apoiado na hipótese de que as dimensões de uma face utilizando uma mídia para ataque são menores do que uma face real e que as variações de movimento facial em um ataque também são menores, \cite{li2004live} propôs uma contramedia analizando o espectro Fourier. A expectativa com esta análise é que as imagens utilizadas para ataque contém menos componentes de alta frequência do que imagens de acessos reais. Avaliado utilizando uma base de dados construída pelos próprios autores e não disponibilizada publicamente, obteve-se uma acurácia de $100\%$ na detecção dos ataques.
+Apoiado na hipótese de que as dimensões de uma face utilizando uma mídia para ataque são menores do que uma face real e que as variações de movimento facial em um ataque também são menores, \cite{li2004live} propôs uma contramedida analizando o espectro Fourier. A expectativa com esta análise é que as imagens utilizadas para ataque contém menos componentes de alta frequência do que imagens de acessos reais. Avaliado utilizando uma base de dados construída pelos próprios autores e não disponibilizada publicamente, obteve-se uma acurácia de $100\%$ na detecção dos ataques.
 
 
-Para detectar padrões de ruído em ataques de spoofing, Pinto et al. desenvolveu uma contramedida analizando vídeos combinando diversos elementos. Primeiramente os quadros capturados são filtrados aplicando na sequência um filtro Gaussiano e um filtro da Mediana respectivamente. Estas imagens filtradas são subtraídas da imagem original obtendo o chamado ruído residual da imagem. Este ruído residual é analizado no domínio da frequência através da transformada de Fourier 2D. Todos os quadros de um vídeo capturado são combinados utilizando a técnica chamada Rítmo Visual \cite{zhang1995video} gerando uma imagem única caracterizando toda uma aquisição. Com esta etapa de pré-processamento concluída uma descrição utilizando Matriz de Co-ocorrência (GLCM) com 4 orientações são computadas. Uma matriz de co-ocorrência descreve a frequência de ocorrência de níveis de cinza entre pares de pixels. Através dessa matriz 12 medidas são extraídas para ser a entrada do classificador que detectará os ataques. Os classificadores avaliados foram o PLS e o SVM.
+Para detectar padrões de ruído em ataques de spoofing, \cite{davideo}. desenvolveu uma contramedida analizando vídeos combinando diversos elementos. Primeiramente os quadros capturados são filtrados aplicando na sequência um filtro Gaussiano e um filtro da Mediana respectivamente. Estas imagens filtradas são subtraídas da imagem original obtendo o chamado ruído residual da imagem. Este ruído residual é analizado no domínio da frequência através da transformada de Fourier 2D. Todos os quadros de um vídeo capturado são combinados utilizando a técnica chamada Rítmo Visual \cite{zhang1995video} gerando uma imagem única caracterizando toda uma aquisição. Com esta etapa de pré-processamento concluída uma descrição utilizando Matriz de Co-ocorrência (GLCM) com 4 orientações são computadas. Uma matriz de co-ocorrência descreve a frequência de ocorrência de níveis de cinza entre pares de pixels. Através dessa matriz 12 medidas são extraídas para ser a entrada do classificador que detectará os ataques. Os classificadores avaliados foram o PLS e o SVM.
 
 Com uma base de dados combinando o subconjunto de ataques utilizando fotografias da base de dados Replay Attack e uma base de dados criado pelos autores uma performance $\sim100\%$ em termos de AUC foi obtida.
 

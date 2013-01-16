@@ -1,28 +1,28 @@
 \select@language {brazil}
-\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{11}{chapter.1}
-\contentsline {section}{\numberline {1.1}Contextualiza\c c\~ao e Motiva\c c\~ao}{11}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Ataque de \textit {Replay}}{13}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Ataque na Refer\^encia Biom\'etrica}{14}{subsection.1.1.2}
-\contentsline {subsection}{\numberline {1.1.3}Ataque \textit {man-in-the-midle}}{14}{subsection.1.1.3}
-\contentsline {subsection}{\numberline {1.1.4}Ataque de Soofing}{15}{subsection.1.1.4}
-\contentsline {section}{\numberline {1.2}Objetivos, Hip\'oteses e Resultados Esperados}{15}{section.1.2}
-\contentsline {section}{\numberline {1.3}Organiza\c c\~ao do Trabalho}{15}{section.1.3}
-\contentsline {chapter}{\numberline {2}Revis\~ao da Literatura}{17}{chapter.2}
-\contentsline {section}{\numberline {2.1}Bases de Dados de Refer\^encia}{17}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}NUAA}{18}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Replay Attack}{19}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}CASIA FASD}{20}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Spoofing em reconhecimento de face}{21}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Presen\c ca de vitalidade}{22}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Caracter\IeC {\'\i }sticas da cena}{23}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Discrep\^ancia relativa \`a qualidade da imagem}{24}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Considera\c c\~oes Finais}{26}{section.2.3}
-\contentsline {chapter}{\numberline {3}Metodologia de Avalia\c c\~ao}{29}{chapter.3}
-\contentsline {section}{\numberline {3.1}Medidas de Desempenho}{29}{section.3.1}
-\contentsline {section}{\numberline {3.2}Protocolo de Avalia\c c\~ao Intra Base de Dados}{30}{section.3.2}
-\contentsline {section}{\numberline {3.3}Protocolo de avalia\c c\~ao Inter-base de dados}{30}{section.3.3}
-\contentsline {chapter}{\numberline {4}Resultados e Conclus\~oes Parciais}{31}{chapter.4}
-\contentsline {section}{\numberline {4.1}Protocolo de Avalia\c c\~ao Intra Base de Dados}{31}{section.4.1}
-\contentsline {section}{\numberline {4.2}Protocolo de Avalia\c c\~ao Inter Base de Dados}{32}{section.4.2}
-\contentsline {section}{\numberline {4.3}Conclus\~oes parciais}{33}{section.4.3}
-\contentsline {section}{\numberline {4.4}Trabalhos futuros e cronograma}{34}{section.4.4}
+\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{17}{chapter.1}
+\contentsline {section}{\numberline {1.1}Contextualiza\c c\~ao e Motiva\c c\~ao}{17}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Ataque de \textit {Replay}}{19}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Ataque na Refer\^encia Biom\'etrica}{20}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Ataque \textit {man-in-the-midle}}{20}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Ataque de Spoofing}{21}{subsection.1.1.4}
+\contentsline {section}{\numberline {1.2}Objetivos}{21}{section.1.2}
+\contentsline {section}{\numberline {1.3}Organiza\c c\~ao do Trabalho}{21}{section.1.3}
+\contentsline {chapter}{\numberline {2}Revis\~ao da Literatura}{23}{chapter.2}
+\contentsline {section}{\numberline {2.1}Bases de Dados de Refer\^encia}{23}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}NUAA}{24}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Replay Attack}{25}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}CASIA FASD}{26}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Spoofing em Reconhecimento de Face}{27}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Presen\c ca de Vitalidade}{28}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Caracter\IeC {\'\i }sticas da Cena}{29}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Discrep\^ancia Relativa \`a Qualidade da Imagem}{30}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Considera\c c\~oes Finais}{32}{section.2.3}
+\contentsline {chapter}{\numberline {3}Metodologia de Avalia\c c\~ao}{35}{chapter.3}
+\contentsline {section}{\numberline {3.1}Medidas de Desempenho}{35}{section.3.1}
+\contentsline {section}{\numberline {3.2}Protocolo de Avalia\c c\~ao Intra Base de Dados}{36}{section.3.2}
+\contentsline {section}{\numberline {3.3}Protocolo de avalia\c c\~ao Inter-base de dados}{36}{section.3.3}
+\contentsline {chapter}{\numberline {4}Resultados Parciais e Plano de Trabalho}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}Protocolo de Avalia\c c\~ao Intra Base de Dados}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}Protocolo de Avalia\c c\~ao Inter Base de Dados}{38}{section.4.2}
+\contentsline {section}{\numberline {4.3}Plano de Trabalho}{39}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclus\~oes Parciais}{41}{chapter.5}
