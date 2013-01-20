@@ -1,11 +1,11 @@
-\chapter{Metodologia de Avaliação}
+\chapter{Metodologia de comparação}
 \label{cap:metodology}
 
-Neste capítulo é apresentada a metodologia de avaliação do projeto em questão. 
+Neste capítulo será apresentada a metodologia de comparação utilizada no projeto em questão. 
 
-As contramedidas serão avaliadas seguindo dois critérios. O primeiro critério avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, utilizando cada uma das bases de dados de referência. Este critério de avaliação é chamado de Protocolo de Avaliação Intra Base de Dados. O segundo critério também avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, mas simulando um cenário mais realístico. Tal cenário procurará avaliar a capacidade de generalização da detecção dos ataques. Este critério de avaliação é chamado de Protocolo de Avaliação Inter Base de Dados.
+As contramedidas serão avaliadas seguindo dois critérios. O primeiro critério avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, utilizando cada uma das bases de dados de referência. Este critério de avaliação é chamado de \textbf{Protocolo de Avaliação Intra Base de Dados}. O segundo critério também avaliará a performance de cada contramedida, em termos de taxa de detecção de ataques, mas simulando um cenário mais realístico. Tal cenário procurará avaliar a capacidade de generalização da detecção dos ataques. Este critério de avaliação é chamado de \textbf{Protocolo de Avaliação Inter Base de Dados}.
 
-Este capítulo está organizado da seguinte maneira: A Seção \ref{sec:performance} descreve as medidas de desempenho que serão utilizadas neste projeto. Já Seção \ref{sec:intra-protocol} apresenta o Protocolo de Avaliação Intra Base de Dados. Por fim  a Seção \ref{sec:intra-protocol} apresenta o Protocolo de Avaliação Inter Base de Dados.
+Este capítulo está organizado da seguinte maneira: Na Seção \ref{sec:performance} são descritas as medidas de desempenho que serão utilizadas neste projeto. Já a Seção \ref{sec:intra-protocol} contém o Protocolo de Avaliação Intra Base de Dados. Por fim na Seção \ref{sec:intra-protocol} é apresentado o Protocolo de Avaliação Inter Base de Dados.
 
 
 \section{Medidas de Desempenho}
@@ -44,4 +44,9 @@ Este protocolo avaliará a performance das contramedidas em termos de detecção de
 Com o objetivo de mitigar qualquer tipo de viés no processo de aferição de performance em classificadores, comumente bases de dados são divididas em conjuntos mutuamente exclusivos de treinamento e teste. Mesmo com este cuidado, viéses relativos à construção da base de dados podem acontecer, prejudicando a avaliação de uma contramedida. O Protocolo de Avaliação Inter Base de Dados tem o objetivo de mitigar este problema. Neste protocolo cada uma das contramedidas serão treinadas e calibradas utilizando uma base de dados. Resultados serão reportados utilizando outras base de dados.
 
 O valor de $\tau$ na Equação \ref{eq:HTER} será obtido estimando o valor da pontuação no ponto de EER no subconjunto de desenvolvimento em uma base de dados. Os resultados serão reportados no subconjunto de teste de outras bases de dados.
+
+\section{Considerações finais}
+\label{sec:inter-protocol}
+
+Neste capítulo foi apresentado a metodologia de comparação das contramedidas contra ataques de \textit{spoofing}. As métricas propostas visam avaliar as contramedidas da literatura de uma maneira justa seguindo dois protocolos de avaliação. O primeiro deles, avaliará a performance, em termos de taxa de acerto, de cada contramedida em bases de dados de referência. O segundo, avaliará a performance das contramedidas em um cenário mais próximo do realístico procurando medir tal performance eliminando viéses decorrentes de construção de base de dados.
 

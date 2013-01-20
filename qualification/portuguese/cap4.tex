@@ -1,7 +1,7 @@
 \chapter{Resultados Parciais e Plano de Trabalho}
 \label{cap:Results}
 
-Neste capítulo são apresentados os primeiros experimentos realizados seguindo a metodologia proposta no Capítulo \ref{cap:metodology}. A metodologia foi aplicada em três contramedidas sendo duas explorando as características relativas a qualidade da imagem e uma relativa às características da cena. Os códigos fontes destas contramedidas estão livremente disponíveis na WEB e são elas:
+Neste capítulo são apresentados os primeiros experimentos do estudo comparativo proposto no Capítulo \ref{cap:metodology}. O estudo foi aplicado em três contramedidas sendo duas explorando as características relativas a qualidade da imagem e uma relativa às características da cena. Os códigos fontes destas contramedidas estão livremente disponíveis na WEB e são elas:
 
 \begin{itemize}
 	\item Contramedida que explora a relação de movimento da face em relação a cena proposta por \cite{AnjosIJCB2011}\footnote{http://pypi.python.org/pypi/antispoofing.motion/1.0.2};
@@ -9,7 +9,7 @@ Neste capítulo são apresentados os primeiros experimentos realizados seguindo a 
 	\item Contramedida que explora a dinâmica de uma textura ao longo do tempo utilizando $LBP-TOP$\cite{Pereira_LBP_2012}\footnote{http://pypi.python.org/pypi/antispoofing.lbptop/}.
 \end{itemize}
 
-As contramedidas propostas por \cite{AnjosIJCB2011} e \cite{Pereira_LBP_2012} admitem apenas vídeos como entrada. Por esta razão a metodologia foi aplicada apenas nas bases de dados Replay Attack e CASIA FASD que possuem apenas vídeos. Neste experimento, a configuração de cada contramedida foi selecionada seguindo orientações apresentadas em cada trabalho de referência. Mais detalhes sobre as configurações de cada contramedida podem ser obtidos no Capítulo \ref{cap:review}.
+As contramedidas propostas por \cite{AnjosIJCB2011} e \cite{Pereira_LBP_2012} admitem apenas vídeos como entrada. Por esta razão a metodologia foi aplicada apenas nas bases de dados Replay Attack e CASIA FASD que possuem apenas vídeos. Neste experimento, a configuração de cada contramedida foi selecionada seguindo orientações apresentadas em cada trabalho de referência. Mais detalhes sobre as configurações de cada contramedida podem ser obtidas no Capítulo \ref{cap:review}.
 
 Em especial, a contramedida proposta por \cite{AnjosIJCB2011} utiliza redes neurais do tipo MLP para classificação. Dada a natureza aleatória na inicialização dos pesos sinápticos, experimentos com esta contramedida foram executados cinco vezes. A média dos resultados é reportada como resultado final.
 
@@ -26,8 +26,8 @@ A Tabela \ref{tb:intraTest} exibe a performance obtida com cada contramedida uti
    \multirow{2}{*}{\textbf{Contramedida}} & \multirow{2}{*}{\textbf{Database}}  & \multicolumn{2}{c|}{\textbf{HTER(\%)}} &  \multirow{2}{*}{\textbf{FAR100 (\%)}} &  \multirow{2}{*}{\textbf{FAR1000 (\%)}} \\ 
      &  & \textbf{dev} & \textbf{test} & & \\ \hline
     
-    Correlação de & Replay Attack  & 11.66 & 11.79 & &\\ 
-               Movimento& CASIA  FASD &  24.91 & 31.36 & &\\ \hline \hline
+    Correlação de & Replay Attack  & 11.66 & 11.79 & 41.31 & 66.11  \\ 
+               Movimento& CASIA  FASD &  24.91 & 31.36 & 97.32 & 98.92 \\ \hline \hline
 
     \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay &  8.17 & 8.51 & 28.77 & 53.72 \\
                & CASIA FASD   &  21.77 & 22.27  & 86.15 & 98.42 \\ \hline \hline
@@ -60,8 +60,8 @@ A Tabela \ref{tb:interTest} exibe a performance obtida com cada contramedida uti
    \textbf{Contra-} & \textbf{Conj. de treino} & \textbf{Conj. de} & \multicolumn{2}{c|}{\textbf{HTER(\%)}} &  \multirow{2}{*}{\textbf{FAR100(\%)}} &  \multirow{2}{*}{\textbf{FAR1000(\%)}} \\ 
     \textbf{medida} &  \textbf{e calibração} & \textbf{teste} & \textbf{dev} & \textbf{test} & & \\ \hline
     
-    Correlação de & Replay Attack  & CASIA  FASD & 11.66 & 61.78 & &\\ 
-    Movimento          & CASIA  FASD & Replay Attack &  24.91 & 54.56 & &\\ \hline \hline
+    Correlação de & Replay Attack  & CASIA  FASD & 11.66 & 61.78 & 97.59 & 99.59 \\ 
+    Movimento          & CASIA  FASD & Replay Attack &  24.91 & 54.56 & 100 & 100\\ \hline \hline
 
     \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay Attack & CASIA FASD &  8.17 & 51.05 & 100 & 100 \\
                & CASIA FASD  & Replay Attack &  21.77 & 61.11 & 99.52 & 99.99 \\ \hline \hline
@@ -99,4 +99,31 @@ Em termos de HTER é possível observar um desempenho distante do obtido no experi
 \section{Plano de Trabalho}
 \label{sec:plan}
 
-Discutir
+Pretende-se
+As atividades que serão realizadas neste projeto são listadas a seguir:
+
+\begin{enumerate}
+        \item Desenvolvimento de contramedida 1;
+        \item Desenvolvimento de contramedida 2;
+        \item Desenvolvimento de contramedida 3;
+        \item Escrita da dissertação de mestrado;
+\end{enumerate}
+
+\begin{table}[ht]
+\caption{}
+\begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c |}
+    \hline
+     & \multicolumn{5}{c|}{2013}  \\ \hline
+    Atividade  & 2  & 3  & 4 & 5 & 6   \\ \hline
+    1  & X  & X & X &    &      \\ \hline
+    2  & X  & X & X &    &      \\ \hline
+    3  &     &      &    & X &     \\ \hline
+    4  & X   & X & X & X & X \\ \hline
+    \end{tabular}
+\end{center}
+\label{tb:comparacao}
+\end{table}
+
+
+
