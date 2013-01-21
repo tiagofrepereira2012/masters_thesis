@@ -1,15 +1,14 @@
 \chapter{Resultados Parciais e Plano de Trabalho}
 \label{cap:Results}
 
-Neste capítulo são apresentados os primeiros experimentos do estudo comparativo proposto no Capítulo \ref{cap:metodology}. O estudo foi aplicado em três contramedidas sendo duas explorando as características relativas a qualidade da imagem e uma relativa às características da cena. Os códigos fontes destas contramedidas estão livremente disponíveis na WEB e são elas:
-
+Neste capítulo são apresentados os primeiros experimentos do estudo comparativo proposto no Capítulo \ref{cap:metodology}. O estudo foi aplicado a três contramedidas sendo duas explorando as características relativas a qualidade da imagem e uma relativa às características da cena. Das três contramedidas, uma foi implementada pelo autor. Vale ressaltar que os códigos fonte destas contramedidas estão livremente disponíveis na WEB com instruções de como reproduzir os resultados de cada trabalho de referência. As contramedidas são:
 \begin{itemize}
 	\item Contramedida que explora a relação de movimento da face em relação a cena proposta por \cite{AnjosIJCB2011}\footnote{http://pypi.python.org/pypi/antispoofing.motion/1.0.2};
 	\item Contramedida que explora texturas utilizando LBP proposta por \cite{ChingovskaBIOSIG2012}\footnote{http://pypi.python.org/pypi/antispoofing.lbp/1.1.0};
 	\item Contramedida que explora a dinâmica de uma textura ao longo do tempo utilizando $LBP-TOP$\cite{Pereira_LBP_2012}\footnote{http://pypi.python.org/pypi/antispoofing.lbptop/}.
 \end{itemize}
 
-As contramedidas propostas por \cite{AnjosIJCB2011} e \cite{Pereira_LBP_2012} admitem apenas vídeos como entrada. Por esta razão a metodologia foi aplicada apenas nas bases de dados Replay Attack e CASIA FASD que possuem apenas vídeos. Neste experimento, a configuração de cada contramedida foi selecionada seguindo orientações apresentadas em cada trabalho de referência. Mais detalhes sobre as configurações de cada contramedida podem ser obtidas no Capítulo \ref{cap:review}.
+As contramedidas propostas por \cite{AnjosIJCB2011} e \cite{Pereira_LBP_2012} admitem apenas vídeos como entrada. Por esta razão, a metodologia foi aplicada apenas nas bases de dados Replay Attack e CASIA FASD que possuem apenas vídeos. Neste experimento, a configuração de cada contramedida foi selecionada seguindo orientações apresentadas em cada trabalho de referência. Mais detalhes sobre as configurações de cada contramedida podem ser obtidas no Capítulo \ref{cap:review}.
 
 Em especial, a contramedida proposta por \cite{AnjosIJCB2011} utiliza redes neurais do tipo MLP para classificação. Dada a natureza aleatória na inicialização dos pesos sinápticos, experimentos com esta contramedida foram executados cinco vezes. A média dos resultados é reportada como resultado final.
 
@@ -18,21 +17,21 @@ Em especial, a contramedida proposta por \cite{AnjosIJCB2011} utiliza redes neur
 A Tabela \ref{tb:intraTest} exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Intra Base de Dados.
 
 \begin{table}[ht!]
-\caption{Performance das três contramedidas utilizando o Protocolo de Avaliação Intra Teste}
+\caption{Performance das três contramedidas avaliadas utilizando o Protocolo de Avaliação Intra Teste}
 \begin{center}
   \begin{tabular}{ | c | c |  c  c |  c  | c |}
     \hline
 
-   \multirow{2}{*}{\textbf{Contramedida}} & \multirow{2}{*}{\textbf{Database}}  & \multicolumn{2}{c|}{\textbf{HTER(\%)}} &  \multirow{2}{*}{\textbf{FAR100 (\%)}} &  \multirow{2}{*}{\textbf{FAR1000 (\%)}} \\ 
+   \multirow{2}{*}{\textbf{Contramedida}} & \multirow{2}{*}{\textbf{Base de Dados}}  & \multicolumn{2}{c|}{\textbf{HTER(\%)}} &  \multirow{2}{*}{\textbf{FAR100 (\%)}} &  \multirow{2}{*}{\textbf{FAR1000 (\%)}} \\ 
      &  & \textbf{dev} & \textbf{test} & & \\ \hline
     
     Correlação de & Replay Attack  & 11.66 & 11.79 & 41.31 & 66.11  \\ 
                Movimento& CASIA  FASD &  24.91 & 31.36 & 97.32 & 98.92 \\ \hline \hline
 
-    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay &  8.17 & 8.51 & 28.77 & 53.72 \\
+    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay Attack &  8.17 & 8.51 & 28.77 & 53.72 \\
                & CASIA FASD   &  21.77 & 22.27  & 86.15 & 98.42 \\ \hline \hline
 
-    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay   & 14.41 &15.45 & 46.10 & 73.38 \\
+    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay Attack & 14.41 &15.45 & 46.10 & 73.38 \\
                & CASIA FASD & 23.00  & 22.54  & 86.48 & 98.84\\
             
     \hline
@@ -42,7 +41,9 @@ A Tabela \ref{tb:intraTest} exibe a performance obtida com cada contramedida uti
 \end{table}
 
 
-Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e vermelhas (linha pontilhada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na Tabela \ref{tb:intraTest}. Porém, analisando a performance das contramedidas com restrições de segurança mais rigorosas os resultados não são satisfatórios.  Analisando a taxa de Falsa Rejeições quando a Taxa de Falsas Aceitações está em 0,1\% (FAR 1000) temos um FRR acima de 98\% para todas as contramedidas inviabilizando o seu uso para aplicações que necessitam de altos requisitos de segurança.
+Em termos de HTER é possível observar um desempenho satisfatório de todas as contramedidas testadas em ambas as bases de dados. A análise da performance de cada contramedida no conjunto de calibração e no conjunto de teste sugere uma boa capacidade de generalização em ambas as bases de dados já que suas performances são semelhantes. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e vermelhas (linha pontilhada e linha sólida) são as performances obtidas no conjunto de desenvolvimento e teste. É possível observar que ambas as curvas estão quase sobrepostas corroborando com o resultado obtido na Tabela \ref{tb:intraTest}. Porém, analisando a performance das contramedidas com restrições de segurança mais rigorosas os resultados não são satisfatórios.
+
+Analisando a taxa de Falsa Rejeições quando a Taxa de Falsas Aceitações está em 0,1\% (FAR 1000) temos um FRR acima de 98\% para todas as contramedidas inviabilizando o seu uso para aplicações que necessitam de altos requisitos de segurança.
 
 A comparação da performance de cada contramedida em diferentes bases de dados sugere que a base de dados CASIA FASD possui ataques mais difíceis de serem detectados que os da base de dados Replay Attack.
 
@@ -52,7 +53,7 @@ A comparação da performance de cada contramedida em diferentes bases de dados su
 A Tabela \ref{tb:interTest} exibe a performance obtida com cada contramedida utilizando o Protocolo de Avaliação Inter Base de Dados.
 
 \begin{table}[ht!]
-\caption{Performance das três contramedidas aplicando o Protocolo de Avaliação Inter Teste}
+\caption{Performance das três contramedidas avaliadas aplicando o Protocolo de Avaliação Inter Teste}
 \begin{center}
   \begin{tabular}{ | c | c | c |  c  c |  c  | c |}
     \hline
@@ -76,7 +77,7 @@ A Tabela \ref{tb:interTest} exibe a performance obtida com cada contramedida uti
 \end{table}
 
 
-Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas não possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e verdes (linha pontilhada e linha tracejada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para qualquer valor de limiar $\tau$. Corroborando com estes resultados, uma análise das Taxas de Falsas Rejeições quando as Taxas de Falsas Aceitações estão em 0,1\% (FAR 1000) temos um FRR acima de 98\% para todas as contramedidas impossibilitando o seu uso para aplicações que necessitam de altos requisitos de segurança.
+Em termos de HTER é possível observar um desempenho distante do obtido no experimento anterior sinalizando um forte enviesamento no processo de treinamento. Tal performance sugere que as contramedidas publicadas não possui um poder de generalização tão bom quanto reportado. Este comportamento pode ser também observado através das curvas ROC na Figura \ref{fig:ROC_cross}. As curvas azuis e verdes (linha pontilhada e linha tracejada) são as performances obtidas no conjunto de calibração de uma base de dados e no conjunto de teste de outra base de dados. É possível observar que as curvas estão bem distantes, ou seja, não é possível ter uma performance satisfatória para qualquer valor de limiar $\tau$. Corroborando com estes resultados, uma análise em termos de FAR 100 e FAR 1000, tem-se um FRR acima de 97\% para todas as contramedidas, impossibilitando o seu uso para aplicações que necessitam de altos requisitos de segurança.
 
 
 \begin{figure}[ht]
@@ -99,31 +100,28 @@ Em termos de HTER é possível observar um desempenho distante do obtido no experi
 \section{Plano de Trabalho}
 \label{sec:plan}
 
-Pretende-se
-As atividades que serão realizadas neste projeto são listadas a seguir:
+Como continuidade deste projeto, três contramedidas ainda serão desenvolvidas e testadas seguindo a metodologia de comparação descrita no Capítulo \ref{cap:metodology}. Como critério de seleção de contramedidas, serão escolhidas pelo menos uma de cada categoria das descritas na Seção \ref{sec_review}. Seguindo um cronograma de 5 meses, a Tabela \ref{tb:cronograma} é descrito como as atividades são organizadas.
 
 \begin{enumerate}
-        \item Desenvolvimento de contramedida 1;
-        \item Desenvolvimento de contramedida 2;
-        \item Desenvolvimento de contramedida 3;
+        \item Desenvolvimento da contramedida 1;
+        \item Desenvolvimento da contramedida 2;
+        \item Desenvolvimento da contramedida 3;
         \item Escrita da dissertação de mestrado;
 \end{enumerate}
 
 \begin{table}[ht]
-\caption{}
+\caption{Cronograma de atividades}
 \begin{center}
-    \begin{tabular}{ | c | c | c | c | c | c |}
-    \hline
+    \begin{tabular}{ c | c | c | c | c | c |}
+    \cline{2-6}
      & \multicolumn{5}{c|}{2013}  \\ \hline
-    Atividade  & 2  & 3  & 4 & 5 & 6   \\ \hline
-    1  & X  & X & X &    &      \\ \hline
-    2  & X  & X & X &    &      \\ \hline
-    3  &     &      &    & X &     \\ \hline
-    4  & X   & X & X & X & X \\ \hline
+    \multicolumn{1}{|c|}{Atividade}  & 2  & 3  & 4 & 5 & 6   \\ \hline
+    \multicolumn{1}{|c|}{1}  & X  & X & X &    &      \\ \hline
+    \multicolumn{1}{|c|}{2}  & X  & X & X &    &      \\ \hline
+    \multicolumn{1}{|c|}{3}  &     &      &    & X &     \\ \hline
+    \multicolumn{1}{|c|}{4}  & X   & X & X & X & X \\ \hline
     \end{tabular}
 \end{center}
-\label{tb:comparacao}
+\label{tb:cronograma}
 \end{table}
-
-
 
