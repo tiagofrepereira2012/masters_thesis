@@ -1,8 +1,52 @@
 \chapter{Biometrics}
 \label{chap:Biometrics}
 
+Some text.
+
 \section{Introduction to Biometric Systems}
 \label{sec:IntroBiome}
 
+Biometrics is the science of recognizing the identity of a person based on their physical attributes and / or behavior, such as face, fingerprints, hand veins, voice or iris \cite{li2011handbook}. The use of biometrics as authentication factor has some advantages. Naturally, is not possible to forget or transfer a biometric trait and it hardly disappears (perhaps in case of a seriously accidents). Biometrics has some disadvantages. As an example, our voice vary drastically  when we get sick or when we are under stress. Unfortunately our facial trait change when we get old. It is important to remark that authentication based on biometrics is probabilistic, which means that errors can happen (????).
+
+To use a biometric trait in a biometric system, the candidate train must satisfy the following requiriments.
+
+\begin{itemize}
+        \item Universality (every person must have it);
+        \item Uniqueness (must distinguish people);
+        \item Stability (must be stable along the time);
+        \item Coletability (must be measure);
+        \item Performance;
+        \item Acceptance;
+        \item Circunvention (low risk of frauds).
+\end{itemize}
+
+
+Table \ref{tb:comparacao} shows a comparative between the most used biometric traits \cite{maltoni2009handbook}. It can be observed that none of the presented biometric traits fulfil all the listed requirements and the selection of a trait depends on the application (??????) \cite{jain1999biometrics}.
+
+%A Tabela \ref{tb:comparacao} apresenta um comparativo realizado por \cite{maltoni2009handbook} entre as características biométricas mais utilizadas. É possível observar que nenhuma das biometrias apresentadas consegue atender todos estes requisitos com excelência e a escolha de qual utilizar deve levar em conta a natureza e as exigências de cada aplicação \cite{jain1999biometrics}.
+
+\begin{table}[ht]
+\caption[Comparison of the most used biometric traits]{Comparison of the most used biometric traits \cite{maltoni2009handbook}}
+\begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c |}
+    \hline
+    \textbf{Biometric trait} & \rotatebox{90}{\textbf{Universality}} & \rotatebox{90}{\textbf{Uniqueness}} & \rotatebox{90}{\textbf{Stability}} & \rotatebox{90}{\textbf{Coletability}} & \rotatebox{90}{\textbf{Performance}} & \rotatebox{90}{\textbf{Acceptance}} & \rotatebox{90}{\textbf{Circunvention}} \\ \hline
+    Face                             & High      & Low  & Medium & High     & Low  & High      & Low \\ \hline
+    Fingerprint                  & Medium  &  High    & High      & Medium & High     & Medium  & Medium \\ \hline
+    Hand geometry         & Medium  & Medium & Medium & High     & Medium & Medium  & Medium \\ \hline
+    Palm vein                   & Medium  & Medium  & Medium & Medium & Medium & Medium & High \\ \hline
+    Iris                               & High      & High       & High     & Medium & High     & Low  & High \\ \hline
+    Signature                   & Low   & Low   & Low  & High     & Low  & High     & Low \\ \hline
+    Voice                           & Medium  & Low   & Low  & Medium & Low  & High     & Low \\ \hline
+    \end{tabular}
+\end{center}
+\label{tb:comparacao}
+\end{table}
+
+
+
+
 \section{Attacks in Biometric Systems}
 \label{sec:AttacksBiometric}
+
+Talk about spoofing.
