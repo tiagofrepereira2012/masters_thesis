@@ -1,16 +1,63 @@
 \chapter{Spoofing Attacks}
 \label{chap:Spoofing}
 
+As aforementioned, spoofing attacks in biometrics are direct attacks to the biometric sensor. Spoofing techniques vary from different biometrics. This chapter discusses the spoofing attacks in different biometric traits focusing in face recognition.
+
 \section{Spoofing Attacks in Biometrics}
 \label{sec:SpoofingAttacksBiometrics}
+
+It is always possible to create a spoofing attack to a biometric system. This sections discusses the occurrences of spoofing attacks in different biometric systems.
+
+%The spoofing attack in biometric system is a direct attack to the biometric sensor; a forged biometric is presented to the biometric sensor. The goal is to pretend to be someone else in order to get some forbidden privileges. Spoofing techniques vary from biometrics, just for the record: In fingerprints based systems the attacker can forge a fingerprint  with different materials (gummy, silicone, etc) in order spoof the system as can be observed in \cite{uludag2004attacks}, \cite{leyden2002gummi} e \cite{matsumoto2002impact}. \cite{johnson2010multimodal}, \cite{kanematsu2007highly} and \cite{pacut2006aliveness} are works addressing spoofing attacks in iris biometric system. Finally \cite{chetty2004liveness} e \cite{eveno2005speaker} address speaker based biometric systems.
+
+
+\subsection{Fingerprint}
+
+In fingerprints based systems the attacker can forge a fingerprint  with different materials (gummy, silicone, etc) in order spoof the system as can be observed in \cite{uludag2004attacks}, \cite{leyden2002gummi} e \cite{matsumoto2002impact}.
+
+BRAZIL EPISOSE.
+http://www.foxnews.com/us/2013/03/13/brazilian-doctors-use-fake-silicone-fingers-to-defraud-hospital-punch-in-clock/
+http://www.tabularasa-euproject.org/news/selected-news-related-to-spoofing-attacks
+
+\subsection{Speaker}
+
+Finally \cite{chetty2004liveness} e \cite{eveno2005speaker} address speaker based biometric systems.
+
+\subsection{Iris}
+
+ \cite{johnson2010multimodal}, \cite{kanematsu2007highly} and \cite{pacut2006aliveness} are works addressing spoofing attacks in iris biometric system. 
+
+
 
 \section{Spoofing Attacks in Face Recognition}
 \label{sec:SpoofingAttacksFaceRec}
 
+Because of its natural and non-intrusive interaction, identity verification and recognition using facial information are among the most active and challenging areas in computer vision research. Despite the significant progress of face recognition technology in the recent decades, wide range of viewpoints, ageing of subjects and complex outdoor lighting are still research challenges. Advances in the area were extensively reported in \cite{flynn2008handbook} and \cite{li2011handbook}. 
+
+Unfortunately, the issue of verifying if the face presented to a camera is indeed a face from a real person and not an attempt to deceive (spoof) the system has mostly been overlooked.  It was not until very recently that the problem of spoofing attacks against face biometric system gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \cite{pan2007eyeblink,tan2010face,zhangface,ChingovskaBIOSIG2012} and the recently organized IJCB 2011 competition on counter measures to 2D facial spoofing attacks~\cite{ChakkaIJCB2011} which was the first competition conducted for studying best practices for non-intrusive spoofing detection.
+
+In authentication systems based on face biometrics, spoofing attacks are usually perpetrated using photographs, videos or forged masks. While one can also use make-up or plastic surgery as mean of spoofing, photographs and videos are probably the most common sources of spoofing attacks. Moreover, due to the increasing popularity of social network websites (facebook, flickr, youtube, instagram and others), a great deal of multimedia content - especially videos and photographs - is available on the web that can be used to spoof a face authentication system. In order to mitigate the vulnerability of face authentication systems, effective countermeasures against face spoofing have to be deployed.
+
+DEPENDENTE E INDEPENDENTE DA COLABORACAO.
+
 \subsection{Presence of vitality (liveness)}
-\subsection{Difference in motion patterns}
+
+Presence of vitality or liveness detection consists of  search for features that only live faces can possess. The eye blinking is an activity that humans do constantly. A regular human blinks once every 2 or 4 seconds in order to maintain the eyes clean and wet. This frequency can vary in stress conditions and/or in a high concentration task. In that situations the interval can extend to $\sim 20$ seconds. However, does not matter in what condition, in some point the eye blink will occur. Following that fact, \cite{pan2007eyeblink} propose a countermeasure measuring the eye blinking using hidden markov (HMM ???) mapping the state of eyes open and closed. Experiments carried out using a database created by the authors and freely available for download\footnote{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html}, shown an accuracy of 95.7\% .
+
+
+%Apoiado na hipótese de que faces vivas apresentam padrões de movimento em certas regiões da face altamente descorrelacionados se comparados a ataques, \cite{kollreider2009non} desenvolveu uma heurística baseada em fluxo ótico para explorar tal característica. Como referência para a heurística foram selecionadas as regiões do centro da face e das orelhas como pode ser observado na Figura \ref{img_kollreider}.
+
+EULERIAN.
+
+\subsection{Scene}
+
+
+
+
 \subsection{Differences in image quality assessment}
 
 
 \section{Face Spoofing Databases}
 \label{sec:Databases}
+
+Discuss permeability of the databases.
