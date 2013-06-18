@@ -13,20 +13,27 @@ It is always possible to create a spoofing attack to a biometric system. This se
 
 \subsection{Fingerprint}
 
-In fingerprints based systems the attacker can forge a fingerprint  with different materials (gummy, silicone, etc) in order spoof the system as can be observed in \cite{uludag2004attacks}, \cite{leyden2002gummi} e \cite{matsumoto2002impact}.
+In fingerprints based systems the attacker can forge a fingerprint with different materials (gummy, silicone, etc) in order spoof the system as can be observed. \cite{matsumoto2002impact} and \cite{leyden2002gummi} discusses how to generate fake fingerprints using materials that is possible easily to find in a supermarket. Figure X shows how easy is to create a mold from a live finger and to reproduce its fingerprint with gummy. This fake fingers can be used  to spoof a fingerprint biometric systems.
 
-BRAZIL EPISOSE.
-http://www.foxnews.com/us/2013/03/13/brazilian-doctors-use-fake-silicone-fingers-to-defraud-hospital-punch-in-clock/
-http://www.tabularasa-euproject.org/news/selected-news-related-to-spoofing-attacks
+Figure X.
+
+Recently in Brazil (2013), was reported that doctors in Sao Paulo were arrested after being caught in the act of using fake fingers made of silicone and imprinted with real fingerprints to defraud a hospital's biometric punch-in clock\footnote{http://www.foxnews.com/us/2013/03/13/brazilian-doctors-use-fake-silicone-fingers-to-defraud-hospital-punch-in-clock/}.
+
+A more sophisticated attack were discussed in \cite{uludag2004attacks}. This paper uses a hill climbing procedure to optimise the position and the orientation of the minutia in a minutia based fingerprint verification system. This optimized minutia can be used to generate a fake finger.
+
+FALAR DOS SENSORES.
+
+%http://www.tabularasa-euproject.org/news/selected-news-related-to-spoofing-attacks
 
 \subsection{Speaker}
 
-Finally \cite{chetty2004liveness} e \cite{eveno2005speaker} address speaker based biometric systems.
+For the speech biometrics the attacker can forge a human voice by mimicry or recording the voice of the target identity and replaying back to the microphone. \cite{chetty2004liveness} e \cite{eveno2005speaker} address the problem using audio-visual features. The first one proposes a bi-modal authentication system using the face information in order to increase security. The second one correlates the lip movements with the content of the speech.
+
+PAPER analyses the speech signal itself applying the 1D-LBP (Local Binary Pattern) followed by a SVM (Support Vector Machines) in order to detect spoofs.
 
 \subsection{Iris}
 
  \cite{johnson2010multimodal}, \cite{kanematsu2007highly} and \cite{pacut2006aliveness} are works addressing spoofing attacks in iris biometric system. 
-
 
 
 \section{Spoofing Attacks in Face Recognition}
@@ -34,7 +41,7 @@ Finally \cite{chetty2004liveness} e \cite{eveno2005speaker} address speaker base
 
 Because of its natural and non-intrusive interaction, identity verification and recognition using facial information are among the most active and challenging areas in computer vision research. Despite the significant progress of face recognition technology in the recent decades, wide range of viewpoints, ageing of subjects and complex outdoor lighting are still research challenges. Advances in the area were extensively reported in \cite{flynn2008handbook} and \cite{li2011handbook}. 
 
-Unfortunately, the issue of verifying if the face presented to a camera is indeed a face from a real person and not an attempt to deceive (spoof) the system has mostly been overlooked.  It was not until very recently that the problem of spoofing attacks against face biometric system gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \cite{pan2007eyeblink,tan2010face,zhangface,ChingovskaBIOSIG2012} and the recently organized IJCB 2011 competition on counter measures to 2D facial spoofing attacks~\cite{ChakkaIJCB2011} which was the first competition conducted for studying best practices for non-intrusive spoofing detection.
+It was not until very recently that the problem of spoofing attacks against face biometric system gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \cite{pan2007eyeblink,tan2010face,zhangface,ChingovskaBIOSIG2012}. Two contests were organized in the last two years. The first one it was the IJCB 2011 "competition on counter measures to 2D facial spoofing attacks" \cite{ChakkaIJCB2011} which was the first competition conducted for studying best practices for non-intrusive spoofing detection. More recently, the ICB 2013 organized the "2nd competition on counter measures to 2D facial spoofing attacks" ????.
 
 In authentication systems based on face biometrics, spoofing attacks are usually perpetrated using photographs, videos or forged masks. While one can also use make-up or plastic surgery as mean of spoofing, photographs and videos are probably the most common sources of spoofing attacks. Moreover, due to the increasing popularity of social network websites (facebook, flickr, youtube, instagram and others), a great deal of multimedia content - especially videos and photographs - is available on the web that can be used to spoof a face authentication system. In order to mitigate the vulnerability of face authentication systems, effective countermeasures against face spoofing have to be deployed.
 
