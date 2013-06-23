@@ -6,9 +6,9 @@ Some text.
 \section{Introduction to Biometric Systems}
 \label{sec:IntroBiome}
 
-Biometrics is the science of recognizing the identity of a person based on their physical attributes and / or behavior, such as face, fingerprints, hand veins, voice or iris \cite{li2011handbook}. The use of biometrics as authentication factor has some advantages. Naturally, is not possible to forget or transfer a biometric trait and it hardly disappears (perhaps in case of a seriously accidents). Biometrics has some disadvantages. As an example, our voice vary drastically  when we get sick or when we are under stress. Unfortunately our facial trait change when we get old. It is important to remark that authentication based on biometrics is probabilistic, which means that errors can happen (????).
+Biometrics is the science of recognising the identity of a person based on their physical attributes and / or behaviour, such as face, fingerprints, hand veins, voice or iris \cite{li2011handbook}. The use of biometrics as authentication factor has some advantages. Naturally, is not possible to forget or transfer a biometric trait and it hardly disappears (perhaps in case of a seriously accidents). 
 
-To use a biometric trait in a biometric system, the candidate must satisfy the following requirements.
+Biometrics has some disadvantages. Compared with regular authentication systems such as passwords or tokens which is exact, the nature of biometric authentication is probabilistic. It turns out that there is no perfect match in biometrics; there is error rates. These errors rates can vary by a number of factors. As an example, our voice vary drastically  when we get sick or when we are under stress and this impacts a speaker authentication system. Unfortunately our facial traits change when we get old and this impacts the error rates of a face authentication system. These and other issues are widely studied by the research community \cite{flynn2008handbook}. To use a biometric trait in a biometric system, the candidate must satisfy the following requirements.
 
 \begin{itemize}
         \item Universality (every person must have it);
@@ -20,10 +20,7 @@ To use a biometric trait in a biometric system, the candidate must satisfy the f
         \item Circunvention (low risk of frauds).
 \end{itemize}
 
-
-Table \ref{tb:comparacao} shows a comparative between the most used biometric traits \cite{maltoni2009handbook}. It can be observed that none of the presented biometric traits fulfil all the listed requirements and the selection of a trait depends on the application (??????) \cite{jain1999biometrics}.
-
-%A Tabela \ref{tb:comparacao} apresenta um comparativo realizado por \cite{maltoni2009handbook} entre as características biométricas mais utilizadas. É possível observar que nenhuma das biometrias apresentadas consegue atender todos estes requisitos com excelência e a escolha de qual utilizar deve levar em conta a natureza e as exigências de cada aplicação \cite{jain1999biometrics}.
+Table \ref{tb:comparacao} shows a comparative between the most used biometric traits \cite{maltoni2009handbook}. It can be observed that none of the presented biometric traits fulfil all the listed requirements and the selection of a trait depends of some factors such as, the security requirements and the application purpose \cite{jain1999biometrics}.
 
 \begin{table}[ht]
 \caption[Comparison of the most used biometric traits]{Comparison of the most used biometric traits \cite{maltoni2009handbook}}
@@ -43,38 +40,41 @@ Table \ref{tb:comparacao} shows a comparative between the most used biometric tr
 \label{tb:comparacao}
 \end{table}
 
-A regular biometric authentication system can be represented with the simple flow chart in Figure X.
+A regular biometric authentication system can be represented with the simple flow chart in Figure \ref{fig:diagram_attacks}.
 
-FIGURE X
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics [width=14cm] {images/diagram_attacks.pdf}
+\caption[]{ADAPATED FROM} \label{fig:diagram_attacks}
+\end{center}
+\end{figure}
 
-Firstly the biometric trait is captured using some sensor. Secondly the captured biometric trait is processed in order to extract the biometric features. When it is in an enrolment procedure, these features will generate a biometric reference, and it will be stored in a database. In an authentication procedure, these features will be used in a comparison with the stored biometric reference. It is possible to observe in the Figure Y, attacks can be done in any point of the architecture \cite{xiao2005security}. The next subsections will be discussed about each one of the possible point of attacks and how to mitigate it.
-
-FIGURE Y
-
-%Primeiramente o trato biométrico é capturado via algum tipo de \textbf{sensor}. Em seguida, o trato biométrico capturado é \textbf{processado} a fim de extrair as características biométricas e geração da referência biométrica. Quando se está efetuando o cadastro de uma referência biométrica, estas características são \textbf{armazenadas} em uma base de dados para acessos futuros. Quando se está efetuando a \textbf{autenticação}, as características biométricas serão utilizadas no processo de comparação com alguma identidade requerida no banco de dados. Conforme pode ser observado na mesma Figura \ref{fig:diagram_attacks}, ataques podem ser efetuados em qualquer ponto da arquitetura \cite{xiao2005security}. As próximas subseções irão discorrer sobre cada um dos possíveis ataques e soluções para mitigá-los.
-
+Firstly the biometric trait is captured using some sensor. Secondly the captured biometric trait is processed in order to extract the biometric features. When it is in an enrolment procedure, these features will generate a biometric reference, and it will be stored in a database. In an authentication procedure, these features will be used in a comparison with the stored biometric reference. It is possible to observe in the same Figure that attacks can be done in any point of the architecture \cite{xiao2005security}. The next subsections will be discussed about each one of the possible point of attacks and how to mitigate it.
 
 \section{Attacks in Biometric Systems}
 \label{sec:AttacksBiometric}
 
-
 \subsection{Replay attack}
 
-The replay attack is performed by injecting a biometric data previously sent, of the target identity, in order to have a non authorised access. This data can be obtained sniffing the biometric software in one of the points of the Figure X. To mitigate these kind of attacks, the biometric system should ensure that the provided data was not injected artificially \cite{xiao2005security}. The most  popular way of protect this kind of attack is to associate a timestamp to the data. As it is improbable to have the exactly the same biometric data in different times, this method is effective.
+The replay attack is performed by injecting a biometric data previously sent, of the target identity, in order to have a non authorised access. This data can be obtained sniffing the biometric authentication software. To mitigate these kind of attacks, the biometric system should ensure that the provided data was not injected artificially \cite{xiao2005security}. The most  popular way of protect this kind of attack is to associate a timestamp to the data. As it is improbable to have the exactly the same biometric data in different times, this method is effective.
 
 %O ataque de \textit{replay} consiste da utilização de dados previamente submetidos da identidade alvo para o sistema de autenticação a fim de obter o acesso não autorizado. Estes dados podem ser obtidos interceptando (\textit{sniffing}) o canal de dados entre o sensor e a unidade de processamento de dados biométricos durante uma autenticação bem sucedida da identidade alvo. Para deter ataques dessa natureza, o sistema de autenticação biométrica deve assegurar que o dado fornecido não foi injetado artificialmente. Uma forma de mitigar a incidência deste tipo de ataque é fazer uso da característica probabilística da própria biometria. É praticamente impossível dois processos de captura independentes e em intervalos de tempo distintos gerarem exatamente o mesmo dado biométrico. Se isto ocorrer é provável que este dado foi interceptado e está sendo injetado no sistema de autenticação \cite{xiao2005security}.
 
-
-
 \subsection{Biometric reference attack}
 
-The attack in the biometric reference is performed where the biometrics are stored. This kind of attacks include actions such as the inclusion, removing, modifying and steal a biometric template. Among this actions, the possibility to steal a biometric reference is the most dangerous treat, since it is possible to work in a reverse engineering processes to regenerate the biometric trait. \cite{hill2001risk} shown that is possible to generate synthetic fingerprints applying reverse engineering in a biometric references based on minutia. With this fake fingers was possible to deceive a fingerprint authentication system. To mitigate the risk of this kind of attack is recommended to encrypt the biometric reference and increase the policy to access the biometric references.
+The attack in the biometric reference is performed where the biometrics are stored. This kind of attack include actions such as the inclusion, removing, modifying and steal a biometric references. Among this actions, the possibility to steal a biometric reference is the most dangerous treat, since it is possible to work in a reverse engineering process to regenerate the biometric trait. 
+
+Using a hill climbing technique to optimize to the position and the orientation of the minutia \cite{MartinezDiaz2006} and \cite{hill2001risk} shown that is possible to generate synthetic fingerprints compatible with fingerprints stored in a database. Fake fingers (with a real fingerprint) with gummy or silicon can be generated with this optimized minutia. It is possible also to inject these minutia in the \textbf{Processing} module (Figure \ref{fig:diagram_attacks}) in order to get a deceive the authentication system. 
+
+To mitigate the risk of this kind of attack best practices in security recommends to encrypt the biometric references and to increase the policy to access these biometric references. 
 
 %The attack in the biometric reference consists in to attack the storage of the biometric data. With this kind of attack it is possible to add a fake biometric reference or steal, delete and modify a biometric reference \cite{uludag2004attacks}. The possibility to steal a biometric reference is dangeours because ENGENHARIA REVERSA. \cite{hill2001risk} shown that is possible to generate synthetic fingerprints applying reverse engineering in a biometric references based on minutia. With this fake fingers was possible to deceive a fingerprint authentication system. 
 
 %O ataque nas referências biométricas consiste em atacar o seu local de armazenamento. Com este tipo de ataque pode-se: adicionar uma biometria falsa no sistema de armazenamento, copiar as referências biométricas armazenadas, remover alguma referência biométrica ou modificar as referências biométricas existentes \cite{uludag2004attacks}. Dentre estas possibilidades a mais perigosa é a cópia de referências biométricas, pois as mesmas podem ser usadas, através de engenharia reversa, para gerar biometrias falsas. \cite{hill2001risk} demonstrou que é possível gerar impressões digitais falsas através do processo de engenharia reversa com referências biométricas baseadas em minúcias. Com estas impressões digitais fabricadas, foi possível violar um sistema de autenticação baseado em impressões digitais. %Um outro ponto de destaque neste tipo de ataque é que uma vez violada uma referência biométrica, a mesma perde a característica da unicidade.
 
-\subsection{Man-in-the-midle attack}
+\subsection{Man-in-the-middle}
+
+In the man in the middle attack the data 
 
 
 
