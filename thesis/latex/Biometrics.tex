@@ -1,7 +1,7 @@
 \chapter{Biometrics}
 \label{chap:Biometrics}
 
-Some text.
+This chapter presents the concepts related to Biometrics and the security issues related to biometrics. Section \ref{sec:IntroBiome} presents what is a biometric authentication system. Section \label{sec:AttacksBiometric} presents the main threats in a biometric authentication system. Finally, Section\ref{sec:FinalRemarks} presents the Final Remarks of the chapter.
 
 \section{Introduction to Biometric Systems}
 \label{sec:IntroBiome}
@@ -40,8 +40,9 @@ Table \ref{tb:comparacao} shows a comparative between the most used biometric tr
 \label{tb:comparacao}
 \end{table}
 
-A regular biometric authentication system can be represented with the simple flow chart in Figure \ref{fig:diagram_attacks}.
+\section{Attacks in Biometric Systems}
 
+A regular biometric authentication system can be represented with the simple flow chart in Figure \ref{fig:diagram_attacks}.
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=14cm] {images/diagram_attacks.pdf}
@@ -51,14 +52,12 @@ A regular biometric authentication system can be represented with the simple flo
 
 Firstly the biometric trait is captured using some sensor. Secondly the captured biometric trait is processed in order to extract the biometric features. When it is in an enrolment procedure, these features will generate a biometric reference, and it will be stored in a database. In an authentication procedure, these features will be used in a comparison with the stored biometric reference. It is possible to observe in the same Figure that attacks can be done in any point of the architecture \cite{xiao2005security}. The next subsections will be discussed about each one of the possible point of attacks and how to mitigate it.
 
-\section{Attacks in Biometric Systems}
+
 \label{sec:AttacksBiometric}
 
 \subsection{Replay attack}
 
 The replay attack is performed by injecting a biometric data previously sent, of the target identity, in order to have a non authorised access. This data can be obtained sniffing the biometric authentication software. To mitigate these kind of attacks, the biometric system should ensure that the provided data was not injected artificially \cite{xiao2005security}. The most  popular way of protect this kind of attack is to associate a timestamp to the data. As it is improbable to have the exactly the same biometric data in different times, this method is effective.
-
-%O ataque de \textit{replay} consiste da utilização de dados previamente submetidos da identidade alvo para o sistema de autenticação a fim de obter o acesso não autorizado. Estes dados podem ser obtidos interceptando (\textit{sniffing}) o canal de dados entre o sensor e a unidade de processamento de dados biométricos durante uma autenticação bem sucedida da identidade alvo. Para deter ataques dessa natureza, o sistema de autenticação biométrica deve assegurar que o dado fornecido não foi injetado artificialmente. Uma forma de mitigar a incidência deste tipo de ataque é fazer uso da característica probabilística da própria biometria. É praticamente impossível dois processos de captura independentes e em intervalos de tempo distintos gerarem exatamente o mesmo dado biométrico. Se isto ocorrer é provável que este dado foi interceptado e está sendo injetado no sistema de autenticação \cite{xiao2005security}.
 
 \subsection{Biometric reference attack}
 
@@ -68,36 +67,27 @@ Using a hill climbing technique to optimize to the position and the orientation 
 
 To mitigate the risk of this kind of attack best practices in security recommends to encrypt the biometric references and to increase the policy to access these biometric references. 
 
-%The attack in the biometric reference consists in to attack the storage of the biometric data. With this kind of attack it is possible to add a fake biometric reference or steal, delete and modify a biometric reference \cite{uludag2004attacks}. The possibility to steal a biometric reference is dangeours because ENGENHARIA REVERSA. \cite{hill2001risk} shown that is possible to generate synthetic fingerprints applying reverse engineering in a biometric references based on minutia. With this fake fingers was possible to deceive a fingerprint authentication system. 
-
-%O ataque nas referências biométricas consiste em atacar o seu local de armazenamento. Com este tipo de ataque pode-se: adicionar uma biometria falsa no sistema de armazenamento, copiar as referências biométricas armazenadas, remover alguma referência biométrica ou modificar as referências biométricas existentes \cite{uludag2004attacks}. Dentre estas possibilidades a mais perigosa é a cópia de referências biométricas, pois as mesmas podem ser usadas, através de engenharia reversa, para gerar biometrias falsas. \cite{hill2001risk} demonstrou que é possível gerar impressões digitais falsas através do processo de engenharia reversa com referências biométricas baseadas em minúcias. Com estas impressões digitais fabricadas, foi possível violar um sistema de autenticação baseado em impressões digitais. %Um outro ponto de destaque neste tipo de ataque é que uma vez violada uma referência biométrica, a mesma perde a característica da unicidade.
-
 \subsection{Man-in-the-middle}
 
-In the man in the middle attack the data 
-
-
-
-%The man-in-the-midle attack is a type of attack when data are inter
-
-%O ataque \textit{man-in-the-middle} ou homem no meio é uma forma de ataque em que os dados trocados entre os componentes do sistema de biometria são, de alguma forma, interceptados e alterados pelo atacante. Neste tipo de ataque, o atacante pode: interceptar dados do sensor, interceptar dados enviados para armazenamento e interceptar dados de decisão do sistema de biometria. Mecanismos como encriptação dos dados antes de serem transmitidos e/ou prover canais de comunicação seguro podem mitigar este tipo de ataque.
-
-The man i
+In the man in the middle attack, the biometric data is intercepted to one point to another in any point of the architecture in Figure \ref{fig:diagram_attacks}.  As shown in the Figure, the attacker can, for example, manipulate the matching score; or inject a fake response or a fake biometric data (as shown in the replay attack) in order to get a forbidden access. 
 
 \subsection{Ataque de Spoofing}
 
-The spoofing attack in biometric system is a direct attack to the biometric sensor; a forged biometric is presented to the biometric sensor. The goal is to pretend to be someone else in order to get some forbidden privileges.
+The spoofing attack in biometric system is a direct attack to the biometric sensor; a forged biometric is presented to the biometric sensor. The goal is to pretend to be someone else in order to get some forbidden privileges. This type of attack is described with more details in Chapter \ref{chap:Spoofing}.
 
-%Spoofing techniques vary from biometrics, just for the record: In fingerprints based systems the attacker can forge a fingerprint  with different materials (gummy, silicone, etc) in order spoof the system as can be observed in \cite{uludag2004attacks}, \cite{leyden2002gummi} e \cite{matsumoto2002impact}. \cite{johnson2010multimodal}, \cite{kanematsu2007highly} and \cite{pacut2006aliveness} are works addressing spoofing attacks in iris biometric system. Finally \cite{chetty2004liveness} e \cite{eveno2005speaker} address speaker based biometric systems.
+Several technologies related to information security can be deployed in a biometric authentication system in order to mitigate the attacks aforementioned. We can highlight:
+\begin{itemize}
+        \item Encrypt the biometric data;
+        \item Traffic the biometric data using a secure channel;
+        \item Deploy all modules of the architecture in a device that cannot be broken;
+        \item Using more than one authentication factor.
+\end{itemize}
+However, in a spoofing attack, the target is the biometric sensor, and in the chart presented in Figure \ref{fig:diagram_attacks}, is not possible to apply any of the security tools to prevent attacks, becoming the most fragile point of attack. This kind of attacks is the main point of this thesis.
 
-Best practices in security recommends to use cryptography or the creation of security channels in order to mitigate most of the problems aforementioned. But in case of a spoofing attack, the target is the biometric sensor, and in the chart presented in Figure X, is not possible to apply any of the security tools to prevent attacks, becoming the most fragile point of attack. This kind of attacks is the main point of this thesis.
+\section{Final Remarks}
+\label{sec:FinalRemarks}
 
-%The spoofing attack in biometric systems is when a forged biometric is presented to the biometric sensor. The goal is to pretend to be someone else in order to get some forbidden privileges. In biometric systems based on the speaker biometrics, the attacker, can record the target voice and use this recorded voice as an input. In fingerprint based systems the attacker can forge a finger with a fingerprint of the target identity with different materials in order break a fingerprint biometric system as can be observed in \cite{uludag2004attacks}, \cite{leyden2002gummi} e \cite{matsumoto2002impact}. All biometric traits can be spoofed. In the literature, \cite{johnson2010multimodal}, \cite{kanematsu2007highly} and \cite{pacut2006aliveness} are works addressing spoofing attacks in iris biometric system. \cite{chetty2004liveness} e \cite{eveno2005speaker} address speaker based biometric systems.
-
-%O ataque de \textit{spoofing} em sistemas de autenticação biométrica é um tipo de ataque em que o trato biométrico alvo é forjado, apresentando uma biometria falsa ao sensor e assim burlando o sistema de autenticação. Em sistemas de autenticação baseados em biometria há duas motivações para se forjar um trato biométrico. A primeira motivação é o atacante obter o trato biométrico de outra pessoa a fim de tomar sua identidade para obter privilégios. Em sistemas de autenticação baseados na voz, o atacante pode gravar a voz da identidade alvo e usar esta gravação como entrada. Em sistemas de autenticação baseados em impressões digitais o atacante pode obter alguma impressão latente da identidade alvo e gerar um dedo artificial contento a impressão digital roubada. A saber, em \cite{uludag2004attacks}, \cite{leyden2002gummi} e \cite{matsumoto2002impact} são trabalhos relacionados a ataques de \textit{spoofing} em sistemas de autenticação baseados em impressões digitais, \cite{johnson2010multimodal}, \cite{kanematsu2007highly} e \cite{pacut2006aliveness} são trabalhos relacionados a ataques de \textit{spoofing} baseados na biometria da íris e em \cite{chetty2004liveness} e \cite{eveno2005speaker} são trabalhos relacionados a ataques de \textit{spoofing} em sistemas de autenticação baseados na biometria de locutor. A segunda motivação é o atacante gerar um trato biométrico totalmente artificial (sem se basear em uma biometria real), a fim de enganar o sistema de cadastro e autenticação biométricos. Com isso, o atacante pode compartilhar esta biometria falsa com outros atacantes.
-
-%Melhores práticas de segurança orientam utilizar mecanismos como: criptografia de dados e criação de canais seguros para mitigar ataques na maioria dos casos citados anteriormente \cite{xiao2005security}. No caso dos ataques de \textit{spoofing}, o sensor de biometria (ponto alvo deste tipo de ataque) é o único ponto do fluxograma da Figura \ref{fig:diagram_attacks} em que nenhum dos mecanismos são efetivos para mitigá-los, tornando-se assim o ponto mais frágil a ataques. Por esta razão, ataques dessa natureza serão o ponto central desta dissertação.
-
+This chapter described the main concepts and the main threats that can happen in biometric authentication systems. As aforementioned, the spoofing attacks are the most fragile point of threats in the architecture presented in the Figure \ref{fig:diagram_attacks}. Countermeasures need to be studied in order to mitigates these threats. This masters thesis will deal with that topic.
 
 
 
