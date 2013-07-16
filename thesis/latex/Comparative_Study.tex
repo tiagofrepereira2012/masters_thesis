@@ -1,12 +1,48 @@
 \chapter{The Comparative Study}
 \label{chap:Comparative_Study}
 
+TEXTO INTRODUTORIO
+
+
+
 \section{Databases Permeability}
 \label{sec:Databases_Permeability}
+
+SERAH QUE DEVO FAZER?
 
 \section{Evaluation Protocol}
 \label{sec:Evaluation_Protocol}
 
+Firstly, we study how the countermeasures, presented in Section \ref{sec:countermeasures}, will perform in a more realistic condition. This condition consists in training and tuning each one of the countermeasures with one face anti-spoofing database and testing with another one. To report the performance in such a scenario, two evaluation protocols were designed to work with the databases described in Section \ref{sec_replay}. These protocols are the "intra-test" protocol and the "inter-test" protocol.
+
+
 \subsection{Intra Database Test Protocol}
+
+The intra-test protocol is equivalent to the database normal protocol. It consists in training, tuning and testing a countermeasure with the respectively training set, development set and test set of such a database. With this protocol, it is possible to evaluate the performance and the generalization power of a countermeasure within one database. 
+
 \subsection{Inter Database Test Protocol}
+
+The inter-test protocol evaluates the countermeasure performance in a more realistic scenario, close to real usage conditions. It consists in training and tuning a countermeasure with the training set and development set of one database and test it with the test set of another one. With this protocol, it is possible to evaluate the performance and the generalization power of a countermeasure in a set of unseen types of attacks.
+
+
 \subsection{Evaluation Metrics}
+
+The Replay Attack Database provides a protocol for objective evaluation of a given countermeasure. To mitigate overfitting, such a protocol defines three non-overlapping partitions: the training, development and test set. The training set should be used to train the countermeasure, the development set is used to tune the countermeasure. The test set must be used only to report results. 
+
+The CASIA FASD lacks a specific development set; this database has only a train and a test set. To mitigate the over-fitting in this database, the train set was split into five partitions and a 5-fold cross-validation training was done. For that, 4 folds were used for training and 1 fold was used to tune the countermeasure. With this strategy, both databases have a train set, a development set (to tune the countermeasure) and a test set, so it is possible to merge them.
+
+The performance of each countermeasure, using the test set of each database, is reported with the Half Total Error Rate ($HTER$): 
+
+\begin{equation}
+\label{eq:HTER}
+HTER(D_2)=\frac{FAR(\tau(D_1),D_2)+ FRR(\tau(D_1),D_2)} {2} ,
+\end{equation}
+where $\tau(D_n)$ is a threshold, $D_n$ is the dataset, $FAR$ is the False Acceptance Rate in the database $D_2$ and $FRR$ is the False Rejection Rate in the database $D_2$. In this protocol, the value of $\tau(D_n)$ is estimated on the Equal Error Rate (EER) using the development set of the database $D_1$. In this Equation when $D_1 = D_2$, we have the intra-test protocol and when $D_1 \neq D_2$, we have the inter-test protocol.
+
+Because of 5-fold cross validation protocol, for the CASIA FASD 5 results were generated. The average of $HTER$ was provided as a final result.
+
+In order to eliminate the face detector influence, the same face detector, based on Modified Census Transform (MCT) features \cite{froba2004face}, was used for both databases.
+
+ROC CURVES
+
+
