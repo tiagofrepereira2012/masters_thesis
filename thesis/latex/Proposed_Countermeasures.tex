@@ -1,14 +1,15 @@
 \chapter{Developed Countermeasures}
 \label{chap:Proposed_Countermeasures}
 
-TEXTO MOTIVANDO A CRIACAO DA CONTRAMEDIDA
+Micro-texture analysis has been effectively used in detecting photo attacks from single face images \cite{bai2010physics,maatta2011face,ChingovskaBIOSIG2012}. This chapter presents a countermeasure developed by the author in the scope of this thesis. In this countermeasure the micro-texture analysis is extended to the spatiotemporal domain using the texture descriptor $LBP-TOP$ (Local Binary Patterns from Three Orthogonal Planes). The basic theory of Local Binary Patterns in spatiotemporal domain is introduced in Section \ref{sec_dynamic}. The architecture of the countermeasure is described in Section \ref{sec_proposed_counter}. In Section \ref{sec_experiments}, we report on the experimental setup and results. Finally, Section \ref{sec:Proposed_finalremarks} presents the Final Remarks of the chapter.
+
 
 \section{LBP based dynamic texture description}
 \label{sec_dynamic}
 
-M\"{a}\"{a}tt\"{a} et al. \cite{maatta2011face} and Chingovska et al. \cite{ChingovskaBIOSIG2012} propose a $LBP$ based countermeasures to spoofing attacks based on the hypothesis that real faces  present different texture patterns in comparison with fake ones. However, the proposed techniques analyse each frame in isolation, not considering the behaviour over time. As aforementioned, in the last chapter, motion is a cue explored in some works and in combination with texture can generate a powerful countermeasure. For describing the face liveness for spoofing detection, we considered a spatiotemporal representation which combines facial appearance and dynamics. We adopted the $LBP$ based spatiotemporal representation because of its recent convincing performance in modelling moving faces and facial expression recognition and also for dynamic texture recognition \cite{pietikainen2011computer}. 
+M\"{a}\"{a}tt\"{a} et al. \cite{maatta2011face} and Chingovska et al. \cite{ChingovskaBIOSIG2012} propose a $LBP$ based countermeasures to spoofing attacks based on the hypothesis that real faces  present different texture patterns in comparison with fake ones. However, the proposed techniques analyse each frame in isolation, not considering the behaviour over time. As aforementioned, in the last chapter, motion is a cue explored in some works and in combination with texture can generate a powerful countermeasure. For describing the face liveness for spoofing detection, we considered a spatiotemporal representation which combines facial appearance and dynamics. We adopted the $LBP$ based spatiotemporal representation because of its recent convincing performance in modeling moving faces and facial expression recognition and also for dynamic texture recognition \cite{inen2011computer}. 
 
-The $LBP$ texture analysis operator, introduced by Ojala et al. \cite{hadid:62,hadid:39}, is defined as a gray-scale invariant  texture measure, derived from a general definition of texture in a local neighbourhood. It is a powerful texture descriptor and among its properties in real-world applications are its discriminative power, computational simplicity and tolerance against monotonic gray-scale changes. The original $LBP$ operator forms labels for the image pixels by thresholding the 3$\times$3 neighbourhood with the center value and considering the result as a binary number. The histogram of these $2^8=256$ different labels is then used as an image descriptor.
+The $LBP$ texture analysis operator, introduced by Ojala et al. \cite{ojala1996comparative,ojala2002multiresolution}, is defined as a gray-scale invariant  texture measure, derived from a general definition of texture in a local neighborhood. It is a powerful texture descriptor and among its properties in real-world applications are its discriminative power, computational simplicity and tolerance against monotonic gray-scale changes. The original $LBP$ operator forms labels for the image pixels by thresholding the 3$\times$3 neighborhood with the center value and considering the result as a binary number. The histogram of these $2^8=256$ different labels is then used as an image descriptor.
 
 The original $LBP$ operator was defined to only deal with the spatial information. However, more recently it has been extended to a spatiotemporal representation for dynamic texture analysis (DT). This has yielded to the so called Volume Local Binary Pattern operator ($VLBP$ \cite{zhao2007dynamic}. The idea behind $VLBP$ consists of looking at dynamic texture (video sequence) as a set of volumes in the ($X$,$Y$,$T$) space where $X$ and $Y$ denote the spatial coordinates and $T$ denotes the frame index (time). The neighborhood of each pixel is thus defined in a three dimensional space. Then, similarly to basic $LBP$ in spatial domain, volume textons can be defined and extracted into histograms. Therefore, $VLBP$ combines motion and appearance into a dynamic texture description.
 
@@ -22,7 +23,7 @@ To make $VLBP$ computationally treatable and easy to extend, the co-occurrences 
 \end{figure}
 %(courtesy of \cite{zhao2007dynamic}
 
-Using equal radii for the time and spatial axes is not a good choice for dynamic textures \cite{zhao2007dynamic} and therefore, in the $XT$ and $YT$ planes, different radii can be assigned to sample neighbouring points in space and time. More generally, the radii $R_{x}$, $R_{y}$  and $R_{t}$ respectively in axes X, Y and T , and the number of neighbouring points $P_{XY}$, $P_{XT}$ and $P_{YT}$ respectively in the $XY$, $XT$ and $YT$ planes can also be different. Furthermore, the type of $LBP$ operator on each plane can vary, for example the uniform pattern ($u2$) or rotation invariant uniform pattern ($riu2$) variants \cite{pietikainen2011computer} can be deployed. The corresponding feature is denoted as $LBP-TOP_{P_{XY},P_{XT},P_{YT},R_{x},R_{y},R_{t}}^{operator}$.
+Using equal radii for the time and spatial axes is not a good choice for dynamic textures \cite{zhao2007dynamic} and therefore, in the $XT$ and $YT$ planes, different radii can be assigned to sample neighbouring points in space and time. More generally, the radii $R_{x}$, $R_{y}$  and $R_{t}$ respectively in axes X, Y and T , and the number of neighbouring points $P_{XY}$, $P_{XT}$ and $P_{YT}$ respectively in the $XY$, $XT$ and $YT$ planes can also be different. Furthermore, the type of $LBP$ operator on each plane can vary, for example the uniform pattern ($u2$) or rotation invariant uniform pattern ($riu2$) variants \cite{inen2011computer} can be deployed. The corresponding feature is denoted as $LBP-TOP_{P_{XY},P_{XT},P_{YT},R_{x},R_{y},R_{t}}^{operator}$.
 
 Assuming we are given a $X\times Y \times T$ dynamic texture $(x_c \in \left\{0,\cdots,X-1\right\},$ $y_c \in\left\{0,\cdots,Y-1\right\}, t_c\in\left\{0,\cdots,T-1\right\})$, i.e. a video sequence. An histogram of the DT can be defined as: 
 \begin{equation}
@@ -49,7 +50,7 @@ N_{i,j}=\frac{H_{i,j}}{\sum_{k=0}^{n_j-1}H_{k,j}} \enspace .
 
 In addition to the computational simplification, compared with $VLBP$, $LBP-TOP$ has the advantage to generate independent histograms for each of intersecting planes, in space and time, which can be treated in combination or individually. Because of the aforementioned complexity issues on the implementation of a $VLBP$ based processor, the developed spatiotemporal face liveness description uses $LBP-TOP$ to encode both facial appearance and dynamics. 
 
-Our key idea is to learn and detect the structure and the dynamics of the facial micro-textures that characterise real faces but not fake ones. Due to its tolerance against monotonic gray-scale changes, $LBP$ based representation is adequate for measuring the facial texture quality and determining whether degradations due to recapturing process, e.g. the used spoofing medium, are observed. Instead of just applying static texture analysis, we exploit also several dynamic visual cues that are based on either the motion patterns of a genuine human face or the used display medium.
+The key idea of this countermeasure is to learn and detect the structure and the dynamics of the facial micro-textures that characterize real faces but not fake ones. Due to its tolerance against monotonic gray-scale changes, $LBP$ based representation is adequate for measuring the facial texture quality and determining whether degradations due to recapturing process, e.g. the used spoofing medium, are observed. Instead of just applying static texture analysis, we exploit also several dynamic visual cues that are based on either the motion patterns of a genuine human face or the used display medium.
 
 \begin{figure}[!htb]
 \begin{center}
@@ -69,7 +70,7 @@ Unlike photographs and display devices, real faces are indeed non-rigid objects 
 
 \begin{figure}[!htb]
 \begin{center}
-\includegraphics [width=14cm] {images/proposed_countermeasure/countermeasure_2.png}
+\includegraphics [width=16cm] {images/proposed_countermeasure/countermeasure_2.png}
 \caption{Block diagram of the proposed countermeasure.} \label{fig_countermeasure}
 \end{center}
 \end{figure}
@@ -100,7 +101,7 @@ The multiresolution approach can be performed by concatenating the histograms in
 \section{Experiments}
 \label{sec_experiments}
 
-This section provides an in-depth analysis on the proposed $LBP-TOP$ based face liveness description using the Replay-Attack Database \cite{ChingovskaBIOSIG2012} and the CASIA Face Anti-Spoofing Database \cite{zhangface}. First, we study the effect of different classifiers and $LBP-TOP$ parameters by following the evaluation method proposed in \cite{TiagoLBP2012}. The $LBP-TOP$ representation is computed over relatively short temporal windows and the results are reported using the overall classification accuracy for the individual volumes. Altogether four experiments were carried out evaluating the effectiveness of:
+This section provides an in-depth analysis on the proposed $LBP-TOP$ based face liveness description using the Replay-Attack Database \cite{ChingovskaBIOSIG2012} and the CASIA Face Anti-Spoofing Database \cite{zhangface}. The $LBP-TOP$ representation is computed over relatively short temporal windows and the results are reported using the overall classification accuracy for the individual volumes. Altogether four experiments were carried out evaluating the effectiveness of:
 
 \begin{enumerate}
         \item Each $LBP-TOP$ plane individually and in combination;
@@ -149,7 +150,7 @@ In this experiment, we analysed the effectiveness of different classifiers when 
 \end{figure}
 
 
-The SVM classifier with an RBF kernel provided the best performance on the Replay-Attack Database and the CASIA Face Anti-Spoofing Database (7.97\% and 20.72\% in terms of HTER, respectively). However, it is important to remark that the same LBP-TOP configuration with an LDA classifier resulted in comparable performance (11.35\% and 24.91\% in terms of HTER). This is not a huge gap and the classification scheme is far simpler. As similar findings have been reported \cite{ChingovskaBIOSIG2012,JukkaICB2013}, the use of simple and computationally efficient classifiers should be indeed considered when constructing real-world anti-spoofing solutions.
+The SVM classifier with an RBF kernel provided the best performance on the Replay-Attack Database and the CASIA Face Anti-Spoofing Database (7.97\% and 20.72\% in terms of HTER, respectively). However, it is important to remark that the same LBP-TOP configuration with an LDA classifier resulted in comparable performance (11.35\% and 24.91\% in terms of HTER). This is not a huge gap and the classification scheme is far simpler. As similar findings have been reported \cite{ChingovskaBIOSIG2012,Komulainen_ICB_2013}, the use of simple and computationally efficient classifiers should be indeed considered when constructing real-world anti-spoofing solutions.
 
 
 %--------------------------------------------------------------------------------------------------------
@@ -277,7 +278,7 @@ On the other hand, the spatiotemporal face description is able to improve the ma
 
 %--------------------------------------------------------------------------------------------------------
 \subsection{Summary}
-\label{sec_summary}
+\label{sec:Proposed_summary}
 
 Table \ref{tb_REPLAY_Results} and Table \ref{tb_CASIA_Results} summarize all the results obtained for each database following their provided protocols. In order to be comparable with still frame analysis presented for example in \cite{ChingovskaBIOSIG2012}, the results for Replay-Attack Database represent the overall classification accuracy considering each frame individually. The access attempt based results are reported only for CASIA Face Anti-Spoofing Database as requested in its test protocol.
 
@@ -328,10 +329,7 @@ During these experiments we observed that the general performance of the propose
 %%%%%%%%%%%%%%%%%%%%%%
 
 \section{Final Remarks}
-\label{sec_conclusion}
+\label{sec:Proposed_finalremarks}
 
-Inspired by the recent progress in dynamic texture, the problem of face spoofing detection was investigated in this chapter using spatiotemporal local binary patterns. The key idea of the proposed countermeasures consists of analysing the structure and the dynamics of the micro-textures in the facial regions using LBP-TOP features that provide an efficient and compact representation for face liveness description. However, very dissimilar strategies were introduced for exploring the temporal dimension even though the same features were utilized. Furthermore, the experiments were carried out using different face normalization techniques and different databases. In this article, we consolidated the methods proposed in the previous studies, isolating the different variables and studying the potential of the different LBP-TOP counter-measures in different settings on the two publicly available datasets. Furthermore, we also provided an open-source framework that makes our research fully reproducible with minimal effort.
-
-Experiments carried out with a unified experimental setup and evaluation methodology showed that the dynamic texture based countermeasure was able to consistently outperform prior work on both datasets. Best results were achieved using nonlinear SVM classifier but it is important to notice that experiments with simpler LDA based classification scheme resulted in comparable performance under various spoofing attack scenarios. Thus, the use of simple and computationally efficient classifiers should be indeed considered when constructing real-world anti-spoofing solutions. In future work, we will study the generalization capabilities of the proposed countermeasure using multiple face anti-spoofing databases. In other words, we plan to perform cross-database experiments by training and tuning the LBP-TOP based face description solely on one dataset and test on another one.
-
+Inspired by the recent progress in dynamic texture, the problem of face spoofing detection was investigated in this chapter using spatiotemporal local binary patterns. The key idea of the proposed countermeasures consists of analysing the structure and the dynamics of the micro-textures in the facial regions using $LBP-TOP$ features that provides an efficient and compact representation for face liveness description. The experiments carried out with this countermeasure consistently outperform prior works on both datasets. Best results were achieved using nonlinear SVM classifier but it is important to notice that experiments with simpler LDA based classification scheme resulted in comparable performance under various spoofing attack scenarios. Thus, the use of simple and computationally efficient classifiers should be indeed considered when constructing real-world anti-spoofing solutions. The results got in this chapter is totally reproducible. The source code with instructions on how to reproduce the results is freely available\footnote{https://pypi.python.org/pypi/antispoofing.lbptop/}.
 
