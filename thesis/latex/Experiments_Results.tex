@@ -1,13 +1,29 @@
 \chapter{Experiments and Results}
 \label{chap:Experiments_Results}
 
-This chapter provides the experiments results of this comparative study of countermeasures. Three countermeasures were selected for this study:
+This chapter provides the experiments and the results of this comparative study of countermeasures. Three countermeasures were selected for this study:
 \begin{itemize}
         \item Dynamic textures with $LBP-TOP$;
-        \item Textures with $LBP$ (\cite{ChingovskaBIOSIG2012} and \cite{maatta2011face});
-        \item Motion correlation (\cite{AnjosIJCB2011}).
+        \item Textures with $LBP$ \cite{ChingovskaBIOSIG2012} and \cite{maatta2011face};
+        \item Motion correlation \cite{AnjosIJCB2011}.
+        \item Eye blinks\footnote{https://github.com/bioidiap/antispoofing.eyeblink}.
 \end{itemize}
-As the Motion correlation and $LBP-TOP$ countermeasures need a frame sequence to work, the databases evaluated in this work were the Replay Attack Database (Section \ref{sec_replay}) and CASIA Face Antispoofing Database (Section \ref{sec_casia}).
+
+The eye blink countermeasure used in this thesis uses a similar technique applied in Motion Correlation countermeasure\cite{AnjosIJCB2011} as discussed in the Section \ref{sec:scene_cues}. In this countermeasure 
+
+The difference BLA BLA.
+Figure \ref{fig:eye_blink} shows the eye blink detection scheme used in the countermeasure.
+
+\begin{figure}[!btb]
+\begin{center}
+\includegraphics [width=10cm] {images/eye_blink.pdf}
+\caption[Eye blink countermeasure scheme]{Eye blink countermeasure scheme}
+\label{fig:eye_blink}
+\end{center}
+\end{figure}
+
+
+As the Motion correlation, $LBP-TOP$ and the eye blink countermeasures need a frame sequence to work, the databases evaluated in this work were the Replay Attack Database (Section \ref{sec_replay}) and CASIA Face Antispoofing Database (Section \ref{sec_casia}).
 
 The Section \ref{sec:Intra_test} compare the countermeasures in the Intra-test protocol. Section \ref{sec:Inter_test} compare the countermeasures in the Inter-test protocol. In the Section \ref{sec:combination} the combination of databases is explored to train each one of the countermeasures. In Section \ref{sec:framework} the Score Level Fusion based Framework is explored to train each countermeasure. Finally Section \ref{sec:Summary} sumarizes the experiments.
 
@@ -19,34 +35,48 @@ Table \ref{tb:IntraTest} shows the performance of the three countermeasures, in 
 \hspace{-17mm}\begin{table}[ht!]
 \caption{$HTER(\%)$ of each countermeasure applying the intra-test ($D_1=D_2$) protocol.}
 \begin{center}
-  \begin{tabular}{ | c | c | c | c  c | }
+  \begin{tabular}{ | c | c | c | c  c | c  c  | c  c |}
     \hline
 
-   \multirow{2}{*}{\textbf{Countermeasure}} & \textbf{Train/Tune} & \textbf{Test} & \multicolumn{2}{c|}{\textbf{HTER(\%)}} \\ 
-     & $D_1$ & $D_2$ & \textbf{dev} & \textbf{test}  \\ \hline
+   \multirow{2}{*}{\textbf{Countermeasure}} & \textbf{Train/Tune} & \textbf{Test} & \multicolumn{2}{c|}{\textbf{HTER(\%)}} & \multicolumn{2}{c|}{\textbf{FAR(\%)}} & \multicolumn{2}{c|}{\textbf{FRR(\%)}} \\ 
+     & $D_1$ & $D_2$ & \textbf{dev} & \textbf{test} & \textbf{dev} & \textbf{test} & \textbf{dev} & \textbf{test}  \\ \hline
     
-    \multirow{2}{*}{Correlation} & Replay  & Replay  &  11.66 & 11.79 \\ 
-               & CASIA &  CASIA  & 24.91 & 31.36 \\ \hline \hline
+    \multirow{2}{*}{Correlation} & Replay  & Replay  &  11.66 & 11.79  &  &  &  & \\ 
+               & CASIA &  CASIA  & 24.91 & 31.36 & & &  & \\ \hline \hline
 
-    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay & Replay  & 8.17 & 8.51  \\
-               & CASIA  & CASIA  & 21.77 & 22.27 \\ \hline \hline
+    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay & Replay  & 8.17 & 8.51  & & &  &\\
+               & CASIA  & CASIA  & 21.77 & 22.27 & & &  &\\ \hline \hline
 
-    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay  & Replay  & 14.41 &15.45  \\
-               & CASIA  & CASIA  & 23.00  & 22.54 \\
+    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay  & Replay  & 14.41 &15.45 & & &  & \\
+               & CASIA  & CASIA  & 23.00  & 22.54 & & &  &\\ \hline \hline
             
+    \multirow{2}{*}{Eye blink (1 blink)} & Replay  & Replay  & 48.17 & 52.62 & 89.67 & 90.25 & 6.67 & 15.00\\
+               & CASIA  & CASIA  & 48.61 &48.33 & 97.22 & 93.33 & 0.00 & 3.33 \\ \hline \hline
+
+    \multirow{2}{*}{Eye blink (2 blink)} & Replay  & Replay  & 53.50 & 54.87 & 10.33 & 16.00 & 96.67 & 93.75\\
+               & CASIA  & CASIA  & 41.67 & 44.81 & 8.33 & 6.30 & 75.00 & 83.33 \\ \hline \hline
+
+    \multirow{2}{*}{Eye blink (3 blink)} & Replay  & Replay  & 49.17 & 49.50 & 0.00 & 0.25& 98.33 & 98.75\\
+               & CASIA  & CASIA  & 47.22  & 48.89 & 2.78 & 0.00 & 91.67 & 97.78\\
     \hline
   \end{tabular}
 \end{center}
 \label{tb:IntraTest}
 \end{table}
 
-Analyzing the performance in the intra-test protocol ($D_1 = D_2$) it can be observed that different countermeasures have different performances in different databases. However, it is possible to observe a that all the three countermeasures have a good overall performance and a good intra-database generalization power. The good generalization performance can be attested comparing the results between the development set and the test set. In Table \ref{tb:IntraTest} the $HTER(\%)$ in the development set and the $HTER(\%)$ in the test set are very similar. In Figure \ref{fig:ROC_cross} the ROC curves blue and red (dashed line and solid line) represents the intra-test test protocol. It can be observed that the curves are almost overlapped.
+Analyzing the performance in the intra-test protocol ($D_1 = D_2$) it can be observed that different countermeasures have different performances using different databases. As already discussed in the Section \ref{sec_lbptop_planes}, both databases has some differences that impacts in the final performance. These differences impacted in our proposed countermeasure, based on $LBP-TOP$ (Chapter \ref{chap:Proposed_Countermeasures}), and it seems to impact in other countermeasures.
+
+The attacks in the CASIA FASD are close-up attacks i.e. the attacker tries to fake only the face region. It is possible to see the borders of the spoofing medium and even the hands of the attacker. Additionally there are three different image qualities attacks and a bit more challenging environmental conditions. The attacks in the Replay Attack database are scenic i.e. the attacker tries to fake the face and in the background at the same time in order to better fake a real access. There is no medium borders and no attacker hands. Additionally this database has two different support conditions, the fixed and the hand-held. We can consider that the CASIA FASD has only the hand-held support.
+
+However, it is possible to observe that all the three countermeasures have a good overall performance and, the most import, a good generalization capability. In Table \ref{tb:IntraTest} the $HTER(\%)$ in the development an in the test set are very similar indicating the assumption of generalization. The ROC curves in Figure \ref{fig:ROC_cross} corroborates this assumption. In the figure, the curves blue and red (dotted line and solid line) represents the intra-test test protocol. It can be observed that the curves are almost overlapped.
+
+The exception here is the countermeasure based on eye blinks. The performances
 
 
 \section{Inter-test protocol}
 \label{sec:Intra_test}
 
-Table \ref{tb:InterTest} shows the performance of the three countermeasures, in HTER terms, applying the Inter-test protocol.
+Table \ref{tb:InterTest} shows the performance of the three countermeasures, in $HTER$ terms, applying the Inter-test protocol.
 
 \hspace{-17mm}\begin{table}[ht!]
 \caption{$HTER(\%)$ of each countermeasure applying the inter-test ($D_1 \neq D_2$) protocol.}
@@ -72,9 +102,39 @@ Table \ref{tb:InterTest} shows the performance of the three countermeasures, in 
 \label{tb:InterTest}
 \end{table}
 
-Analyzing the performance in the inter-test protocol ($D_1 \neq D_2$), it can be observed that the performance results considerably degrade compared with the intra-test protocol and it becomes evident that both databases and the methods are strongly biased indicating the countermeasures do not generalize as expected. In Table \ref{tb:InterTest} the $HTER(\%)$ in the development set and the $HTER(\%)$ in the test set are quite different. In Figure \ref{fig:ROC_cross} the ROC curves blue and green (dotted line and solid line) represents the inter-test test protocol. It can be observed that the curves are quite distant from each other.
+Analyzing the performance in the inter-test protocol ($D_1 \neq D_2$), it can be observed that the performance results considerably degrade compared with the intra-test protocol and it becomes evident that both databases and the methods are strongly biased indicating that the countermeasures do not generalize as expected. In Table \ref{tb:InterTest} the $HTER(\%)$ in the development set and in the test set are quite different. In Figure \ref{fig:ROC_cross} the ROC curves blue and green (dashed line and solid line) represents the curves got by the development set of the database $D_1$ and by the test set of the database $D_2$ when $D_1 \neq D_2$ respectively. The curves are quite distant from each other. The results indicate that the countermeasures and the databases can introduce some biases on the spoofing detections. The countermeasures bias are possibly related to the feature selection. The databases bias are possibly related to the differences in the databases discussed in the last Section.
 
-The results indicate that the countermeasures and the databases introduce some bias on the spoofing detections. The countermeasures bias are possibly related to the feature selection. The databases bias are possibly related with the types and styles of attacks that is hard to generalize. In next experiment, we stray if the countermeasures are truly biased to databases or can be tuned to overcome the database bias.
+Still in the biases that databases can introduce, a simple observation has to be made. In order to generate a good fake representation of a real access (without any medium borders and attackers hands), the designers of the Replay Attack database, in genenal, approximate to much the spoofing medium to the camera. It turns out that the size of the faces in the attacks are generally bigger than in the real accesses. Figure \ref{fig:database_bias} shows some examples of that observation. 
+
+In order to see if that observation is significative in the whole database, we can run the intra-test protocol using, as a feature, only the area of the face bounding box. Table \ref{tb:TrickCounter} shows the performance of this trick countermeasure.
+
+\begin{figure}[!btb]
+\begin{center}
+\includegraphics [width=16cm] {images/database_bias.pdf}
+\caption[Example of bias in the Replay Attack Database]{Example of bias in the Replay Attack Database} 
+\label{fig:database_bias}
+\end{center}
+\end{figure}
+
+
+\begin{table}[ht!]
+\caption{$HTER(\%)$ of the trick countermeasure using only the area of the face bounding box  applying the intra-test ($D_1 = D_2$) protocol.}
+\begin{center}
+  \begin{tabular}{ | c | c | c  c | }
+    \hline
+
+    \textbf{Tune} & \textbf{Test} & \multicolumn{2}{c|}{\textbf{HTER(\%)}} \\ 
+     $D_1$ & $D_2$ & \textbf{dev} & \textbf{test}  \\ \hline
+    
+     Replay & Replay & 24.22 & 19.63  \\ 
+     CASIA  & CASIA & 51.13 & 53.09  \\
+    \hline
+  \end{tabular}
+\end{center}
+\label{tb:TrickCounter}
+\end{table}
+
+It can be observed that for the Replay attack database the performance in the development and in the test set is far from a random behavior suggesting a bias in this database. It is not possible to observe the same shortcoming in the CASIA FASD. In next section, we stray if the countermeasures are truly biased to databases or can be tuned to overcome the database bias.
 
 \begin{figure*}[ht]
 \begin{center}
@@ -95,7 +155,9 @@ The results indicate that the countermeasures and the databases introduce some b
 \section{Combination of Multiple Databases}
 \label{sec:combination}
 
-Say something.
+
+
+This experiment analyze how the three countermeasures perform using a joint training set combining multiple databases. This is the most intuitive approach to accumulate attacks from different sources. Table \ref{tb:TrainAllTest} shows the performance for each countermeasure trained with this strategy. %The analysis is supported with the ROC curves presented in Figure \ref{tb:TrainAllTest}.
 
 %Analyzing the performances with this strategy compared with the performance obtained with the inter-set protocol, can be observed a significant improvement for all countermeasures ($\sim41.9\%$ in HTER average improvement). However, comparing with the intra-test protocol the performance drops drastically ($\sim64\%$ in HTER average degradation). It can be observed that the performance for CASIA FASD degrades more than for the Replay Attack Database suggesting a strong bias for this database. The Replay Attack Database has twice more data than the CASIA FASD, and this difference is biasing the final performance.
 
@@ -138,11 +200,15 @@ Say something.
 \end{center}
 \end{figure}
 
+Analyzing the performances with this strategy compared with the performance obtained with the inter-set protocol, can be observed a significant improvement for all countermeasures ($\sim41.9\%$ in HTER average improvement). However, comparing with the intra-test protocol the performance drops drastically ($\sim64\%$ in HTER average degradation). It can be observed that the performance for CASIA FASD degrades more than for the Replay Attack Database suggesting a strong bias for this database. 
+
+This strategy also has one drawback: when a new database with new types of attacks needs to be added, it is necessary to train and tune all the countermeasures again.
+
 
 \section{Score Level Fusion based Framework}
 \label{sec:framework}
 
-To improve the performance results in comparison with the intra-test protocol and the inter-test protocol and to mitigate the bias mentioned in the last section, we introduce a framework based on score level fusion. Using this framework, when a new countermeasure need to be added, it is possible to "plug it" without any extra training steps required for the other countermeasures.
+To improve the performance results in comparison with the intra-test protocol and the inter-test protocol and to mitigate the bias mentioned in the last section, we introduce a framework based on score level fusion. Using this framework, when a new countermeasure need to be added, it is possible to "plug it" without any extra training steps required for the other countermeasures, working like an antivirus.
 
 To support this assumption, we first evaluate the level of independence of the countermeasures trained with different databases in order to ensure its effectiveness in a possible score fusion. Kulcheva and Whitaker \cite{kuncheva2003measures} show that the combination of statistically independent classifiers is a recommended for a good performance in a score level fusion. In order to evaluate the dependence of classifiers, ten statistics were analyzed. The methodology presented on that work shows that the $Q-statistic$ is most suitable and we choose that metric to evaluate the statistic dependence of each countermeasure for the Score Level Fusion based Framework. The $Q-statistic$ for two classifiers is defined as follow:
 
