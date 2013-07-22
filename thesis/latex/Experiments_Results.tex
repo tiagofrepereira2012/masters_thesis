@@ -12,7 +12,7 @@ This chapter provides the experiments and the results of this comparative study 
 
 As the Motion correlation, $LBP-TOP$ and the eye blink countermeasures need a frame sequence to work, the databases evaluated in this thesis were the Replay Attack Database (Section \ref{sec_replay}) and CASIA Face Antispoofing Database (Section \ref{sec_casia}).
 
-The Section \ref{sec:Intra_test} compare the countermeasures in the Intra-test protocol. Section \ref{sec:Inter_test} compare the countermeasures in the Inter-test protocol. In the Section \ref{sec:combination} the combination of databases is explored to train each one of the countermeasures. In Section \ref{sec:framework} the Score Level Fusion based Framework is explored to train each countermeasure. Finally Section \ref{sec:Summary} sumarizes the experiments.
+The Section \ref{sec:Intra_test} presents the results applying the Intra-test protocol. Section \ref{sec:Inter_test} presents the results applying the Inter-test protocol. In the Section \ref{sec:combination} the combination of databases is explored to train each one of the presented countermeasures. In Section \ref{sec:framework} the Score Level Fusion based Framework is explored to train each countermeasure. Finally Section \ref{sec:Experiments_finalremarks} summarizes the experiments.
 
 \section{Intra-test protocol}
 \label{sec:Intra_test}
@@ -28,14 +28,14 @@ Table \ref{tb:IntraTest} shows the performance of the four countermeasures, in H
    \multirow{2}{*}{\textbf{Countermeasure}} & \textbf{Train/Tune} & \textbf{Test} & \multicolumn{2}{c|}{\textbf{HTER(\%)}} & \multicolumn{2}{c|}{\textbf{FAR(\%)}} & \multicolumn{2}{c|}{\textbf{FRR(\%)}} \\ 
      & $D_1$ & $D_2$ & \textbf{dev} & \textbf{test} & \textbf{dev} & \textbf{test} & \textbf{dev} & \textbf{test}  \\ \hline
     
-    \multirow{2}{*}{Correlation} & Replay  & Replay  &  11.66 & 11.79  &  &  &  & \\ 
-               & CASIA &  CASIA  & 24.91 & 31.36 & & &  & \\ \hline \hline
+    \multirow{2}{*}{Correlation} & Replay  & Replay  &  11.66 & 11.79  & 11.66 &  & 11.66  & \\ 
+               & CASIA &  CASIA  & 24.91 & 31.36 & 24.91 & & 24.91 & \\ \hline \hline
 
-    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay & Replay  & 8.17 & 8.51  & & &  &\\
-               & CASIA  & CASIA  & 21.77 & 22.27 & & &  &\\ \hline \hline
+    \multirow{2}{*}{$LBPTOP_{8,8,8,1,1,1}^{u2}$}  & Replay & Replay  & 8.17 & 8.51  & 8.17& & 8.17 &\\
+               & CASIA  & CASIA  & 21.77 & 22.27 & 21.77& & 21.77 &\\ \hline \hline
 
-    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay  & Replay  & 14.41 &15.45 & & &  & \\
-               & CASIA  & CASIA  & 23.00  & 22.54 & & &  &\\ \hline \hline
+    \multirow{2}{*}{$LBP_{8,1}^{u2}$} & Replay  & Replay  & 14.41 &15.45 & 14.41 & & 14.41 & \\
+               & CASIA  & CASIA  & 23.00  & 22.54 & 23.00 & & 23.00 &\\ \hline \hline
             
     \multirow{2}{*}{Eye blink (1 blink)} & Replay  & Replay  & 48.17 & 52.62 & 89.67 & 90.25 & 6.67 & 15.00\\
                & CASIA  & CASIA  & 48.61 &48.33 & 97.22 & 93.33 & 0.00 & 3.33 \\ \hline \hline
@@ -73,7 +73,7 @@ Increasing the number of eye blinks (two and three) as a liveness check, in orde
 
 
 \section{Inter-test protocol}
-\label{sec:Intra_test}
+\label{sec:Inter_test}
 
 Table \ref{tb:InterTest} shows the performance of the three countermeasures, in $HTER$ terms, applying the Inter-test protocol.
 
@@ -154,8 +154,7 @@ It can be observed that for the Replay attack database the performance in the de
 \section{Combination of Multiple Databases}
 \label{sec:combination}
 
-In the previous section we shown that, with the chosen countermeasures, was not possible to get a good performance in both databases at the same time. If can not get that in tests with databases, what can we say about applying these in a real world scenario? If the databases introduce some bias in the countermeasures due to some particularities of them, we can train each countermeasure with a joint training set combining both databases in order to overcame these biases. This is the most intuitive approach to learn different kind of attacks. 
-
+In the previous section we shown that, with the chosen countermeasures, was not possible to get a good performance in both databases at the same time. If we can not get that in tests with databases, what can we say about applying these in a real world scenario? If the databases introduce some bias in the countermeasures due to some particularities of them, we can train each countermeasure with a joint training set combining both databases in order to overcame these biases. This is the most intuitive approach to learn different kind of attacks. 
 
 Table \ref{tb:TrainAllTest} shows the performance for each countermeasure trained with this strategy. %The analysis is supported with the ROC curves presented in Figure \ref{tb:TrainAllTest}.
 
@@ -201,7 +200,7 @@ We can suggest that this strategy is ineffective using these countermeasures. Ad
 \section{Score Level Fusion based Framework}
 \label{sec:framework}
 
-In order to improve the performance results in comparison with the intra-test protocol and the inter-test protocol and to mitigate the bias mentioned in the last section, we introduce a framework based on score level fusion. Using this framework, when a new countermeasure need to be added, it is possible to "plug it" without any extra training steps required for the other countermeasures. This strategy can be compared with an antivirus since it is possible to automatic update to new kind of attack any time such as the updates that a regular antivirus does.
+In order to improve the performance results in comparison with the intra-test protocol and the inter-test protocol, and to mitigate the bias mentioned in the last section, we introduce a framework based on score level fusion. Using this framework, when a new countermeasure need to be added, it is possible to "plug it" without any extra training steps required for the other countermeasures. This strategy can be compared with an antivirus since it is possible to automatic update to new kind of attack any time such as the updates that a regular antivirus does.
 
 To support this assumption, we first evaluate the level of independence of the countermeasures trained with different databases in order to ensure its effectiveness in a possible score fusion. Kulcheva and Whitaker \cite{kuncheva2003measures} show that the combination of statistically independent classifiers is recommended for a good performance in a score level fusion. In order to evaluate the dependence of classifiers, ten statistics were analyzed. The methodology presented in that work shows that the $Q-statistic$ is most suitable and we choose that metric to evaluate the statistic dependence of each countermeasure for the Score Level Fusion based Framework. The $Q-statistic$ for two classifiers is defined as follow:
 
@@ -254,9 +253,18 @@ Table \ref{tb:FrameworkTest} shows the statistic dependency using the $Q-statist
 
 Analyzing the $Q-statistic$ it is  possible to observe that the Correlation with Frame Differences countermeasure is the most statistically independent and suggests that a score fusion is suitable. This can be attested analysing its performance compared with the \textbf{inter-test} (see Table \ref{tb:InterTest}) and \textbf{intra-test} (see Table \ref{tb:IntraTest}) protocol results (see Table \ref{tb:FrameworkTest}). For the inter-test protocol the improvement with the Score Level Fusion based Framework was significative. Comparing with the intra-test protocol the degradation was very low and the countermeasure is able to detect spoofs in both databases with different degrees of success.
 
-However the $Q-statistic$ for the $LBP-TOP$ and the $LBP$ countermeasures present unbalanced values for each database. Specially for the CASIA FASD $Q_{R,C}\simeq-0.4$ suggesting that each one of this two countermeasure trained with different databases oppose each other and are not suitable for the Score Level Fusion based Framework. This can be attested analysing their performances compared with the intra-test protocol results (see Table \ref{tb:CrossTest}). The degradation is still high.
+However the $Q-statistic$ for the $LBP-TOP$ and the $LBP$ countermeasures present unbalanced values for each database. Specially for the CASIA FASD $Q_{R,C}\simeq-0.4$ suggesting that each one of this two countermeasure trained with different databases oppose each other and are not suitable for the Score Level Fusion based Framework. This can be attested analysing their performances compared with the intra-test protocol results (see Table \ref{tb:IntraTest}). The degradation is still high.
 
 %The authors that designed the $LBP$ and $LBP-TOP$ countermeasures chosen the SVM with the RBF kernel as classifier. In both settings, the final trained machines have $\sim35\%$ of the training data as support vectors, what suggest overfitting in each database. The authors that designed the Correlation with Frame Differences countermeasure chosen MLPs with only 5 neurons, which is much simpler classifier and has less chance to overfit of the training data than a SVM.
 
 It is important to remark that the literature lacks in video face spoofing databases and is not possible to ensure the effectiveness of the Score Level Fusion based Framework in a third database. Its effectiveness in a third video face spoofing database, at this stage is only speculative. Another point to highlight is that the fusion strategy chosen for this work is quite simple. For a future extensions more complex fusion strategies need to be addressed.
+
+\section{Final Remarks}
+\label{sec:Experiments_finalremarks}
+
+This chapter compared four countermeasures, very representative according to the state of the art of this research field, using two different test protocols. Using the only two video face antispoofing databases publicly available (Replay Attack Database and CASIA FASD) we introduced the intra-test protocol and the inter-test protocol.
+
+The evaluation of each countermeasure using the intra-test protocol, suggests a good performance and good intra-database generalization power for three countermeasures (Textures with $LBP$, Dynamic textures with $LBP-TOP$  and Motion Correlation). The exception was the countermeasure based on eye blinks. Due to some particularities of the databases, this countermeasure was not effective in this protocol and we discarded it. Using the inter-test protocol, the countermeasures accumulates a lot of degradation suggesting a strong bias in the databases.
+
+To overcame this bias we introduce two approaches. The first one, combination of multiple databases, combines the train set of each database to train each one of the presented countermeasures. Compared with the inter-test protocol, this strategy improved the countermeasures performance. However, it was observed a strong bias to the Replay Attack Database degrading the performance in the CASIA FASD comparing with the intra-test protocol. In the second approach, we introduced the Score Level Fusion based Framework that merges the scores of countermeasures trained with different databases. Only countermeasures that are statistically independent are suitable for an effective score fusion. Analyzing the $Q-statistic$ measure, the Correlation with Frame Differences countermeasure is the most statistically independent and it is the most suitable for the Framework. This was attested comparing the performance of this countermeasure with the performance obtained with the inter-test and intra-test protocols.  However the framework performance using the $LBP-TOP$ and $LBP$ presented unbalanced values for each database and high absolute values for the $Q-statistic$. This behavior indicated the "improperness" of fusion for these countermeasures.
 
