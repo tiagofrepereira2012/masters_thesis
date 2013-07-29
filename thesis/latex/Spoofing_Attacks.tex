@@ -1,63 +1,12 @@
-\chapter{Spoofing Attacks}
+\chapter{Spoofing Attacks in Face Authentication}
 \label{chap:Spoofing}
 
-As aforementioned in the last chapter, spoofing attacks in biometrics are direct attacks to the biometric sensor. Spoofing techniques vary from different biometrics. This chapter discusses the spoofing attacks in different biometric traits focusing in face recognition. Section \ref{sec:SpoofingAttacksBiometrics} presents the spoofing attacks in other biometric traits. Section \ref{sec:SpoofingAttacksFaceRec} discusses spoofing in face biometrics. Section \ref{sec:Databases} presents the face antispoofing databases publicly available. Finally Section \ref{sec:final_remarks} presents the final remarks of the chapter.
+As mentioned in the Chapter \ref{chap:introduction}, spoofing attacks in biometrics are direct attacks to the biometric sensor. This chapter discusses the spoofing attacks in face authentication systems and is organized as follows. Section \ref{sec:countermeasures} discusses spoofing in face biometrics presenting the state of the art countermeasures. Section \ref{sec:Databases} presents the face antispoofing databases publicly available. Finally Section \ref{sec:final_remarks} presents the final remarks of the chapter.
 
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%
-% Spoofing Attacks
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%
-\section{Spoofing Attacks in Biometrics}
-\label{sec:SpoofingAttacksBiometrics}
+\section{The countermeasures}
+\label{sec:countermeasures}
 
-Most of biometric systems can be spoofed. This section discusses the findings of spoofing attacks in different biometric systems.
-
-\subsection{Fingerprint}
-
-In fingerprints verification systems, the attacker can forge a fingerprint with different materials (gummy, silicone, etc). \cite{matsumoto2002impact} and \cite{leyden2002gummi} discusses how to generate fake fingerprints using materials easily found in a supermarket. Figure \ref{fig:finger_attack} shows how easy is to create a mold from a live finger and to reproduce its fingerprint with gummy. This fake fingers can be used  to spoof a fingerprint biometric systems.
-
-\begin{figure}[!htb]
-\begin{center}
-\includegraphics [width=16cm] {images/finger_print_attack.pdf}
-\caption[Creating a fake fingerprint]{Creating a fake fingerprint (Adapted from \cite{matsumoto2002impact})} \label{fig:finger_attack}
-\end{center}
-\end{figure}
-
-Recently in Brazil (2013), was reported that doctors in Sao Paulo were arrested after being caught in the act of using fake fingers made of silicone and imprinted with real fingerprints to defraud a hospital's biometric punch-in clock\footnote{http://www.foxnews.com/us/2013/03/13/brazilian-doctors-use-fake-silicone-fingers-to-defraud-hospital-punch-in-clock/}.
-
-A more sophisticated attack were discussed in \cite{MartinezDiaz2006} and \cite{hill2001risk}. These papers use a hill climbing technique to optimize  the position and the orientation of the minutia. With this optimization was possible to generate fingerprints compatible for match.
-
-%Using a hill climbing technique to optimize to the position and the orientation of the minutia  shown that is possible to generate fingerprints compatible with fingerpri
-%A more sophisticated attack were discussed in \cite{uludag2004attacks}. This paper uses a hill climbing procedure to optimize the position and the orientation of the minutia in a minutia based fingerprint verification system. The optimized result of the minutia can be used to generate a fake finger.
-
-%FALAR DOS SENSORES.
-
-%http://www.tabularasa-euproject.org/news/selected-news-related-to-spoofing-attacks
-
-\subsection{Speaker}
-
-For the speech biometrics the attacker can forge a human voice by mimicry or recording the voice of the target identity and replaying back to the microphone. 
-
-\cite{chetty2004liveness} and \cite{eveno2005speaker} address the problem using audio-visual features. The first one proposes a bi-modal authentication system using the face information in order to increase security. The second one correlates the lip movements with the content of the speech as a security barrier.
-
-\cite{QimingZhu} analyses the speech signal itself applying the 1-dimensional $LBP$ (Local Binary Pattern) followed by a SVM (Support Vector Machines) in order to detect spoofs.
-
-\subsection{Iris}
-
-Iris biometrics has been traditionally regarded as one of the most reliable and accurate biometric traits, but as the other biometric traits also can be spoofed. A simple way to spoof an iris recognition system is with a high quality printed image. More sophisticated attacks using contact lenses can also be carried out.
-
-Countermeasures to deal with this kind of attacks can be deployed in the hardware level (with a specific equipment) or in the software level \cite{Galbally_ICB-2012}. Specially in the software level, \cite{Galbally_ICB-2012} addresses the problem using a bunch of features, including a set of  high pass filters, motion features and occlusion filters in the iris images followed by a binary classifier as countermeasure. 
-
-An approach based on textures was carried out by \cite{ZhuoshiWei}. This countermeasure uses the co-occurrence matrix descriptor followed by a binary classifier. 
-
-%Measuring the pupil reflex using a set of high filters, \cite{kanematsu2007highly}
-% \cite{johnson2010multimodal}, \cite{kanematsu2007highly} and \cite{pacut2006aliveness} are works addressing spoofing attacks in iris biometric system. 
-
-\section{Spoofing Attacks in Face Recognition}
-\label{sec:SpoofingAttacksFaceRec}
-
-Because of its natural and non-intrusive interaction, identity verification and recognition using facial information are among the most active and challenging areas in computer vision research. Despite the significant progress of face recognition technology in the recent decades, wide range of viewpoints, ageing of subjects and complex outdoor lighting are still research challenges. Advances in the area were extensively reported in \cite{flynn2008handbook} and \cite{li2011handbook}. 
+Because of its natural and non-intrusive interaction, identity verification and recognition using facial information are among the most active and challenging areas in computer vision research. Despite the significant progress of face recognition technology in the recent decades, wide range of viewpoints, aging of subjects and complex outdoor lighting are still research challenges. Advances in the area were extensively reported in \cite{flynn2008handbook} and \cite{li2011handbook}. 
 
 It was not until very recently that the problem of spoofing attacks against face biometric system gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \cite{pan2007eyeblink,tan2010face,zhangface,ChingovskaBIOSIG2012} and contests addressing the problem. 
 
@@ -72,9 +21,7 @@ In authentication systems based on face biometrics, spoofing attacks are usually
 \end{center}
 \end{figure}
 
-Recently, the media has documented some situations of attacks in deployed face recognition systems. Using simple photographs, a research group from University of Hanoi showed how easy is to spoof the face authentication systems deployed in Lenovo, Asus and Toshiba Laptops \cite{BlackHat2009}. Since the release \textit{Ice Cream Sandwich}, the Android OS come with a built-in face authentication system to unlock the mobile phone. Since then, it has been extensively demonstrated around the web how easy it is to spoof this face recognition system\footnote{http://www.itproportal.com/2011/11/14/ice-cream-sandwich-facial-recognition-cracked/}. As a consequence, an eye blinking detection has been introduced in the most recent version of the Android OS.
-
-The countermeasures against spoofing attempts in face recognition can be macro classified between the countermeasures that depends of user collaboration and the countermeasures that do not depends of user collaboration. The countermeasure that depends of user collaboration, the user is challenged to interact to the face authentication system. For example, researchers from google are studying a way to unlock the android phones based on facial expressions\footnote{http://www.bbc.co.uk/news/technology-22790221}. As can be observed in Figure \ref{fig:google_unlock}, this strategy can be fun in the beginning but in some situations this can be embarrassing. On the other hand, the countermeasures that do not depend of user collaboration, try to solve this issue analysing the signal itself, without any awareness of the user. This type of countermeasures can be classified by the following cues:
+The countermeasures against spoofing attempts in face recognition can be macro classified in countermeasures that depend and do not depend on user collaboration. In countermeasures that depends on user collaboration, the user is challenged to interact to the face authentication system. For example, researchers from google are studying a way to unlock the android phones based on facial expressions\footnote{\url{http://www.bbc.co.uk/news/technology-22790221}}. As can be observed in Figure \ref{fig:google_unlock}, this strategy can be fun in the beginning but in some situations this can be embarrassing. On the other hand, countermeasures that do not depend on user collaboration try to solve this issue analysing the signal itself, without any awareness of the user. This type of countermeasures can be classified by the following cues:
 \begin{itemize}
         \item Presence of vitality (liveness detection);
         \item Scene characteristics;
@@ -90,9 +37,9 @@ The countermeasures against spoofing attempts in face recognition can be macro c
 
 \subsection{Presence of vitality (liveness detection)}
 
-Presence of vitality or liveness detection, consists of  search for features that only live faces can possess. The eye blinking is an activity that humans do constantly. A regular human blinks once every 2 or 4 seconds in order to maintain the eyes clean and wet. This frequency can vary in stress conditions and/or in a high concentration task. In that situations the interval can extend to $\sim 20$ seconds. However, does't matter in what condition the person is, in some point the eye blink will occur. Following that fact, \cite{pan2007eyeblink} propose a countermeasure measuring the eye blinking using Hidden Markov Models (HMM) mapping the state of eyes open and closed. Experiments carried out using a database created by the authors and freely available for download\footnote{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html}, shown an accuracy of 95.7\% .
+Presence of vitality, or liveness detection, consists of the searching for features that only live faces can possess. The eye blinking is an activity that humans do constantly. A regular human blinks once every 2 or 4 seconds in order to maintain the eyes clean and wet. This frequency can vary in stress conditions and/or in a high concentration task. In that situations the interval can extend to $\sim 20$ seconds. However, does't matter in what condition the person is, the eye blink will always occur. Following that fact, \cite{pan2007eyeblink} propose a countermeasure measuring the eye blinking using Hidden Markov Models (HMM) mapping the state of eyes open and closed. Experiments carried out using a database created by the authors and freely available for download\footnote{\url{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html}}, shown an accuracy of 95.7\% .
 
-Supported by the hypothesis that live faces present uncorrelated motion pattens in some parts of the face compared to the attacks, \cite{kollreider2009non} developed a countermeasure based on optical flow field to explore such cue. As a reference to the algorithm, were selected the center of the face an the region of the ears, as can be observed in Figure \ref{img_kollreider}.
+Supported by the hypothesis that live faces present uncorrelated motion pattens in some parts of the face and the attacks do not, \cite{kollreider2009non} developed a countermeasure based on optical flow field to explore such cue. As a reference to the algorithm, were selected the center of the face an the region of the ears, as can be observed in Figure \ref{img_kollreider}.
 
 \begin{figure}[!htb]
 \begin{center}
@@ -111,7 +58,7 @@ The strategy of the countermeasure can be summarized as follows:
         \item The spoof is detected if the aforementioned ratio was bigger than a threshold $\alpha$.
 \end{enumerate}
 
-The performance was evaluated using an adaptation of the XM2VTS database. The real accesses were videos from XM2VTS database\footnote{http://www.ee.surrey.ac.uk/CVSSP/xm2vtsdb/} and the attacks were generated with printed photographs from the same database. With this database, which was not made public, an $EER=0.5\%$ (Equal Error Rate) was achieved.
+The performance was evaluated using an adaptation of the XM2VTS database. The real accesses were videos from XM2VTS database\footnote{\url{http://www.ee.surrey.ac.uk/CVSSP/xm2vtsdb/}} and the attacks were generated with printed photographs from the same database. With this database, which was not made public, an $EER=0.5\%$ (Equal Error Rate) was achieved.
 
 %EULERIAN.
 
@@ -120,7 +67,7 @@ The performance was evaluated using an adaptation of the XM2VTS database. The re
 
 Countermeasures that search scene features analyse the relationship of the face in the scene.
 
-The countermeasure proposed in \cite{AnjosIJCB2011}\footnote{http://pypi.python.org/pypi/antispoofing.motion/} measures the relative motion difference between the face and the background. The authors focused on simple differences of intensities in successive frames. The motion accumulated between this difference ($M_D$), for a given a Region-of-Interest (RoI) and its respective background, is computed using the following equation:
+The countermeasure proposed in \cite{AnjosIJCB2011}\footnote{\url{http://pypi.python.org/pypi/antispoofing.motion/}} measures the relative motion difference between the face and the background. The authors focused on simple differences of intensities in successive frames. The motion accumulated between this difference ($M_D$), for a given a Region-of-Interest (RoI) and its respective background, is computed using the following equation:
 
 \begin{equation}
 M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|,
@@ -128,7 +75,7 @@ M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|,
 \end{equation}
 where $D$ is the RoI, $S_D$ is the area of the RoI and $I_t$ is the intensity of a pixel.
 
-To input the motion coefficient into a classifier, 5 quantities are extracted for every window of 20 frames. The quantities are: the minimum of $M_D$ in that time window, the maximum, the average, the standard deviation and the ratio $R$ between the spectral sum for all non-DC components and DC component itself taken as base the $N$-point Fourier transform of the signal (see Equation \ref{eq:motionR}). These 5 quantities are fed into a Multi-layer Perceptron (MLP) classifier with 5 neurons in the hidden layer which is trained to detect spoofing attacks. This countermeasure was evaluated using the photograph attacks subset of the Replay Attack Database\cite{ChingovskaBIOSIG2012} and achieved an $HTER=9\%$ (Half Total Error Rate).
+To input the motion coefficient into a classifier, 5 parameters are measured for every window of 20 frames. The parameters are: the minimum of $M_D$ in that time window, the maximum, the average, the standard deviation and the ratio $R$ between the spectral sum for all non-DC components and DC component itself taken as base the $N$-point Fourier transform of the signal (see Equation \ref{eq:motionR}). These 10 parameters (five for the face and five for the background) are fed into a Multi-layer Perceptron (MLP) classifier with 5 neurons in the hidden layer which is trained to detect spoofing attacks. This countermeasure was evaluated using the photograph attacks subset of the Replay Attack Database\cite{ChingovskaBIOSIG2012} and achieved an $HTER=9\%$ (Half Total Error Rate).
 
 %\vspace{-2mm}
 \begin{equation}
@@ -152,7 +99,7 @@ Compared to real faces, attack medias have different reflexive patterns. Support
 \end{center}
 \end{figure}
 
-The Table \ref{tb_LBP-Countermeasure} shows the reported performance, in $HTER$ terms, in the three databases; the Replay Attack Database, the CASIA FASD and the NUAA Database using the $SVM$ (Support Vector Machines) and $LDA$ (Linear Discriminant Analysis) as binary classifiers. It can be observed a satisfactory performance in the three databases (between $\sim15\%$ and $\sim20\%$). However, comparing the performance in the development set (used to tune the hyperparameters) and in the test set of the NUAA database suggest a low generalisation capability.  
+The Table \ref{tb_LBP-Countermeasure} shows the reported performance, in $HTER$ terms, in the three databases; the Replay Attack Database, the CASIA FASD and the NUAA Database using the $SVM$ (Support Vector Machines) and $LDA$ (Linear Discriminant Analysis) as binary classifiers. In the test set, it can be observed a performance between $\sim15\%$ and $\sim20\%$ in the three databases. However, comparing the performance in the development set (used to tune the hyper-parameters) and in the test set of the NUAA database suggest a low generalization capability.  
 
 
 \begin{table}[ht]
@@ -191,9 +138,11 @@ As can be observed in the block diagram in Figure \ref{img:flow_DoG}, four seque
 \end{center}
 \end{figure}
 
-After of the sequence of filters, the images are geometric normalized to $128\times 128$ pixels and these data fed into a $SVM$ classifier. Evaluated using a the CASIA FASD, the countermeasure achieved an $EER$ of $17\%$. 
+After of the sequence of filters, the images are geometric normalized to $128\times 128$ pixels and these data fed into a $SVM$ classifier. Evaluated using a the CASIA FASD, the countermeasure achieved an $EER$ of $17\%$. With these image dimensions, the feature vector of this countermeasure have dimensionality 65,536. The training step of the $SVM$ with this dimensionality could take several weeks. 
 
-Li et al. \cite{li2004live} hypothesize that fraudulent photographs have less high frequency components than real ones. To test the hypothesis a small database was built with 4 identities containing both real access and printed photo attacks. With this private database, an accuracy of $100\%$ was achieved. 
+
+
+Li et al. \cite{li2004live} hypothesize that fraudulent photographs have less high frequency components than real ones. To test the hypothesis, a small database was built with 4 identities containing both real access and printed photo attacks. With this private database, an accuracy of $100\%$ was achieved. 
 
 In order to detect noise patterns in spoofing attacks, \cite{davideo} developed a countermeasure analysing videos combining several elements. First, each frame in a frame sequence is filtered using a gaussian filter followed by a median filter. These filtered images are subtracted by the original ones. The result of this subtraction is so called "residual image". This residual image is analysed in the frequency domain using a 2D Fourier transform. All processed frames in the videos are combined using the Visual Rhythm technique\cite{zhang1995video}. This technique, generates one image with a combination of all frames ending the preprocessing steps. 
 
@@ -207,14 +156,14 @@ A texture description using Gray Level Co-ocurrency matrix (GLMC) was applied in
 \section{Face Spoofing Databases}
 \label{sec:Databases}
 
-In this section, we give an overview of the only three face spoofing databases, the NUAA face antispoofing database, the Replay-Attack Database and the CASIA Face Anti-Spoofing Database \cite{zhangface}, consisting of real access attempts and several fake face attacks of different natures under varying conditions. 
+In this section, we give an overview of the only three freely available face spoofing databases, the NUAA face antispoofing database, the Replay-Attack Database and the CASIA Face Anti-Spoofing Database \cite{zhangface}, consisting of real access attempts and several fake face attacks of different natures under varying conditions. 
 
 %Instead of still images, both datasets contain short video recordings which makes them suitable for evaluating countermeasures that exploit also temporal information.
 
 \subsection{NUAA}
 \label{sec_nuaa}
 
-The NUAA face spoofing database\footnote{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html} \ref{tan2010face} consists of images of real accesses and attacks made with printed photographs. Emulating a scenario of access in a regular notebook, this database has images of 15 users splited in 3 section spaced in two weeks. Each section has 4 screenshots per user in different illumination conditions. Figure \ref{fig:nuaa} has some examples of this database.
+The NUAA face spoofing database\footnote{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html} \cite{tan2010face} consists of images of real accesses and attacks made with printed photographs. Emulating a scenario of access in a regular notebook, this database has images of 15 users splited in 3 section spaced in two weeks. Each section has 4 screenshots per user in different illumination conditions. Figure \ref{fig:nuaa} has some examples of this database.
 
 %Construída para estudar o cenário de ataques utilizando fotografias impressas em papel, a base de dados NUAA\footnote{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html} consiste de capturas fotográficas de pessoas em frente à câmera de um \emph{notebook} e de ataques feitos à mesma câmera com fotos impressas de alta qualidade destas mesmas pessoas. A base de dados possui gravações de 15 pessoas distintas divididas em 3 seções espaçadas em duas semanas e cada seção possui quatro gravações por pessoa com condições de iluminação distintas. Na Figura~\ref{fig:nuaa} são apresentados exemplos dessa base de dados.
 
@@ -307,5 +256,10 @@ Since the main purpose of the database is to investigate the possible effects of
 \section{Final Remarks}
 \label{sec:final_remarks}
 
-In this chapter were exposed how it is possible to spoof biometric systems focusing in the face biometrics, the main issue of this masters project. The research community gave more attention in this kind of research mainly in the last three years. We can quote two evidences of this. The first one, two contest were organized in the last two years calling researchers to develop countermeasures. The second one; three databases were freely released in the last three years. The Section \ref{SpoofingAttacksFaceRec} shown that the most of the countermeasures presented in the literature were evaluated using different metrics and in some cases in private databases, make the work of comparison a hard task. 
+
+In the last three years, the research community presented more works addressing the spoofing 
+
+In this chapter were exposed how it is possible to spoof biometric systems focusing in the face biometrics, the main issue of this masters project. 
+
+The research community gave more attention in this kind of research mainly in the last three years. We can quote two evidences of this. The first one, two contest were organized in the last two years calling researchers to develop countermeasures. The second one; three databases were freely released in the last three years. The Section \ref{SpoofingAttacksFaceRec} shown that the most of the countermeasures presented in the literature were evaluated using different metrics and in some cases in private databases, make the work of comparison a hard task. 
 
