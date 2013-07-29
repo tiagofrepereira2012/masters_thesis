@@ -10,7 +10,7 @@ Because of its natural and non-intrusive interaction, identity verification and 
 
 It was not until very recently that the problem of spoofing attacks against face biometric system gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \cite{pan2007eyeblink,tan2010face,zhangface,ChingovskaBIOSIG2012} and contests addressing the problem. 
 
-Two contest were organized in the last two years. The first one was organized under IJCB 2011(International Joint Conference on Biometrics)\cite{ChakkaIJCB2011} which was the first competition conducted for studying best practices for non-intrusive spoofing detection. More recently, was organized the second competition in this field under ICB 2013 (International Conference on Biometrics).
+Two contest were organized in the last two years. The first one was organized under IJCB 2011(International Joint Conference on Biometrics)\cite{ChakkaIJCB2011} which was the first competition conducted for studying best practices for non-intrusive spoofing detection. More recently, was organized the second competition in this field under ICB 2013 (International Conference on Biometrics)\cite{Chingovska_ICB2013_2013} .
 
 In authentication systems based on face biometrics, spoofing attacks are usually perpetrated using photographs, videos or forged masks. While one can also use make-up or plastic surgery as mean of spoofing, photographs and videos are probably the most common sources of spoofing attacks. Moreover, due to the increasing popularity of social network websites (facebook, flickr, youtube, instagram and others), a great deal of multimedia content - especially videos and photographs - is available on the web that can be used to spoof a face authentication system. Figure \ref{fig:flow_spoofing} (a) and (b) shows the biometric data flow in a real access and in a spoofing attack respectively. In order to mitigate this kind of vulnerability in face authentication systems, effective countermeasures against face spoofing have to be deployed.
 
@@ -163,7 +163,7 @@ In this section, we give an overview of the only three freely available face spo
 \subsection{NUAA}
 \label{sec_nuaa}
 
-The NUAA face spoofing database\footnote{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html} \cite{tan2010face} consists of images of real accesses and attacks made with printed photographs. Emulating a scenario of access in a regular notebook, this database has images of 15 users splited in 3 section spaced in two weeks. Each section has 4 screenshots per user in different illumination conditions. Figure \ref{fig:nuaa} has some examples of this database.
+The NUAA face spoofing database\footnote{\url{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html}} \cite{tan2010face} consists of images of real accesses and attacks made with printed photographs. Emulating a scenario of access in a regular notebook, this database has images of 15 users splited in 3 section spaced in two weeks. Each section has 4 screenshots per user in different illumination conditions. Figure \ref{fig:nuaa} has some examples of this database.
 
 %Construída para estudar o cenário de ataques utilizando fotografias impressas em papel, a base de dados NUAA\footnote{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html} consiste de capturas fotográficas de pessoas em frente à câmera de um \emph{notebook} e de ataques feitos à mesma câmera com fotos impressas de alta qualidade destas mesmas pessoas. A base de dados possui gravações de 15 pessoas distintas divididas em 3 seções espaçadas em duas semanas e cada seção possui quatro gravações por pessoa com condições de iluminação distintas. Na Figura~\ref{fig:nuaa} são apresentados exemplos dessa base de dados.
 
@@ -256,10 +256,14 @@ Since the main purpose of the database is to investigate the possible effects of
 \section{Final Remarks}
 \label{sec:final_remarks}
 
+It was not until very recently that the problem of spoofing attacks against face biometric systems gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \cite{tan2010face,zhangface,ChingovskaBIOSIG2012} and the recently two contests organized \cite{ChakkaIJCB2011,Chingovska_ICB2013_2013}. With that efforts, a number of countermeasures were recently published and we presented the main of them in this chapter.
 
-In the last three years, the research community presented more works addressing the spoofing 
+Most of the countermeasures presented in this chapter were evaluated using different metrics and in some cases in private databases, making the comparison of them a hard task. Just a few of them have source code available, making this task even worse. Additionally, the countermeasures recently published focuses only in the performance analysis in one database. The extension to more databases and the analysis of possible database bias in these countermeasures are overlooked in these works. 
 
-In this chapter were exposed how it is possible to spoof biometric systems focusing in the face biometrics, the main issue of this masters project. 
+%This masters dissertation focuses 
 
-The research community gave more attention in this kind of research mainly in the last three years. We can quote two evidences of this. The first one, two contest were organized in the last two years calling researchers to develop countermeasures. The second one; three databases were freely released in the last three years. The Section \ref{SpoofingAttacksFaceRec} shown that the most of the countermeasures presented in the literature were evaluated using different metrics and in some cases in private databases, make the work of comparison a hard task. 
+
+%In this chapter were exposed how it is possible to spoof biometric systems focusing in the face biometrics, the main issue of this masters project. 
+
+%The research community gave more attention in this kind of research mainly in the last three years. We can quote two evidences of this. The first one, two contest were organized in the last two years calling researchers to develop countermeasures. The second one; three databases were freely released in the last three years. The Section \ref{SpoofingAttacksFaceRec} shown that the most of the countermeasures presented in the literature were evaluated using different metrics and in some cases in private databases, make the work of comparison a hard task. 
 
