@@ -142,7 +142,7 @@ After of the sequence of filters, the images are geometric normalized to $128\ti
 
 
 
-Li et al. \cite{li2004live} hypothesize that fraudulent photographs have less high frequency components than real ones. To test the hypothesis, a small database was built with 4 identities containing both real access and printed photo attacks. With this private database, an accuracy of $100\%$ was achieved. 
+Li et al. \cite{li2004live} hypothesize that fraudulent photographs have less high frequency components than real ones. To test the hypothesis, a small database was built with 4 identities containing both real access and printed photo attacks. With this private database (which was not made public), an accuracy of $100\%$ was achieved. 
 
 In order to detect noise patterns in spoofing attacks, \cite{davideo} developed a countermeasure analysing videos combining several elements. First, each frame in a frame sequence is filtered using a gaussian filter followed by a median filter. These filtered images are subtracted by the original ones. The result of this subtraction is so called "residual image". This residual image is analysed in the frequency domain using a 2D Fourier transform. All processed frames in the videos are combined using the Visual Rhythm technique\cite{zhang1995video}. This technique, generates one image with a combination of all frames ending the preprocessing steps. 
 
@@ -258,7 +258,7 @@ Since the main purpose of the database is to investigate the possible effects of
 
 It was not until very recently that the problem of spoofing attacks against face biometric systems gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \cite{tan2010face,zhangface,ChingovskaBIOSIG2012} and the recently two contests organized \cite{ChakkaIJCB2011,Chingovska_ICB2013_2013}. With that efforts, a number of countermeasures were recently published and we presented the main of them in this chapter.
 
-Most of the countermeasures presented in this chapter were evaluated using different metrics and in some cases in private databases, making the comparison of them a hard task. Just a few of them have source code available, making this task even worse. Additionally, the countermeasures recently published focuses only in the performance analysis in one database. The extension to more databases and the analysis of possible database bias in these countermeasures are overlooked in these works. 
+Most of the countermeasures presented in this chapter were evaluated using different metrics and in some cases in private databases, making the comparison of them a hard task. Just a few of them have source code available, making this task even worse. Additionally, the countermeasures recently published focuses only in the performance analysis in one database. The extension to more databases and the analysis of possible database bias in these countermeasures are overlooked. 
 
 %This masters dissertation focuses 
 

@@ -23,11 +23,11 @@ Firstly, the biometric trait is captured using a some kind of sensor. Secondly, 
 %\subsection{Replay attack}
 %\label{sec:rep}
 
-The \textbf{replay attack} is performed by injecting a biometric data previously sent, of the target identity, in order to have a non authorized access. This data can be obtained sniffing the biometric authentication software. To mitigate this kind of attack, the biometric system should ensure that the provided data was not injected artificially \cite{xiao2005security}. The most  popular way of protect this kind of attack is to associate a timestamp to the data. As it is improbable to have exactly the same biometric data in different times, this method can be quite effective.
+The \textbf{replay attack} is performed by injecting a biometric data previously sent, of the target identity, in order to have a non authorized access. This data can be obtained sniffing the biometric authentication software. To mitigate this kind of attack, the biometric system should ensure that the provided data was not injected artificially \cite{xiao2005security}. A common way to protect against this kind of attack, is to associate a timestamp to the data. As it is improbable to have exactly the same biometric data in different times, this method can be quite effective.
 
 %\subsection{Biometric reference attack}
 
-The \textbf{biometric reference attack} is performed where the biometrics are stored. This kind of attack include actions such as the inclusion, removing, modifying and steal biometric references. Among this actions, the possibility to steal a biometric reference is the most dangerous threat, since it is possible to work in a reverse engineering process to regenerate the biometric trait. 
+The \textbf{biometric reference attack} is performed where the biometrics are stored. This kind of attack, include actions such as the inclusion, removing, modifying and steal biometric references. Among this actions, the possibility to steal a biometric reference is the most dangerous threat, since it is possible to work in a reverse engineering process to regenerate the biometric trait. 
 
 Using a hill climbing technique to optimize to the position and the orientation of the minutia \cite{MartinezDiaz2006} and \cite{hill2001risk} shown that is possible to generate synthetic fingerprints compatible with fingerprints stored in a database. Fake fingers (with a real fingerprint) with gummy or silicone can be generated with this minutia. It is possible also to inject these minutia in the \textbf{Processing} module (see Figure \ref{fig:diagram_attacks}) in order to deceive the authentication system. 
 
@@ -43,11 +43,11 @@ In the \textbf{man in the middle attack}, the biometric data is intercepted in a
         \item Inject biometric data (as shown in the replay attack).
 \end{itemize}
 
-The same security recommendations aforementioned to deal with this security breaks can be used here i.e. encrypt the data before transmission, increase the security grants and so on. 
+The same security recommendations aforementioned to deal with this security breaks can be used here; i.e. encrypt the data before transmission, increase the security grants and so on. 
 
 %\subsection{Ataque de Spoofing}
 
-The \textbf{spoofing attack}, in biometric systems, is a direct attack to the biometric sensor; i.e. a forged biometric trait is presented to the biometric sensor in order to deceived it. The goal is to pretend to be someone else in order to get forbidden privileges. Most of biometric systems can be spoofed. Next subsections presents a brief discussion about spoofing in other biometric systems:
+The \textbf{spoofing attack}, in biometric systems, is a direct attack to the biometric sensor; i.e. a forged biometric trait is presented to the biometric sensor in order to deceived it. The goal is to pretend to be someone else in order to get forbidden privileges. Most of biometric systems can be spoofed. Next subsections presents a brief discussion about spoofing in different biometric traits:
 
 \subsubsection{Fingerprint}
 
