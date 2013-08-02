@@ -19,7 +19,7 @@ To make $VLBP$ computationally treatable and easy to extend, the co-occurrences 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=0.75\linewidth] {images/proposed_countermeasure/LBP-TOP_design.png}
-\caption{(a) Three planes intersecting one pixel (b) LBP histogram of each plane (c) Concatenating the histograms).} \label{fig:LBP-TOP_design}
+\caption[LBP-TOP scheme]{LBP-TOP scheme (a) Three planes intersecting one pixel (b) LBP histogram of each plane (c) Concatenating the histograms).} \label{fig:LBP-TOP_design}
 \end{center}
 \end{figure}
 %(courtesy of \cite{zhao2007dynamic}
@@ -56,7 +56,7 @@ The key idea of this countermeasure is to learn and detect the structure and the
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=0.85\linewidth] {images/proposed_countermeasure/flicker.png}
-\caption[Example sequence of a warped photo attack from the CASIA Face Anti-Spoofing Database]{Example sequence of a warped photo attack from the CASIA Face Anti-Spoofing Database \cite{zhangface} describing the characteristic reflections (flickering) of planar spoofing medium and the distorted motion patterns.} \label{fig:flickering}
+\caption[Sequence of a warped photo attack extracted from the CASIA FASD]{Sequence of a warped photo attack extracted from the CASIA FASD \cite{zhangface} describing the characteristic reflections (flickering) of planar spoofing medium and the distorted motion patterns.} \label{fig:flickering}
 \end{center}
 \end{figure}
 %\cite{zhangface}
@@ -72,7 +72,7 @@ Unlike photographs and display devices, real faces are indeed non-rigid objects 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=16cm] {images/proposed_countermeasure/countermeasure_2.png}
-\caption{Block diagram of the proposed countermeasure.} \label{fig_countermeasure}
+\caption[Block diagram of the proposed countermeasure based on LBP-TOP]{Block diagram of the proposed countermeasure based on LBP-TOP} \label{fig_countermeasure}
 \end{center}
 \end{figure}
 
@@ -84,7 +84,7 @@ Figure \ref{fig_countermeasure} shows a block diagram of the proposed countermea
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=6cm] {images/proposed_countermeasure/faceDetection_2.png}
-\caption{Face detection strategy for $R_t = 1$.} \label{fig_faceDetection}
+\caption[Face detection strategy for $R_t = 1$]{Face detection strategy for $R_t = 1$} \label{fig_faceDetection}
 \end{center}
 \end{figure}
 
@@ -102,7 +102,7 @@ The multiresolution approach can be performed by concatenating the histograms in
 \section{Experiments}
 \label{sec_experiments}
 
-This section provides an in-depth analysis on the proposed $LBP-TOP$ based face liveness description using the Replay-Attack Database \cite{ChingovskaBIOSIG2012} and the CASIA Face Anti-Spoofing Database \cite{zhangface}. The $LBP-TOP$ representation is computed over relatively short temporal windows and the results are reported using the overall classification accuracy for the individual volumes. Altogether four experiments were carried out evaluating the effectiveness of:
+This section provides an in-depth analysis on the proposed $LBP-TOP$ based face liveness description using the Replay Attack Database \cite{ChingovskaBIOSIG2012} and the CASIA FASD \cite{zhangface}. The $LBP-TOP$ representation is computed over relatively short temporal windows and the results are reported using the overall classification accuracy for the individual volumes. Altogether four experiments were carried out evaluating the effectiveness of:
 
 \begin{enumerate}
         \item Each $LBP-TOP$ plane individually and in combination;
@@ -111,7 +111,7 @@ This section provides an in-depth analysis on the proposed $LBP-TOP$ based face 
         \item The multiresolution approach.
 \end{enumerate}
 
-In order to study the effect of the different variables, each parameter was tuned solely (fixing other elements) using the development set of each face spoofing database. It should be noted that unlike the Replay-Attack Database, the CASIA Face Anti-Spoofing Database lacks a specific development set. Therefore, the first four experiments were performed in this database using cross-validation by randomly dividing the training data into five folds. Hence, the results presented for CASIA Face Anti-Spoofing Database are actually the average $HTER$ on the test set over five iterations of the algorithm with different folds playing the role of a development set.
+In order to study the effect of the different variables, each parameter was tuned solely (fixing other elements) using the development set of each face spoofing database. It should be noted that unlike the Replay Attack Database, the CASIA FASD lacks a specific development set. Therefore, the first four experiments were performed in this database using cross-validation by randomly dividing the training data into five folds. Hence, the results presented for CASIA FASD are actually the average $HTER$ on the test set over five iterations of the algorithm with different folds playing the role of a development set.
 
 Finally, we also studied the accumulation of facial appearance and dynamics information over longer time windows and perform an evaluation at system level. The access attempt based results presented in Section \ref{sec_attempt} were obtained using the official protocol of each database.
 
@@ -121,20 +121,20 @@ Inspired by \cite{ChingovskaBIOSIG2012}, the $LBP-TOP$ operator chosen to start 
 \subsection{Effectiveness of each $LBP-TOP$ plane individually and in combination}
 \label{sec_lbptop_planes}
 
-In this experiment, we analysed the effectiveness of each individual plane and their combinations when the multiresolution area is increased. Figure \ref{fig:planes_evaluation_LDA} shows the $HTER$ evolution, on the test set, considering individual and combined histograms of $LBP-TOP$ planes for each database. We used, as binary classifier, a linear projection derived from Linear Discriminant Analysis LDA as in \cite{ChingovskaBIOSIG2012}.
+In this experiment, we analysed the effectiveness of each individual plane and their combinations when the multiresolution area is increased. Figure \ref{fig:planes_evaluation_LDA} shows the $HTER$ evolution, on the test set, considering individual and combined histograms of $LBP-TOP$ planes for each database. We used, as binary classifier, a linear projection derived from LDA (Linear Discriminant Analysis) as in \cite{ChingovskaBIOSIG2012}.
 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=\textwidth] {images/proposed_countermeasure/planes_evaluation_LDA.pdf}
-\caption{Evaluation of HTER(\%) in each plane when the multiresolution area ($R_t$) is increased with LBP-TOP$_{8,8,8,1,1,R_t}^{u2}$ and LDA classifier - test-set \textbf{(a)} Replay-Attack Database \textbf{(b)} CASIA Face Anti-Spoofing Database.} \label{fig:planes_evaluation_LDA}
+\caption[HTER(\%) evaluation in each plane when the multiresolution area ($R_t$) is increased]{HTER(\%) evaluation in each plane when the multiresolution area ($R_t$) is increased with LBP-TOP$_{8,8,8,1,1,R_t}^{u2}$ and LDA classifier - test-set \textbf{(a)} Replay Attack Database \textbf{(b)} CASIA FASD.} \label{fig:planes_evaluation_LDA}
 \end{center}
 \end{figure}
 
-The results indicate differences in the performance between the two databases. The temporal components ($XT$ and $YT$) are a decisive cue for the Replay-Attack Database and the combination of all three planes ($XY$, $XT$ and $YT$) gives the best performance. Conversely, for the CASIA Face Anti-Spoofing Database, the addition of temporal planes improves the performance only slightly compared to the spatial $LBP$ representation (considering only the $XY$ plane). These observations can be explained by taking a closer look at the differences in the databases and their spoofing attack scenarios. 2D fake face attacks can be categorized into two groups, close-up and scenic attacks, based on how the fake face is represented with the spoofing medium.
+The results indicate differences in the performance between the two databases. The temporal components ($XT$ and $YT$) are a decisive cue for the Replay Attack Database and the combination of all three planes ($XY$, $XT$ and $YT$) gives the best performance. Conversely, for the CASIA FASD, the addition of temporal planes improves the performance only slightly compared to the spatial $LBP$ representation (considering only the $XY$ plane). These observations can be explained by taking a closer look at the differences in the databases and their spoofing attack scenarios. 2D fake face attacks can be categorized into two groups, close-up and scenic attacks, based on how the fake face is represented with the spoofing medium.
 
-A close-up spoof describes only the facial area which is presented to the sensor. The main weakness with the tightly cropped fake faces is that the boundaries of the spoofing medium, e.g. a video screen frame, photograph edges, or the attacker's hands are usually visible during the attack, thus can be detected in the scene \cite{JukkaLBP2012}. However, these visual cues can be hidden by incorporating background scene in the face spoof and placing the resulting scenic fake face very near to the sensor as performed on the Replay-Attack Database. In such cases, the description of facial appearance leads to rather good performance because the proximity between the spoofing medium and the camera causes the recaptured face image to be out-of-focus also revealing other facial texture quality issues, like degradation due to the used spoofing medium. Furthermore, the attacks in Replay-Attack Database are performed using two types of support conditions, fixed and hand-held. Naturally, the $LBP-TOP$ based face representation can easily detect fixed photo and print attacks since there is no variation in the facial texture over time. On the other hand, the hand-held attacks introduce synchronized shaking of the face and spoofing medium. This can be observed as excessive relative motion in the view, again, due to the proximity between the display medium and the sensor. Since the distinctive global motion patterns are clearly visible also on the facial region, they can be captured even by computing the LBP-TOP description over relatively short temporal windows, i.e. low values of $R_t$.
+A close-up spoof describes only the facial area which is presented to the sensor. The main weakness with the tightly cropped fake faces is that the boundaries of the spoofing medium, e.g. a video screen frame, photograph edges, or the attacker's hands are usually visible during the attack, thus can be detected in the scene \cite{JukkaLBP2012}. However, these visual cues can be hidden by incorporating background scene in the face spoof and placing the resulting scenic fake face very near to the sensor as performed on the Replay Attack Database. In such cases, the description of facial appearance leads to rather good performance because the proximity between the spoofing medium and the camera causes the recaptured face image to be out-of-focus also revealing other facial texture quality issues, like degradation due to the used spoofing medium. Furthermore, the attacks in Replay Attack Database are performed using two types of support conditions, fixed and hand-held. Naturally, the $LBP-TOP$ based face representation can easily detect fixed photo and print attacks since there is no variation in the facial texture over time. On the other hand, the hand-held attacks introduce synchronized shaking of the face and spoofing medium. This can be observed as excessive relative motion in the view, again, due to the proximity between the display medium and the sensor. Since the distinctive global motion patterns are clearly visible also on the facial region, they can be captured even by computing the LBP-TOP description over relatively short temporal windows, i.e. low values of $R_t$.
 
-In contrast, the CASIA Face Anti-Spoofing database consists of close-up face spoofs. The distance between the camera and the display medium is much farther compared to the attacks on Replay-Attack Database. The display medium does not usually move much in the attack scenarios. Therefore, the overall translational movement of a fake face is much closer to the motion of a genuine head. Due to the lack of distinctive shaking of the display medium, the CASIA Face Anti-Spoofing Database can be considered to be more challenging from the dynamic texture point of view. Because the motion cues are harder to explore in some attack scenarios using small values of $R_t$, we investigated in Section \ref{sec_attempt} whether the use of longer time windows helps to reveal the disparities between a genuine face and a fake one.
+In contrast, the CASIA FASD consists of close-up face spoofs. The distance between the camera and the display medium is much farther compared to the attacks on Replay Attack Database. The display medium does not usually move much in the attack scenarios. Therefore, the overall translational movement of a fake face is much closer to the motion of a genuine head. Due to the lack of distinctive shaking of the display medium, the CASIA FASD can be considered to be more challenging from the dynamic texture point of view. Because the motion cues are harder to explore in some attack scenarios using small values of $R_t$, we investigated in Section \ref{sec_attempt} whether the use of longer time windows helps to reveal the disparities between a genuine face and a fake one.
 
 
 %--------------------------------------------------------------------------------------------------------
@@ -146,12 +146,12 @@ In this experiment, we analysed the effectiveness of different classifiers when 
 \begin{figure}[!btb]
 \begin{center}
 \includegraphics [width=\textwidth] {images/proposed_countermeasure/evaluation_classifiers.pdf}
-\caption{Evaluation of HTER(\%) with LBP-TOP$_{8,8,8,1,1,R_t}^{u2}$ using different classifiers \textbf{(a)} Replay-Attack Database \textbf{(b)} CASIA Face Anti-Spoofing Database.} \label{fig:evaluation_classifiers}
+\caption[HTER(\%) evaluation with LBP-TOP$_{8,8,8,1,1,R_t}^{u2}$ using different classifiers]{HTER(\%) evaluation with LBP-TOP$_{8,8,8,1,1,R_t}^{u2}$ using different classifiers \textbf{(a)} Replay Attack Database \textbf{(b)} CASIA FASD.} \label{fig:evaluation_classifiers}
 \end{center}
 \end{figure}
 
 
-The SVM classifier with an RBF kernel provided the best performance on the Replay-Attack Database and the CASIA Face Anti-Spoofing Database (7.97\% and 20.72\% in terms of HTER, respectively). However, it is important to remark that the same LBP-TOP configuration with an LDA classifier resulted in comparable performance (11.35\% and 24.91\% in terms of HTER). This is not a huge gap and the classification scheme is far simpler. As similar findings have been reported \cite{ChingovskaBIOSIG2012,Komulainen_ICB_2013}, the use of simple and computationally efficient classifiers should be indeed considered when constructing real-world anti-spoofing solutions.
+The SVM classifier with an RBF kernel provided the best performance on the Replay Attack Database and the CASIA FASD (7.97\% and 20.72\% in terms of HTER, respectively). However, it is important to remark that the same LBP-TOP configuration with an LDA classifier resulted in comparable performance (11.35\% and 24.91\% in terms of HTER). This is not a huge gap and the classification scheme is far simpler. As similar findings have been reported \cite{ChingovskaBIOSIG2012,Komulainen_ICB_2013}, the use of simple and computationally efficient classifiers should be indeed considered when constructing real-world anti-spoofing solutions.
 
 
 %--------------------------------------------------------------------------------------------------------
@@ -165,7 +165,7 @@ The size of the histogram in a multiresolution analysis, in time domain, increas
 \begin{figure}[!btb]
 \begin{center}
 \includegraphics [width=\textwidth] {images/proposed_countermeasure/evaluation_LBP-operator.pdf}
-\caption{Evaluation of HTER(\%) with LBP-TOP$_{8,8,8,1,1,R_t}$ using different LBP configurations in the planes with SVM classifier \textbf{(a)} Replay-Attack Database \textbf{(b)} CASIA Face Anti-Spoofing Database.}
+\caption[HTER(\%) evaluation with LBP-TOP$_{8,8,8,1,1,R_t}$ using different LBP operators]{HTER(\%) evaluation with LBP-TOP$_{8,8,8,1,1,R_t}$ using different LBP operators in the planes with SVM classifier \textbf{(a)} Replay Attack Database \textbf{(b)} CASIA FASD.}
 \label{fig:evaluation_LBP-operator}
 \end{center}
 \end{figure}
@@ -178,7 +178,7 @@ The size of the histogram in a multiresolution analysis, in time domain, increas
 \end{center}
 \end{figure}
 
-When the multiresolution area is increased, the HTER saturates for LBP$^{riu2}$ and LBP$^{u2}$ on both datasets. For the basic LBP operator a minimum can be observed in 7.60\% and 20.71\% on the Replay-Attack Database and CASIA Face Anti-Spoofing Database respectively. On both databases, basic LBP and LBP$^{u2}$ presented similar performance. Even though the use of regular LBP leads to the best results, the LBP$^{u2}$ operator seems to provide a reasonable trade-off between computational complexity (see Fig. \ref{fig:dimIncrease}) and performance. Hence, we will still proceed with LBP$^{u2}$.
+When the multiresolution area is increased, the HTER saturates for LBP$^{riu2}$ and LBP$^{u2}$ on both datasets. For the basic LBP operator a minimum can be observed in 7.60\% and 20.71\% on the Replay Attack Database and CASIA FASD respectively. On both databases, basic LBP and LBP$^{u2}$ presented similar performance. Even though the use of regular LBP leads to the best results, the LBP$^{u2}$ operator seems to provide a reasonable trade-off between computational complexity (see Fig. \ref{fig:dimIncrease}) and performance. Hence, we will still proceed with LBP$^{u2}$.
 
 %--------------------------------------------------------------------------------------------------------
 \subsection{Effectiveness of the multiresolution approach}
@@ -189,7 +189,7 @@ In this experiment we analysed the effectiveness of the multiresolution approach
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=\textwidth] {images/proposed_countermeasure/multiVSsingle.pdf}
-\caption{Evaluatation of HTER\% using LBP-TOP$_{8,8,8,1,1,R_t}^{u2}$ with the single resolution and the multiresolution approach using SVM classifier \textbf{(a)} Replay-Attack Database \textbf{(b)} CASIA Face Anti-Spoofing Database.} \label{fig:multiVSsingle}
+\caption[HTER(\%) evaluation using LBP-TOP$_{8,8,8,1,1,R_t}^{u2}$ with the single resolution and the multiresolution approach]{HTER(\%) evaluation using LBP-TOP$_{8,8,8,1,1,R_t}^{u2}$ with the single resolution and the multiresolution approach using SVM classifier \textbf{(a)} Replay Attack Database \textbf{(b)} CASIA FASD.} \label{fig:multiVSsingle}
 \end{center}
 \end{figure}
 
@@ -201,31 +201,33 @@ On both datasets, the HTER of single resolution approach increases with $R_t$ wh
 \subsection{Access attempt based analysis}
 \label{sec_attempt}
 
-In the previous experiments, the importance of the temporal dimension was studied using the single resolution and the multiresolution approaches. As presented in Section\ref{sec_lbptop_planes}, the multiresolution approach is able to capture the nature of fixed photo attacks and the excessive motion of display medium, especially on the Replay-Attack Database. However, in some attack scenarios, the motion patterns were harder to explore using small values of $R_t$. We now study how the temporal window size affects the performance when the facial appearance and dynamics information are accumulated over time. The face description of the single resolution and multiresolution methods can be accumulated over longer time periods either by averaging the features within a time window or by classifying each subvolume and then averaging the scores within the current window. In this manner, we are able to provide dense temporal sampling over longer temporal windows without excessively increasing the size of the feature histogram.
+In the previous experiments, the importance of the temporal dimension was studied using the single resolution and the multiresolution approaches. As presented in Section\ref{sec_lbptop_planes}, the multiresolution approach is able to capture the nature of fixed photo attacks and the excessive motion of display medium, especially on the Replay Attack Database. However, in some attack scenarios, the motion patterns were harder to explore using small values of $R_t$. We now study how the temporal window size affects the performance when the facial appearance and dynamics information are accumulated over time. The face description of the single resolution and multiresolution methods can be accumulated over longer time periods either by averaging the features within a time window or by classifying each subvolume and then averaging the scores within the current window. In this manner, we are able to provide dense temporal sampling over longer temporal windows without excessively increasing the size of the feature histogram.
 
-In order to follow the method used in previous experiments, we begin evaluating the two averaging strategies with the LBP-TOP$_{8,8,8,1,1,1}^{u2}$ operator and a SVM classifier with RBF kernel. In order to determine the video based system performance, we applied both average of features and scores on the first valid time window of N frames from the beginning of each video sequence. It should be noted that the following access attempt based analysis is based on the official protocol of each database. Thus, the results on Replay-Attack Database are reported in terms of HTER whereas the performance on CASIA Face Anti-Spoofing Database is described using EER.
+In order to follow the method used in previous experiments, we begin evaluating the two averaging strategies with the LBP-TOP$_{8,8,8,1,1,1}^{u2}$ operator and a SVM classifier with RBF kernel. In order to determine the video based system performance, we applied both average of features and scores on the first valid time window of N frames from the beginning of each video sequence. It should be noted that the following access attempt based analysis is based on the official protocol of each database. Thus, the results on Replay Attack Database are reported in terms of HTER whereas the performance on CASIA FASD is described using EER.
 
-The access attempt based performance of both averaging strategies on the two databases is presented in Fig. \ref{fig:blocks_in_videos}. The results indicate that when the amount of temporal information increases, the better we are able to discriminate real faces from fake ones. This is the case especially on the CASIA Face Anti-Spoofing Database in which the distinctive motion clues, such as the excessive shaking of the display medium, cannot be exploited. However, when longer video sequences are explored, we are more likely to observe other specific dynamic events, such as different facial motion patterns (including eye blinking, lip movements and facial expression changes) or sudden characteristic reflections of planar spoofing media which can be used for differentiating real faces from fake ones. It is also interesting to notice that by averaging features, more stable and robust spoofing detection performance is achieved on both databases. The averaging scores of individual sub-volumes seems to suffer from outliers, thus more sophisticated temporal processing of scores might lead to more stable behavior.
+The access attempt based performance of both averaging strategies on the two databases is presented in Fig. \ref{fig:blocks_in_videos}. The results indicate that when the amount of temporal information increases, the better we are able to discriminate real faces from fake ones. This is the case especially on the CASIA FASD in which the distinctive motion clues, such as the excessive shaking of the display medium, cannot be exploited. However, when longer video sequences are explored, we are more likely to observe other specific dynamic events, such as different facial motion patterns (including eye blinking, lip movements and facial expression changes) or sudden characteristic reflections of planar spoofing media which can be used for differentiating real faces from fake ones. It is also interesting to notice that by averaging features, more stable and robust spoofing detection performance is achieved on both databases. The averaging scores of individual sub-volumes seems to suffer from outliers, thus more sophisticated temporal processing of scores might lead to more stable behavior.
+
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics [width=\textwidth] {images/proposed_countermeasure/video_based_results.pdf}
-\caption{Access attempt based evaluation of different time window sizes using mean of features and mean of scores with LBP-TOP$_{8,8,8,1,1,1}^{u2}$(a) Replay-Attack Database (HTER \%) (b) CASIA Face Anti-Spoofing Database (EER \%).} \label{fig:blocks_in_videos}
+\caption[Access attempt based evaluation of different time window sizes]{Access attempt based evaluation of different time window sizes using mean of features and mean of scores with LBP-TOP$_{8,8,8,1,1,1}^{u2}$(a) Replay Attack Database (HTER \%) (b) CASIA FASD (EER \%).} \label{fig:blocks_in_videos}
 \end{center}
 \end{figure}
 
-According to the official test protocol of CASIA Face Anti-Spoofing, also the Detection-Error Trade-off (DET) curves and the EERs for the seven scenarios (Section \ref{sec_casia}) should be reported. Based on the previous analysis we chose to use the average of features within a time window of 75 frames which corresponds to three seconds of video time. As it can be seen in Fig \ref{fig:DET_overall} and Table \ref{tab:casia_eer}, the use of only facial appearance (LBP) leads to better results compared to the baseline method (CASIA baseline). More importantly, when the temporal planes XT and YT are also considered for spatiotemporal face description (LBP-TOP), a significant performance enhancement is obtained (from 16\% to 10\% in terms of EER), thus confirming the benefits of encoding and exploiting not only the facial appearance but also the facial dynamics information.
+According to the official test protocol of CASIA FASD, also the DET curves and the EERs for the seven scenarios (Section \ref{sec_casia}) should be reported. Based on the previous analysis we chose to use the average of features within a time window of 75 frames which corresponds to three seconds of video time. As it can be seen in Fig \ref{fig:DET_overall} and Table \ref{tab:casia_eer}, the use of only facial appearance (LBP) leads to better results compared to the baseline method (CASIA FASD baseline). More importantly, when the temporal planes XT and YT are also considered for spatiotemporal face description (LBP-TOP), a significant performance enhancement is obtained (from 16\% to 10\% in terms of EER), thus confirming the benefits of encoding and exploiting not only the facial appearance but also the facial dynamics information.
+
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics [width=0.6\linewidth] {images/proposed_countermeasure/casia_scenarios_XYT_XY_baseline.pdf}
-\caption{Overall performance of LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features compared to the DoG baseline method and LBP$_{8,1}^{u2}$ on the CASIA Face Anti-Spoofing Database.} 
+\caption[Overall performance of LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features compared to the DoG baseline method]{Overall performance of LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features compared to the DoG baseline method and LBP$_{8,1}^{u2}$ on the CASIA FASD.} 
 \label{fig:DET_overall}
 \end{center}
 \end{figure}
 
 \begin{table}
-\caption{EER (in \%) comparison between the DoG baseline method, LBP$_{8,1}^{u2}$ and LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features on the CASIA Face Anti-Spoofing Database.}
+\caption{EER (in \%) comparison between the DoG baseline method, LBP$_{8,1}^{u2}$ and LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features on the CASIA FASD.}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c||c|}
 \hline 
@@ -247,12 +249,12 @@ More detailed results for each scenario are presented in Fig. \ref{fig:DET_proto
 \begin{figure}[h]
 \begin{center}
 \includegraphics [width=\textwidth] {images/proposed_countermeasure/casia_overall_XYT_XY_baseline.pdf}
-\caption{Performance of LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features compared to the DoG baseline method and LBP$_{8,1}^{u2}$ under the different protocols of the CASIA Face Anti-Spoofing Database. } \label{fig:DET_protocols}
+\caption[Performance of LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features compared to the DoG baseline method]{Performance of LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features compared to the DoG baseline method and LBP$_{8,1}^{u2}$ under the different protocols of the CASIA FASD. } \label{fig:DET_protocols}
 \end{center}
 \end{figure}
 
 \begin{table}\centering
-\caption{EER (in \%) development of LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features on the CASIA Face Anti-Spoofing Database.}
+\caption{EER (in \%) development of LBP-TOP$_{8,8,8,1,1,1}^{u2}$ using average of features on the CASIA FASD.}
 \begin{center}
 \begin{tabular}{|c||c|c|c|c|c|c|}
 \hline 
@@ -281,15 +283,15 @@ On the other hand, the spatiotemporal face description is able to improve the ma
 \subsection{Discussion}
 \label{sec:Proposed_summary}
 
-Table \ref{tb_REPLAY_Results} and Table \ref{tb_CASIA_Results} summarize all the results obtained for each database following their provided protocols. In order to be comparable with still frame analysis presented for example in \cite{ChingovskaBIOSIG2012}, the results for Replay-Attack Database represent the overall classification accuracy considering each frame individually. The access attempt based results are reported only for CASIA Face Anti-Spoofing Database as requested in its test protocol.
+Table \ref{tb_REPLAY_Results} and Table \ref{tb_CASIA_Results} summarize all the results obtained for each database following their provided protocols. In order to be comparable with still frame analysis presented for example in \cite{ChingovskaBIOSIG2012}, the results for Replay Attack Database represent the overall classification accuracy considering each frame individually. The access attempt based results are reported only for CASIA FASD as requested in its test protocol.
 
 Table \ref{tb_REPLAY_Results} shows also the results for the LBP$^6$ \cite{ChingovskaBIOSIG2012} and the Motion Correlation$^7$ \cite{AnjosIJCB2011} based countermeasures whose source code is freely available. Table \ref{tb_CASIA_Results} contains the provided DoG based baseline and the holistic LBP based face description. It can be seen that the proposed countermeasure presented the best results overtaking the baseline results in both databases, thus confirming the benefits of encoding and exploiting not only the facial appearance but also the facial dynamics information. Unfortunately, our comparison is limited to these countermeasures due to the lack of publicly available implementations of other state-of-the-art techniques presented in literature. 
 
-During these experiments we observed that the general performance of the proposed countermeasure was consistently better on Replay-Attack Database compared to the CASIA Face Anti-Spoofing Database. As mentioned in Section \ref{sec_lbptop_planes}, the nature of the attack scenarios is different between the two datasets. In the Replay-Attack Database, our LBP-TOP based face description was able to capture motion patterns of fixed photo attacks and scenic fake face attacks already when only relatively short time windows were explored. Performances below 10\% (HTER) were achieved. On the other hand, the CASIA Face Anti-Spoofing Database turned out to be more challenging from the dynamic texture point of view. Due to the lack of motion, analysis of longer temporal windows was required in order to find out distinctive motion patterns between genuine faces and fake ones. As it can be seen in Table \ref{tb_CASIA_Results}, by extending the micro-texture based spoofing detection into spatiotemporal domain, an improvement from 16\% to 10\% in terms of EER was obtained. The results also indicate that the proposed dynamic texture based face liveness description was able to improve the state of the art on both datasets.
+During these experiments we observed that the general performance of the proposed countermeasure was consistently better on Replay Attack Database compared to the CASIA FASD. As mentioned in Section \ref{sec_lbptop_planes}, the nature of the attack scenarios is different between the two datasets. In the Replay Attack Database, our LBP-TOP based face description was able to capture motion patterns of fixed photo attacks and scenic fake face attacks already when only relatively short time windows were explored. Performances below 10\% (HTER) were achieved. On the other hand, the CASIA FASD turned out to be more challenging from the dynamic texture point of view. Due to the lack of motion, analysis of longer temporal windows was required in order to find out distinctive motion patterns between genuine faces and fake ones. As it can be seen in Table \ref{tb_CASIA_Results}, by extending the micro-texture based spoofing detection into spatiotemporal domain, an improvement from 16\% to 10\% in terms of EER was obtained. The results also indicate that the proposed dynamic texture based face liveness description was able to improve the state of the art on both datasets.
 
 
 \begin{table}
-   \caption{HTER(\%) of the best results achieved on the Replay-Attack Database (following the database protocol) comparing with the provided baseline.}
+   \caption{HTER(\%) of the best results achieved on the Replay Attack Database (following the database protocol) comparing with the provided baseline.}
    \begin{center}
 
      \begin{tabular}{l | c c | c c |}
@@ -306,7 +308,7 @@ During these experiments we observed that the general performance of the propose
 \end{table}
 
 \begin{table}
-   \caption{$EER(\%)$ of the best results achieved on the CASIA Face Anti-Spoofing Database (following the database protocol) comparing with the provided baseline.}
+   \caption{$EER(\%)$ of the best results achieved on the CASIA FASD (following the database protocol) comparing with the provided baseline.}
    \begin{center}
 
      \begin{tabular}{l | c |}

@@ -17,7 +17,7 @@ In authentication systems based on face biometrics, spoofing attacks are usually
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=14cm] {images/flow_spoofing.pdf}
-\caption[Biometric data flow in a face authentication system]{(a) Biometric data flow in a real access (b) Biometric data flow in a spoofing attack} \label{fig:flow_spoofing}
+\caption[Biometric data flow in a face authentication system]{Biometric data flow in a face authentication system (a) Biometric data flow in a real access (b) Biometric data flow in a spoofing attack} \label{fig:flow_spoofing}
 \end{center}
 \end{figure}
 
@@ -44,7 +44,7 @@ Supported by the hypothesis that live faces present uncorrelated motion pattens 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=14cm] {images/kollreider.pdf}
-\caption[Selection of face regions]{Selection of face regions of the algorithm \cite{kollreider2009non} } \label{img_kollreider}
+\caption[Face regions selection]{Face regions selection. Input for the algorithm \cite{kollreider2009non} } \label{img_kollreider}
 \end{center}
 \end{figure}
 
@@ -95,7 +95,7 @@ Compared to real faces, attack medias have different reflexive patterns. Support
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=15cm] {images/lbp_flow.pdf}
-\caption{Block diagram of the countermeasure based on LBP} \label{fig:block-diagram}
+\caption[Block diagram of the countermeasure based on LBP]{Block diagram of the countermeasure based on LBP} \label{fig:block-diagram}
 \end{center}
 \end{figure}
 
@@ -237,7 +237,7 @@ where $\tau$ is the decision threshold, $D$ is the dataset, FAR is the False Acc
 
 The CASIA Face Anti-Spoofing Database$^5$ \cite{zhangface} contains short videos of 50 real clients and the corresponding fake faces were captured with high quality from the original ones. The database has a variety kind of attack. This variety is achieved by introducing three imaging qualities (low, normal and high) and three fake face attacks which include warped photo, cut photo (eyeblink) and video attacks. Examples from the database can be seen in Figure \ref{fig:casia_db}. Altogether the database consists of 600 video clips and the subjects are divided into subsets for training and testing (240 and 360, respectively). Results of a baseline system are also provided along the database for fair comparison. The baseline system considers the high frequency information in the facial region using multiple DoG features and SVM classifier and is inspired by the work of Tan {\em et  al.}~\cite{tan2010face}. 
 
-Since the main purpose of the database is to investigate the possible effects of different fake face types and imaging qualities, the test protocol consists of seven scenarios in which particular train and test samples are to be used. The quality test considers the three imaging qualities separately, low (1), normal (2) and high quality (3), and evaluates  the overall spoofing detection performance under variety of attacks at the given imaging quality. Similarly, the fake face test assesses how robust the anti-spoofing measure is to specific fake face attacks, warped photo (4), cut photo (5) and video attacks (6), regardless of the imaging quality. In the overall test (7), all data is used to give a more general evaluation. The results of each scenario are reported as Detection-Error Trade-off (DET) curves and equal error rates (EER), which is the point where false acceptance rate (FAR) equals false rejection rate (FRR) on the DET curve.
+Since the main purpose of the database is to investigate the possible effects of different fake face types and imaging qualities, the test protocol consists of seven scenarios in which particular train and test samples are to be used. The quality test considers the three imaging qualities separately, low (1), normal (2) and high quality (3), and evaluates  the overall spoofing detection performance under variety of attacks at the given imaging quality. Similarly, the fake face test assesses how robust the anti-spoofing measure is to specific fake face attacks, warped photo (4), cut photo (5) and video attacks (6), regardless of the imaging quality. In the overall test (7), all data is used to give a more general evaluation. The results of each scenario are reported as Detection Error Tradeoff (DET) curves and equal error rates (EER), which is the point where false acceptance rate (FAR) equals false rejection rate (FRR) on the DET curve.
 
 \begin{figure}[!btb]
 \begin{center}
