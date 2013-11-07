@@ -3,7 +3,7 @@
 
 This chapter presents the experimental results of this comparative study of face spoofing countermeasures. The countermeasures compared in this dissertation and how each hyper-parameter was set is discussed in Section \ref{sec:Evaluated_countermeasures}. The Section \ref{sec:Evaluation_Protocol} presents the evaluation protocol applied in this dissertation and section \ref{sec:Metrics} presents metrics used. The data evaluated in this dissertation and how this data was organized in the experiments are covered in Section \ref{sec:data}. In Section \ref{sec:Comparative_experiments} we report our experimental results. Finally, Section \ref{sec:Experiments_finalremarks} presents the final remarks of the chapter.
 
-The content of this chapter was published in the International Conference on Biometrics (ICB 2013) with the paper entitled "Can Face Antispoofing Countermeasures Work in a Real World Scenario?" \cite{FreitasPereira_ICB_2013}.
+The content of this chapter was published in the International Conference on Biometrics (ICB 2013) with the paper entitled ``Can Face Antispoofing Countermeasures Work in a Real World Scenario?" \cite{FreitasPereira_ICB_2013}.
 
 %The Section \ref{sec:Intra_test} presents the results applying the Intra-test protocol. Section \ref{sec:Inter_test} presents the results applying the Inter-test protocol. In the Section \ref{sec:combination} the combination of databases is explored to train each one of the presented countermeasures. In Section \ref{sec:framework} the Score Level Fusion based Framework is explored to train each countermeasure. Finally Section \ref{sec:Experiments_finalremarks} summarizes the experiments.
 
@@ -35,7 +35,7 @@ There are, basically, three hyper-parameters in this countermeasure. The first o
 
 \subsection{Eye blinks}
 
-The eye blink countermeasure used in this dissertation, uses a similar technique applied in Motion Correlation countermeasure \citep{AnjosIJCB2011}. The difference is; the accumulated motion $M_D$, (see Equation \ref{eq:motion}) is computed between the face region and the eyes region as can be observed in the Figure \ref{fig:eye_blink}. 
+The eye blink countermeasure used in this dissertation, uses a similar technique applied in Motion Correlation countermeasure \citep{AnjosIJCB2011}. The difference is the accumulated motion $M_D$, (see Equation \ref{eq:motion}) is computed between the face region and the eyes region as can be observed in the Figure \ref{fig:eye_blink}. 
 
 \begin{figure}[!btb]
 \begin{center}
@@ -322,7 +322,7 @@ In order to improve the performance results in comparison with the intra-test pr
 
 This framework consists of training each countermeasure to one specific database; each one will generate a score and these scores are fused generating the framework output. The fusion strategy used in this dissertation was a simple sum of normalized scores. Figure \ref{img:fusion_framework} shows a schema of the Score Level Fusion based Framework. In this Figure, the same countermeasure are trained with two different databases and each one generates a score. These scores are fused generating the final score of the Framework. 
 
-Using this strategy, when a new countermeasure need to be added, it is possible to "plug it" in the framework. This strategy is similar to an antivirus software. An antivirus is robust against different kind of attacks and they have regular updates in  order to become more robust against new threats.
+Using this strategy, when a new countermeasure need to be added, it is possible to ``plug it" in the framework. This strategy is similar to an antivirus software. An antivirus is robust against different kind of attacks and they have regular updates in  order to become more robust against new threats.
 
 \begin{figure}[!htb]
 \begin{center}

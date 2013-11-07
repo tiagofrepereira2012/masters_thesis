@@ -1,10 +1,11 @@
-\documentclass[12pt,twoside,final]{book}
+\documentclass[12pt,oneside,final]{book}
 \usepackage{natbib}
 
 %\usepackage[portuges,brazil]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage{hyperref}
 \usepackage{enumerate}
+\usepackage[final]{pdfpages} 
 
 \usepackage{indentfirst}
 \usepackage{ae}
@@ -38,14 +39,26 @@
 \input{macros}
 
 \begin{document}
-
 \pagenumbering{roman}
+\setcounter{page}{2}
 \pagestyle{plain}
+
 
 %Tese em português
 \input{capa}
 %Tese em português e inglês
 %\input{capaPortIngles}
+
+\input{res_abstract}
+
+%=============================== sumário =============================================
+\tableofcontents
+
+\newpage %verso em branco
+\thispagestyle{empty} %Tirando o numero da primeira p‡gina
+\addtocounter{page}{-1}
+\null
+\newpage
 
 
 \input{dedicatoria}
@@ -57,7 +70,7 @@
 
 \baselineskip 1.1 \baselineskip
 
-\input{res_abstract}
+
 
 
 %=============================== lista de tabelas e figuras ==========================
@@ -73,17 +86,17 @@
 %============================ acrônimos, símbolos e notações ========================
 \input{acro_notacao.tex}
 
-%=============================== sumário =============================================
-\tableofcontents
 
 
-\newpage
-%caso o sumário acabe em uma página ímpar, o verso será em branco
-\null \vfill
+
+\newpage %verso em branco
+\thispagestyle{empty} %Tirando o numero da primeira p‡gina
+\addtocounter{page}{-1}
+\null
 \newpage
 
 %Agora muda para o estilo fancy
-\pagestyle{fancy}
+\pagestyle{plain}
 
 %%%%%%
 % CRIAR FINAL REMARKS

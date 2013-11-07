@@ -1,27 +1,168 @@
 \chapter{Spoofing Attacks in Face Authentication}
 \label{chap:Spoofing}
 
-As mentioned in the Chapter \ref{chap:introduction}, spoofing attacks in biometrics are direct attacks to the biometric sensor. This chapter discusses the spoofing attacks in face authentication systems and is organized as follows. Section \ref{sec:countermeasures} discusses spoofing in face biometrics presenting the state of the art countermeasures. Section \ref{sec:Databases} presents the face antispoofing databases publicly available. Finally Section \ref{sec:final_remarks} presents the final remarks of the chapter.
+As mentioned in the Chapter \ref{chap:introduction}, spoofing attacks in biometrics are direct attacks to the biometric sensor. 
+This chapter discusses spoofing attacks in face authentication systems and is organized as follows. 
+Section \ref{sec:Databases} presents the face antispoofing databases publicly available. 
+Section \ref{sec:countermeasures} discusses spoofing in face biometrics presenting the state of the art countermeasures. 
+Finally Section \ref{sec:final_remarks} presents the final remarks of the chapter.
 
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+% Databases
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\section{Face Spoofing Databases}
+\label{sec:Databases}
+
+In this section, we give an overview of three face spoofing databases: the NUAA face antispoofing database \citep{tan2010face}, the Replay Attack Database \citep{ChingovskaBIOSIG2012} and the CASIA Face Anti-Spoofing Database \citep{zhangface}. These databases consist of real access attempts and several fake face attacks of different natures under varying conditions. To our knowledge, these databases are currently the only freely available face spoofing databases.
+
+
+%Instead of still images, both datasets contain short video recordings which makes them suitable for evaluating countermeasures that exploit also temporal information.
+
+\subsection{NUAA}
+\label{sec_nuaa}
+
+The NUAA face spoofing database\footnote{\url{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html}} \citep{tan2010face} consists of images of real accesses and attacks made with printed photographs. Emulating a scenario of access in a regular notebook, this database has images of 15 users splited in 3 section spaced in two weeks. Each section has 4 screenshots per user in different illumination conditions. Figure \ref{fig:nuaa} presents two examples of this database.
+
+%Construída para estudar o cenário de ataques utilizando fotografias impressas em papel, a base de dados NUAA\footnote{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html} consiste de capturas fotográficas de pessoas em frente à câmera de um \emph{notebook} e de ataques feitos à mesma câmera com fotos impressas de alta qualidade destas mesmas pessoas. A base de dados possui gravações de 15 pessoas distintas divididas em 3 seções espaçadas em duas semanas e cada seção possui quatro gravações por pessoa com condições de iluminação distintas. Na Figura~\ref{fig:nuaa} são apresentados exemplos dessa base de dados.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics [width=7.5cm] {images/NUAA.png}
+\caption[Printed photo attacks of the NUAA database]{Printed photo attacks of the NUAA database (courtesy of \cite{tan2010face}).}
+\label{fig:nuaa}
+\end{center}
+\end{figure}
+
+
+\subsection{Replay Attack Database}
+\label{sec_replay}
+
+The Replay Attack Database\footnote{\url{http://www.idiap.ch/dataset/replayattack}} \citep{ChingovskaBIOSIG2012} consists of short video ($\sim$10s of duration) of both real access and attack attempts to 50 different identities using a laptop. It contains 1200 videos (200 real-access and 1000 attacks) and the attacks were taken in three different scenarios with two different illumination and support conditions. The scenarios of attack include:
+
+\begin{enumerate}
+        \item \textbf{Print}: the attacker displays hard copies of high resolution photographs printed on A4 paper;
+        \item \textbf{Mobile}: the attacker displays photos and videos taken with an iPhone 3GS using the phone screen;
+        \item \textbf{Highdef}: the attacker displays high resolution photos and videos using an iPad screen with resolution 1024$\times$768.
+\end{enumerate}
+
+The illumination conditions include:
+\begin{enumerate}
+        \item \textbf{Controlled}: the background of the scene is uniform and the light of a fluorescent lamp illuminates the scene;
+        \item \textbf{Adverse}: the background of the scene is non uniform and the day-light illuminates the scene.
+\end{enumerate}
+
+The support conditions include:
+\begin{enumerate}
+        \item \textbf{Hand-based}: the attacker holds the attack device;
+        \item \textbf{Fixed}: the attacker sets the attack device in a fixed support so it does not move during the spoofing attempt.
+\end{enumerate}
+
+Figure~\ref{fig:Database} show some examples of real accesses and attacks in different scenarios. In the top row, samples from controlled scenario. In the bottom row, samples from adverse scenario. Columns from left to right show examples of real accesses, printed photographs, mobile phones and tablet attacks. Table~\ref{tb_Database1} shows the number of videos of the Replay Attack Database and its distribution.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics [width=15cm] {images/Replay_database.pdf}
+\caption[Some frames of real access and spoofing attempts]{Some frames of real access and spoofing attempts (a) Real accesses; (b) Printed attacks; (c) Mobile phone attacks; (d) High definition attacks (courtesy of \cite{ChingovskaBIOSIG2012}).} \label{fig:Database}
+\end{center}
+\end{figure}
+
+The Replay Attack Database provides a protocol for objectively evaluate a given countermeasure. Such protocol defines three non-overlapping partitions for training, development (tuning) and testing countermeasures. The training set is used to train the countermeasure, the development set is used to tune the countermeasure and to estimate a threshold value to be used in the test set. The test set must be used only to report results. As performance measurement, the protocol advises the use of Half Total Error Rate (HTER)(Equation~\ref{eq:HTER_1}).
+
+\begin{equation}
+\label{eq:HTER_1}
+HTER=\frac{FAR(\tau,D)+ FRR(\tau,D)} {2} ,
+\end{equation}
+where $\tau$ is the decision threshold, $D$ is the dataset, FAR is the False Acceptance Rate and FRR is the False Rejection Rate. In this protocol, the value of $\tau$ is 	estimated on the Equal Error Rate (EER) using the development set, which is the error rate when the False Acceptance Rate (FAR) is equals to False Rejection Rate (FRR).
+
+
+
+\begin{table}
+   \begin{center}
+     \begin{tabular}{ | l | c | c | c || c | }
+      \hline
+       \textbf{Type} & \textbf{Train} & \textbf{Devel.} & \textbf{Test} & \textbf{Total}\\ \hline
+       Real-access & 60 & 60 & 80 & 200 \\ \hline
+       Print-attack & 30+30 & 30+30 & 40+40  & 100+100\\ \hline
+       Mobile-attack & 60+60 & 60+60 & 80+80 & 200+200\\ \hline
+       Highdef-attack & 60+60 & 60+60 & 80+80 & 200+200\\ \hline \hline
+       \textbf{Tota}l & 360 & 360 & 480 & 1200\\
+       \hline
+     \end{tabular}
+   \end{center}
+   \caption{Number of videos in each subset. Numbers displayed as sums indicate the amount of hand-based and fixed support attack available in each subset.}
+   \label{tb_Database1}
+\end{table}
+
+
+\subsection{CASIA Face Anti-Spoofing Database}
+\label{sec_casia}
+
+
+The CASIA Face Anti-Spoofing Database (CASIA FASD)\footnote{\url{http://www.cbsr.ia.ac.cn/english/FaceAntiSpoofDatabases.asp}} \citep{zhangface} contains short videos of both real accesses and attacks attempts of 50 different identities using a laptop. 
+This database has a variety kind of attacks. 
+This variety is achieved by introducing attacks with different imaging qualities and fake face attacks. 
+There are three different imaging qualities: low, normal and high. 
+These different imaging qualities were achieved using video recordings with different cameras. 
+There are three fake face attacks: warped photo, cut photo and video. 
+In the warped photo attack, the attacker warps a printed photograph trying to emulate a facial motion. 
+In the cut photo attack, it was required to the attackers to emulate a blink behavior with a printed photo (making holes in the eyes region). 
+In the video attacks, the attacker holds a device displaying the video. 
+
+Examples from the database can be seen in Figure \ref{fig:casia_db}. Altogether, the database consists of 600 video clips that are divided into subsets for training and testing (240 and 360, respectively). Results of a baseline countermeasure are also provided along the database for fair comparison. The baseline countermeasure considers the high frequency information in the facial region using multiple DoG features and SVM classifier and is inspired by the work of \cite{tan2010face} (see Section \ref{sec:quality_assessment}). 
+
+Since the main purpose of the database is to investigate the possible effects of different fake face types and imaging qualities, the test protocol consists of seven scenarios in which particular train and test samples are to be used. The quality test considers the three imaging qualities separately, low (1), normal (2) and high quality (3), and evaluates  the overall spoofing detection performance under variety of attacks at the given imaging quality. Similarly, the fake face test assesses how robust the anti-spoofing measure is to specific fake face attacks, warped photo (4), cut photo (5) and video attacks (6), regardless of the imaging quality. In the overall test (7), all data is used to allow a more general evaluation. The results of each scenario are reported as Detection Error Tradeoff (DET) curves and equal error rates (EER) in the test set.
+
+\begin{figure}[!btb]
+\begin{center}
+\includegraphics [width=1.0\linewidth] {images/casia_db.png}
+\caption[Example images of real accesses and the corresponding spoofing attempts]{Example images of real accesses and the corresponding spoofing attempts (courtesy of \cite{zhangface})} 
+\label{fig:casia_db}
+\end{center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+% The countermeasures
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
 \section{The countermeasures}
 \label{sec:countermeasures}
 
-Because of its natural and non-intrusive interaction, identity verification and recognition using facial information are among the most active and challenging research areas in computer vision. Despite the significant progress of face recognition technology in the recent decades, wide range of viewpoints, aging of subjects and complex outdoor lighting are still research challenges. Advances in the area were extensively reported in \cite{flynn2008handbook} and \cite{li2011handbook}. 
+Because of its natural and non-intrusive interaction, identity verification and recognition using facial information are among the most active and challenging research areas in computer vision. 
+Despite the significant progress of face recognition technology in the recent decades, wide range of viewpoints, aging of subjects and complex outdoor lighting are still research challenges. 
+Advances in the area were extensively reported in \cite{flynn2008handbook} and \cite{li2011handbook}. 
 
-It was not until very recently that the problem of spoofing attacks against face biometric system gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \cite{pan2007eyeblink,tan2010face,zhangface,ChingovskaBIOSIG2012} and contests addressing the problem. 
+It was not until very recently that the problem of spoofing attacks against face biometric system gained attention of the research community. 
+This can be attested by the gradually increasing number of publicly available databases, as we presented in Section \ref{sec:Databases}, and contests addressing the problem. 
 
-Two contests were organized in the last two years. The first one was organized under IJCB 2011(International Joint Conference on Biometrics)\cite{ChakkaIJCB2011} which was the first competition conducted for studying best practices for non-intrusive spoofing detection. More recently, the second competition in this field, under ICB 2013 (International Conference on Biometrics)\cite{Chingovska_ICB2013_2013} was organized.
+Two contests were organized in the last two years. 
+The first one was organized under IJCB 2011 (International Joint Conference on Biometrics)\citep{ChakkaIJCB2011} which was the first competition conducted for studying best practices for non-intrusive spoofing detection. 
+More recently, the second competition in this field, under ICB 2013 (International Conference on Biometrics)\citep{Chingovska_ICB2013_2013} was organized.
 
-In authentication systems based on face biometrics, spoofing attacks are usually perpetrated using photographs, videos or forged masks. While it is possible to use make-up or plastic surgery as mean of spoofing, photographs and videos are probably the most common sources of spoofing attacks. Moreover, due to the increasing popularity of social network websites (facebook, flickr, youtube, instagram and others), a great deal of multimedia content - especially videos and photographs - is available on the web that can be used to spoof a face authentication system. Figure \ref{fig:flow_spoofing} (a) and (b) shows the biometric data flow in a real access and in a spoofing attack respectively. In order to mitigate this kind of vulnerability in face authentication systems, effective countermeasures against face spoofing have to be deployed.
+In authentication systems based on face biometrics, spoofing attacks are usually perpetrated using photographs, videos or forged masks. 
+While it is possible to use make-up or plastic surgery as mean of spoofing, photographs and videos are probably the most common sources of spoofing attacks. 
+Moreover, due to the increasing popularity of social network websites (facebook, flickr, youtube, instagram and others), a great deal of multimedia content - especially videos and photographs - is available on the web that can be used to spoof a face authentication system. 
+Figure \ref{fig:flow_spoofing} (a) and (b) shows the biometric data flow in a real access and in a spoofing attack respectively. 
+In order to mitigate this kind of vulnerability in face authentication systems, effective countermeasures against face spoofing have to be deployed.
 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=14cm] {images/flow_spoofing.pdf}
-\caption[Biometric data flow in a face authentication system]{Biometric data flow in a face authentication system (a) Biometric data flow in a real access (b) Biometric data flow in a spoofing attack} \label{fig:flow_spoofing}
+\caption[Biometric data flow in a face authentication system]{Biometric data flow in a face authentication system; (a) Biometric data flow in a real access; (b) Biometric data flow in a spoofing attack.} \label{fig:flow_spoofing}
 \end{center}
 \end{figure}
 
-The countermeasures against spoofing attempts in face recognition can be macro classified in countermeasures that depend and do not depend on user collaboration. In countermeasures that depend on user collaboration, the user is challenged to interact to the face authentication system. For example, researchers from google are studying a way to unlock the android phones based on facial expressions\footnote{\url{http://www.bbc.co.uk/news/technology-22790221}}. As can be observed in Figure \ref{fig:google_unlock}, this strategy can be fun in the beginning but in some situations this can be embarrassing. On the other hand, countermeasures that do not depend on user collaboration try to solve this issue analysing the signal itself, without any awareness of the user. This type of countermeasures can be classified by the following cues:
+The countermeasures against spoofing attempts in face recognition can be macro classified in countermeasures that depend or do not depend on user collaboration. 
+In countermeasures that depend on user collaboration, the user is challenged to interact to the face authentication system. 
+For example, researchers from google are studying a way to unlock the android phones based on facial expressions\footnote{\url{http://www.bbc.co.uk/news/technology-22790221}}. 
+As can be observed in Figure \ref{fig:google_unlock}, this strategy can be fun in the beginning but in some situations this can be embarrassing. 
+On the other hand, countermeasures that do not depend on user collaboration try to solve this issue analysing the signal itself, without any awareness of the user. 
+This type of countermeasures can be classified by the following cues:
 \begin{itemize}
         \item Presence of vitality (liveness detection);
         \item Scene characteristics;
@@ -31,7 +172,7 @@ The countermeasures against spoofing attempts in face recognition can be macro c
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=9cm] {images/face_unlock.jpg}
-\caption[New google face unlock screen]{New google face unlock screen} \label{fig:google_unlock}
+\caption[New google face unlock screen]{New google face unlock screen.} \label{fig:google_unlock}
 \end{center}
 \end{figure}
 
@@ -39,12 +180,13 @@ The countermeasures against spoofing attempts in face recognition can be macro c
 
 Presence of vitality, or liveness detection, consists of the searching for features that only live faces can possess. The eye blinking is an activity that humans do constantly. A regular human blinks once every 2 or 4 seconds in order to maintain the eyes clean and wet. This frequency can vary in stress conditions and/or in high concentration tasks. In those situations the interval can extend to $\sim 20$ seconds. However, it doesn't matter in what condition the person is, the eye blink will always occur. Following this assumption, \cite{pan2007eyeblink} propose a countermeasure measuring the eye blinking using Hidden Markov Models (HMM) mapping the state of eyes open and closed. Experiments carried out using a database created by the authors and freely available for download\footnote{\url{http://www.cs.zju.edu.cn/~gpan/database/db\_blink.html}}, shown an accuracy of 95.7\% .
 
-Based on the hypothesis that live faces present uncorrelated motion pattens in some parts of the face and the attacks do not, \cite{kollreider2009non} developed a countermeasure based on optical flow field to explore such cue. As a reference to the algorithm, were selected the center of the face an the region of the ears, as can be observed in Figure \ref{img_kollreider}.
+Based on the hypothesis that live faces present uncorrelated motion patterns in some parts of the face and the attacks do not, \cite{kollreider2009non} developed a countermeasure based on optical flow field to explore such cue. 
+As a reference to the algorithm, were selected the center of the face an the region of the ears, as can be observed in Figure \ref{img_kollreider}.
 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=14cm] {images/kollreider.pdf}
-\caption[Face regions selection]{Face regions selection. Input for the algorithm \cite{kollreider2009non} } \label{img_kollreider}
+\caption[Face regions selection]{Face regions selection. Input for the algorithm \cite{kollreider2009non} .} \label{img_kollreider}
 \end{center}
 \end{figure}
 
@@ -75,7 +217,10 @@ M_D  = \frac{1}{S_D} \sum_{(x,y) \in D} |I_t(D) - I_{t-1}(D)|,
 \end{equation}
 where $D$ is the RoI, $S_D$ is the area of the RoI in pixels, $I_t$ is the intensity of a pixel and $t$ is the frame index of frame sequence.
 
-To input the motion coefficient into a classifier, 5 parameters are measured for every window of 20 frames. The parameters are: the minimum of $M_D$ in that time window, the maximum, the average, the standard deviation and the ratio $R$ between the spectral sum for all non-DC components and DC component taken as base the $N$-point Fourier transform of the signal generate by the $M_D$s accumulated in 20 frames. (see Equation \ref{eq:motionR}). These 10 parameters (five for the face and five for the background) are fed into a Multi-layer Perceptron (MLP) classifier with 5 neurons in the hidden layer which is trained to detect spoofing attacks. This countermeasure was evaluated using the photograph attacks subset of the Replay Attack Database\cite{ChingovskaBIOSIG2012} and achieved an $HTER=9\%$ (Half Total Error Rate).
+To input the motion coefficient into a classifier, 5 parameters are measured for every window of 20 frames.
+The parameters are: the minimum of $M_D$ in that time window, the maximum, the average, the standard deviation and the ratio $R$ between the spectral sum for all non-DC components and DC component taken as base the $N$-point Fast Fourier Transform (FFT) of the signal generate by the $M_D$s accumulated in 20 frames (see Equation \ref{eq:motionR}). 
+These 10 parameters (five for the face and five for the background) are fed into a Multi-layer Perceptron (MLP) classifier, with 5 neurons in the hidden layer, which is trained to detect spoofing attacks. 
+This countermeasure was evaluated using the photograph attacks subset of the Replay Attack Database\citep{ChingovskaBIOSIG2012} and achieved an $HTER=9\%$ (Half Total Error Rate).
 
 %\vspace{-2mm}
 \begin{equation}
@@ -90,12 +235,12 @@ R = \frac{\sum_{i=1}^{N}|FFT_i|}{|FFT_0|}
 
 Countermeasures based on differences in image quality assessment rely on the presence of artifacts intrinsically present at the attack media. Such remarkable properties can be originated from media quality issues or differences in reflectance properties of the object exposed to the camera.
 
-Compared to real faces, distinct attack media have different reflexive patterns. Based on that observation, \cite{ChingovskaBIOSIG2012} and \cite{maatta2011face} explored the $LBP$ (Local Binary Patterns) texture descriptor analysing single frames (see more details about the $LBP$ in the Appendix \ref{AppendixA}). In this countermeasure the detected faces (see Figure \ref{fig:block-diagram}) are geometric normalized to $64 \times 64$ pixels. The $LBP$ features are extracted from the whole face region and histogrammed. The histograms for each frame are fed into a binary classifier which can be trained to detect spoofing attacks. 
+Compared to real faces, distinct attack media have different reflexive patterns. Based on that observation, \cite{ChingovskaBIOSIG2012} and \cite{maatta2011face} explored the $LBP$ (Local Binary Patterns) texture descriptor analysing single frames. In this countermeasure the detected faces (see Figure \ref{fig:block-diagram}) are geometric normalized to $64 \times 64$ pixels. The $LBP$ features are extracted from the whole face region and histogrammed. The histograms for each frame are fed into a binary classifier which can be trained to detect spoofing attacks. 
 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics [width=15cm] {images/lbp_flow.pdf}
-\caption[Block diagram of the countermeasure based on LBP]{Block diagram of the countermeasure based on LBP} \label{fig:block-diagram}
+\caption[Block diagram of the countermeasure based on LBP]{Block diagram of the countermeasure based on LBP.} \label{fig:block-diagram}
 \end{center}
 \end{figure}
 
@@ -141,116 +286,13 @@ As can be observed in the block diagram in Figure \ref{img:flow_DoG}, four seque
 After applying the sequence of filters, the images are geometric normalized to $128\times 128$ pixels and fed into a $SVM$ classifier. Evaluated using a the CASIA FASD, the countermeasure achieved an $EER$ of $17\%$. With this image dimension, the feature vector of the countermeasure have dimensionality 65,536. The training step of the $SVM$ with this dimensionality could take several weeks. 
 
 
+\cite{li2004live}, hypothesize that fraudulent photographs have less high frequency components than real ones. To test this hypothesis, a small database was built with 4 identities containing both real access and printed photo attacks. With this private database (which was not made public), an accuracy of $100\%$ was achieved. 
 
-Li et al. \cite{li2004live} hypothesize that fraudulent photographs have less high frequency components than real ones. To test this hypothesis, a small database was built with 4 identities containing both real access and printed photo attacks. With this private database (which was not made public), an accuracy of $100\%$ was achieved. 
+In order to detect noise patterns in spoofing attacks, \cite{davideo} developed a countermeasure for videos. First, each frame in a frame sequence is filtered using a gaussian filter followed by a median filter. These filtered images are subtracted by the original ones. The result of this subtraction is so called ``residual image". This residual image is analysed in the frequency domain using a 2D Fourier transform. All processed frames in the videos are combined using the Visual Rhythm technique \cite{zhang1995video}. This technique generates one image with a combination of all frames ending the preprocessing steps. 
 
-In order to detect noise patterns in spoofing attacks, \cite{davideo} developed a countermeasure for videos. First, each frame in a frame sequence is filtered using a gaussian filter followed by a median filter. These filtered images are subtracted by the original ones. The result of this subtraction is so called "residual image". This residual image is analysed in the frequency domain using a 2D Fourier transform. All processed frames in the videos are combined using the Visual Rhythm technique\cite{zhang1995video}. This technique, generates one image with a combination of all frames ending the preprocessing steps. 
-
-A texture description using Gray Level Co-ocurrency matrix (GLMC) was applied in the Visual Rhythm image \cite{zhong1997spatio}. With the co-ocurrence matrix, 12 measures are extracted to feed into a binary classifier that detects attacks. The classifiers evaluated was the $PLS$ (Partial Least Squares) and the $SVM$. With a database combining the photograph subset of the Replay Attack Database and a database created by the authors (which was not made public), an AUC (Area Under the Curve) of $\sim100\%$ was achieved.
-
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%
-% Databases
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%
-\section{Face Spoofing Databases}
-\label{sec:Databases}
-
-In this section, we give an overview of three face spoofing databases: the NUAA face antispoofing database, the Replay Attack Database and the CASIA Face Anti-Spoofing Database \cite{zhangface}. These databases consist of real access attempts and several fake face attacks of different natures under varying conditions. To our knowledge, these databases are currently the only freely available face spoofing databases.
+A texture description using Gray Level Co-ocurrency Matrix (GLCM) was applied in the Visual Rhythm image \citep{zhong1997spatio}. With the co-ocurrence matrix, 12 measures are extracted to feed into a binary classifier that detects attacks. The classifiers evaluated was the $PLS$ (Partial Least Squares) and the $SVM$. With a database combining the photograph subset of the Replay Attack Database and a database created by the authors (which was not made public), an AUC (Area Under the Curve) of $\sim100\%$ was achieved.
 
 
-%Instead of still images, both datasets contain short video recordings which makes them suitable for evaluating countermeasures that exploit also temporal information.
-
-\subsection{NUAA}
-\label{sec_nuaa}
-
-The NUAA face spoofing database\footnote{\url{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html}} \cite{tan2010face} consists of images of real accesses and attacks made with printed photographs. Emulating a scenario of access in a regular notebook, this database has images of 15 users splited in 3 section spaced in two weeks. Each section has 4 screenshots per user in different illumination conditions. Figure \ref{fig:nuaa} has some examples of this database.
-
-%Construída para estudar o cenário de ataques utilizando fotografias impressas em papel, a base de dados NUAA\footnote{http://parnec.nuaa.edu.cn/xtan/data/NuaaImposterdb.html} consiste de capturas fotográficas de pessoas em frente à câmera de um \emph{notebook} e de ataques feitos à mesma câmera com fotos impressas de alta qualidade destas mesmas pessoas. A base de dados possui gravações de 15 pessoas distintas divididas em 3 seções espaçadas em duas semanas e cada seção possui quatro gravações por pessoa com condições de iluminação distintas. Na Figura~\ref{fig:nuaa} são apresentados exemplos dessa base de dados.
-
-\begin{figure}[!htb]
-\begin{center}
-\includegraphics [width=7.5cm] {images/NUAA.png}
-\caption[Printed photo attacks of the NUAA database]{Printed photo attacks of the NUAA database (courtesy of \cite{tan2010face})}
-\label{fig:nuaa}
-\end{center}
-\end{figure}
-
-
-\subsection{Replay Attack Database}
-\label{sec_replay}
-
-The Replay Attack Database\footnote{\url{http://www.idiap.ch/dataset/replayattack}} (\cite{ChingovskaBIOSIG2012}) consists of short video ($\sim$10s of duration) of both real access and attack attempts to 50 different identities using a laptop. It contains 1200 videos (200 real-access and 1000 attacks) and the attacks were taken in three different scenarios with two different illumination and support conditions. The scenarios of attack include:
-
-\begin{enumerate}
-        \item \textbf{print}: the attacker displays hard copies of high resolution photographs printed on A4 paper;
-        \item \textbf{mobile}: the attacker displays photos and videos taken with an iPhone 3GS using the phone screen;
-        \item \textbf{highdef}: The attacker displays high resolution photos and videos using an iPad screen with resolution 1024$\times$768.
-\end{enumerate}
-The illumination conditions include:
-\begin{enumerate}
-        \item \textbf{controlled}: the background of the scene is uniform and the light of a fluorescent lamp illuminates the scene;
-        \item \textbf{adverse}: the background of the scene is non uniform and the day-light illuminates the scene.
-\end{enumerate}
-The support conditions include:
-\begin{enumerate}
-        \item \textbf{hand-based}: the attacker hand holds the attack medium;
-        \item \textbf{fixed}: the attacker sets the attack device in a fixed support so it does not move during the spoofing attempt.
-\end{enumerate}
-Figure. \ref{fig:Database} show some examples of real accesses and attacks in different scenarios. In the top row, samples from controlled scenario. In the bottom row, samples from adverse scenario. Columns from left to right show examples of real access, printed photograph, mobile phone and tablet attacks.
-
-\begin{figure}[!htb]
-\begin{center}
-\includegraphics [width=15cm] {images/Replay_database.png}
-\caption[Some frames of real access and spoofing attempts]{Some frames of real access and spoofing attempts (courtesy of \cite{ChingovskaBIOSIG2012}).} \label{fig:Database}
-\end{center}
-\end{figure}
-
-The Replay Attack Database provides a protocol for objectively evaluate a given countermeasure. Such protocol defines three non-overlapping partitions for training, development (tuning) and testing countermeasures. The training set is used to train the countermeasure, the development set is used to tune the countermeasure and to estimate a threshold value to be used in the test set. The test set must be used only to report results. As performance measurement, the protocol advises the use of Half Total Error Rate (HTER)(Equation \ref{eq:HTER}).
-
-\begin{equation}
-\label{eq:HTER}
-HTER=\frac{FAR(\tau,D)+ FRR(\tau,D)} {2} ,
-\end{equation}
-where $\tau$ is the decision threshold, $D$ is the dataset, FAR is the False Acceptance Rate and FRR is the False Rejection Rate. In this protocol, the value of $\tau$ is 	estimated on the Equal Error Rate (EER) using the development set, which is the error rate when the False Acceptance Rate (FAR) is equals to False Rejection Rate (FRR).
-
-
-
-\begin{table}
-   \label{tb_Database}
-   \caption{Number of videos in each subset. Numbers displayed as sums indicate the amount of hand-based and fixed support attack available in each subset.}
-   \begin{center}
-     \begin{tabular}{ | l | c | c | c || c | }
-      \hline
-       \textbf{Type} & \textbf{Train} & \textbf{Devel.} & \textbf{Test} & \textbf{Total}\\ \hline
-       Real-access & 60 & 60 & 80 & 200 \\ \hline
-       Print-attack & 30+30 & 30+30 & 40+40  & 100+100\\ \hline
-       Mobile-attack & 60+60 & 60+60 & 80+80 & 200+200\\ \hline
-       Highdef-attack & 60+60 & 60+60 & 80+80 & 200+200\\ \hline \hline
-       \textbf{Tota}l & 360 & 360 & 480 & 1200\\
-       \hline
-     \end{tabular}
-   \end{center}
-\end{table}
-
-
-\subsection{CASIA Face Anti-Spoofing Database}
-\label{sec_casia}
-
-
-The CASIA Face Anti-Spoofing Database (CASIA FASD)\footnote{\url{http://www.cbsr.ia.ac.cn/english/FaceAntiSpoofDatabases.asp}} (\cite{zhangface}) contains short videos of both real accesses and attacks attempts of 50 different identities using a laptop. This database has a variety kind of attacks. This variety is achieved by introducing attacks with different imaging qualities and fake face attacks. There are three different imaging qualities: low, normal and high. These different imaging qualities were achieved using video recordings with different cameras. There are three fake face attacks: warped photo, cut photo and video. In the warped photo attack, the attacker warps a printed photograph trying to emulate a facial motion. In the cut photo attack, was required to the attackers to emulate a blink behavior with a printed photo (making holes in the eyes region). In the video attacks, the attacker holds a device displaying a video. 
-
-Examples from the database can be seen in Figure \ref{fig:casia_db}. Altogether, the database consists of 600 video clips that are divided into subsets for training and testing (240 and 360, respectively). Results of a baseline countermeasure are also provided along the database for fair comparison. The baseline countermeasure considers the high frequency information in the facial region using multiple DoG features and SVM classifier and is inspired by the work of \cite{tan2010face} (see Section \ref{sec:quality_assessment}). 
-
-Since the main purpose of the database is to investigate the possible effects of different fake face types and imaging qualities, the test protocol consists of seven scenarios in which particular train and test samples are to be used. The quality test considers the three imaging qualities separately, low (1), normal (2) and high quality (3), and evaluates  the overall spoofing detection performance under variety of attacks at the given imaging quality. Similarly, the fake face test assesses how robust the anti-spoofing measure is to specific fake face attacks, warped photo (4), cut photo (5) and video attacks (6), regardless of the imaging quality. In the overall test (7), all data is used to allow a more general evaluation. The results of each scenario are reported as Detection Error Tradeoff (DET) curves and equal error rates (EER) in the test set.
-
-\begin{figure}[!btb]
-\begin{center}
-\includegraphics [width=1.0\linewidth] {images/casia_db.png}
-\caption[Example images of real accesses and the corresponding spoofing attempts]{Example images of real accesses and the corresponding spoofing attempts (courtesy of \cite{zhangface})} 
-\label{fig:casia_db}
-\end{center}
-\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -261,9 +303,9 @@ Since the main purpose of the database is to investigate the possible effects of
 \section{Final Remarks}
 \label{sec:final_remarks}
 
-It was not until very recently that the problem of spoofing attacks against face biometric systems gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \cite{tan2010face,zhangface,ChingovskaBIOSIG2012} and the recently two contests organized \cite{ChakkaIJCB2011,Chingovska_ICB2013_2013}. With that efforts, a number of countermeasures were recently published and we presented, in this chapter, the most relevant ones.
+It was not until very recently that the problem of spoofing attacks against face biometric systems gained attention of the research community. This can be attested by the gradually increasing number of publicly available databases \citep{tan2010face,zhangface,ChingovskaBIOSIG2012} and the recently two contests organized \citep{ChakkaIJCB2011,Chingovska_ICB2013_2013}. With those efforts, a number of countermeasures were recently published and we presented, in this chapter, the most relevant ones.
 
-Most of the countermeasures presented were evaluated using different metrics and in some cases using private databases, making the comparison of them a hard task. Just a few of them have source code available, making this task even harder. Additionally, the countermeasures recently published focuses only in the performance analysis in one database. The extension to more databases and the analysis of possible biases that these databases can introduce in these countermeasures are overlooked. 
+Most of the countermeasures presented were evaluated using different metrics and in some cases using private databases, making the comparison of them a hard task. Just a few of them have source code available, making this task even harder. Additionally, the countermeasures recently published focus only in the performance analysis in one database. The extension to more databases and the analysis of possible biases that these databases can introduce in these countermeasures are overlooked. 
 
 %This masters dissertation focuses 
 
